@@ -443,10 +443,15 @@ def main():
 
         # Scrapear solo ese partido
         raw_one = process_match(m)
-        updated = build_data([raw_one])
-        if updated:
-            # Reemplazar entrada en el JSON
-            data[idx] = updated[0]
+        if raw_one.get('win_table'):
+            # Preservar last_updated del dato anterior si existe
+            raw_one.setdefault('last_updated', data[idx].get('last_updated',''))
+            updated = build_data([raw_one])
+            if updated:
+                data[idx] = updated[0]
+                print(f"✅ Datos actualizados para partido #{idx}")
+        else:
+            print(f"⚠️  Scrape sin datos para partido #{idx} — manteniendo datos anteriores")
 
         ok = sum(1 for d in data if d.get('has_data'))
         print(f"\nPartidos con datos: {ok}/{len(data)}")
@@ -494,13 +499,24 @@ def main():
         else:
             existing = {}
 
-        raw_map = {r['slug']: r for r in raw_pending}
+        # Solo usar nuevo dato si tiene win_table válido; si no, preservar el anterior
+        raw_map = {r['slug']: r for r in raw_pending if r.get('win_table')}
+        failed_slugs = {r['slug'] for r in raw_pending if not r.get('win_table')}
+        if failed_slugs:
+            print(f"\n⚠️  {len(failed_slugs)} partido(s) sin datos — manteniendo valores anteriores:")
+            for s in failed_slugs:
+                print(f"   {s}")
+
         merged_raw = []
         for m in MATCHES:
             if m['slug'] in raw_map:
-                merged_raw.append(raw_map[m['slug']])
+                # Nuevo dato válido — preservar last_updated previo como fallback
+                r = raw_map[m['slug']]
+                if m['slug'] in existing:
+                    r.setdefault('last_updated', existing[m['slug']].get('last_updated',''))
+                merged_raw.append(r)
             elif m['slug'] in existing:
-                merged_raw.append(existing[m['slug']])  # mantener datos congelados
+                merged_raw.append(existing[m['slug']])  # mantener dato anterior (started o fallo)
             else:
                 merged_raw.append(m)
 
