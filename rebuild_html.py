@@ -486,20 +486,6 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
     </div>
 
     <div class="update-section">
-      <h2>🔑 Token de GitHub</h2>
-      <div class="token-row">
-        <input id="token-input" type="text" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-        <button id="token-paste" onclick="pasteToken()">Pegar</button>
-        <button id="token-save">Guardar</button>
-      </div>
-      <div id="token-status"></div>
-      <p class="token-help">
-        Necesitas un token con scope <strong>repo</strong>.<br>
-        Créalo en <a href="https://github.com/settings/tokens/new" target="_blank">github.com/settings/tokens</a>
-      </p>
-    </div>
-
-    <div class="update-section">
       <div class="runs-title">Últimas ejecuciones</div>
       <div id="runs-list"><p class="run-empty">Cargando…</p></div>
     </div>
