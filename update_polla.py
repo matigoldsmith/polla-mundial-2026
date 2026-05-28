@@ -254,6 +254,8 @@ def build_data(raw_results):
         cs_refined, ovr = refine_cs(r, r.get('cs_pred',''), l)
         wt = {bk:{EN_ES.get(k,k):v for k,v in r['win_table'][bk].items()}
               for bk in BK_ORDER if bk in r.get('win_table',{})}
+        import datetime as _dt
+        ts = _dt.datetime.now(_dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ') if r.get('win_table') else r.get('last_updated','')
         out.append({
             'slug':r['slug'],'fecha':r['fecha'],'hora':r['hora'],'ciudad':r['ciudad'],
             'j':r['j'],'grp':r['grp'],'local':r['local'],'visita':r['visita'],
@@ -261,6 +263,7 @@ def build_data(raw_results):
             'cs_refined':cs_refined,'cs_nivel':r.get('cs_nivel',''),
             'cs_overridden':ovr,'has_data':bool(r.get('win_table')),
             'win_table':wt,'cs_top':r.get('cs_top',{}),
+            'last_updated':ts,
         })
     return out
 
@@ -383,33 +386,133 @@ def build_html(data):
     html = html.replace('{DOW_JSON}', dow_js[1:-1])  # strip outer {}
     return html
 
+# ── Kickoff check (CLT = UTC-4) ───────────────────────────────────────────────
+
+def match_started(m):
+    """Returns True if the match kickoff time (CLT = UTC-4) has already passed."""
+    import datetime
+    MONTH = {'Jan':1,'Feb':2,'Mar':3,'Apr':4,'May':5,'Jun':6,'Jul':7,'Aug':8,'Sep':9,'Oct':10,'Nov':11,'Dec':12}
+    try:
+        month_str, day_str = m['fecha'].split()
+        month = MONTH[month_str]
+        day = int(day_str)
+        h, mn = map(int, m['hora'].split(':'))
+        # CLT = UTC-4, so kickoff UTC = hora + 4
+        kickoff_utc = datetime.datetime(2026, month, day, h, mn, tzinfo=datetime.timezone.utc) + datetime.timedelta(hours=4)
+        return datetime.datetime.now(datetime.timezone.utc) >= kickoff_utc
+    except Exception:
+        return False
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
-    import datetime
+    import datetime, argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--match-id', type=int, default=None,
+                        help='Índice del partido a actualizar (0-71). Si se omite, actualiza todos.')
+    args = parser.parse_args()
+
     print("=" * 60)
     print("  POLLA MUNDIAL 2026 — Actualizando cuotas")
     print(f"  {datetime.datetime.now().strftime('%d %b %Y %H:%M')}")
     print("=" * 60)
 
-    raw = scrape_all()
-    data = build_data(raw)
+    json_path = os.path.join(DIR, 'polla_data_final.json')
 
-    ok = sum(1 for d in data if d['has_data'])
-    print(f"\nPartidos con datos: {ok}/{len(data)}")
+    if args.match_id is not None:
+        # ── Modo partido único ──────────────────────────────────────
+        idx = args.match_id
+        if idx < 0 or idx >= len(MATCHES):
+            print(f"❌ match-id {idx} fuera de rango (0-{len(MATCHES)-1})")
+            sys.exit(1)
+
+        m = MATCHES[idx]
+        if match_started(m):
+            print(f"⏸ Partido ya iniciado: {m['local']} vs {m['visita']} ({m['fecha']} {m['hora']} CLT) — cuotas congeladas.")
+            sys.exit(0)
+
+        print(f"Actualizando partido #{idx}: {m['local']} vs {m['visita']}...")
+
+        # Cargar JSON existente
+        if os.path.exists(json_path):
+            with open(json_path, encoding='utf-8') as f:
+                data = json.load(f)
+        else:
+            print("❌ No existe polla_data_final.json — ejecuta sin --match-id primero.")
+            sys.exit(1)
+
+        # Scrapear solo ese partido
+        raw_one = process_match(m)
+        updated = build_data([raw_one])
+        if updated:
+            # Reemplazar entrada en el JSON
+            data[idx] = updated[0]
+
+        ok = sum(1 for d in data if d.get('has_data'))
+        print(f"\nPartidos con datos: {ok}/{len(data)}")
+
+    else:
+        # ── Modo completo — skip partidos ya iniciados ──────────────
+        to_scrape = [m for m in MATCHES if not match_started(m)]
+        skipped   = [m for m in MATCHES if match_started(m)]
+
+        if skipped:
+            print(f"⏸ Saltando {len(skipped)} partido(s) ya iniciados (cuotas congeladas):")
+            for m in skipped:
+                print(f"   {m['local']} vs {m['visita']} ({m['fecha']} {m['hora']} CLT)")
+
+        if not to_scrape:
+            print("ℹ️  Todos los partidos ya iniciaron. Nada que actualizar.")
+            sys.exit(0)
+
+        print(f"\nActualizando {len(to_scrape)} partido(s)...")
+
+        # Scrapear solo los pendientes
+        raw_pending = []
+        batches = [to_scrape[i:i+18] for i in range(0, len(to_scrape), 18)]
+        from concurrent.futures import ThreadPoolExecutor, as_completed
+        for bi, batch in enumerate(batches):
+            print(f"\nBatch {bi+1}/{len(batches)}...")
+            with ThreadPoolExecutor(max_workers=6) as ex:
+                futures = {ex.submit(process_match, m): m['slug'] for m in batch}
+                for fut in as_completed(futures):
+                    raw_pending.append(fut.result())
+            time.sleep(1)
+
+        # Retry failures
+        failed = [m for m in to_scrape if not any(r.get('slug') == m['slug'] and r.get('win_table') for r in raw_pending)]
+        if failed:
+            print(f"\nReintentando {len(failed)} fallidos...")
+            for m in failed:
+                raw_pending.append(process_match(m))
+                time.sleep(1.5)
+
+        # Merge con JSON existente (preservar datos de partidos ya iniciados)
+        if os.path.exists(json_path):
+            with open(json_path, encoding='utf-8') as f:
+                existing = {d['slug']: d for d in json.load(f)}
+        else:
+            existing = {}
+
+        raw_map = {r['slug']: r for r in raw_pending}
+        merged_raw = []
+        for m in MATCHES:
+            if m['slug'] in raw_map:
+                merged_raw.append(raw_map[m['slug']])
+            elif m['slug'] in existing:
+                merged_raw.append(existing[m['slug']])  # mantener datos congelados
+            else:
+                merged_raw.append(m)
+
+        data = build_data(merged_raw)
+        ok = sum(1 for d in data if d.get('has_data'))
+        print(f"\nPartidos con datos: {ok}/{len(data)}")
 
     # Guardar JSON
-    json_path = os.path.join(DIR, 'polla_data_final.json')
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, separators=(',',':'))
     print(f"JSON: {json_path}")
 
-    # Generar HTML
-    html = build_html(data)
-    html_path = os.path.join(DIR, 'polla_mundial_2026.html')
-    with open(html_path, 'w', encoding='utf-8') as f:
-        f.write(html)
-    print(f"HTML: {html_path}")
     print("\n✅ Listo.")
 
 if __name__ == '__main__':

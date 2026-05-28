@@ -47,11 +47,55 @@ const GH_WORKFLOW='update.yml';
 
 function getLEV(m){const w=m.win_pred;if(!w||w==='Empate')return'E';if(w===m.local)return'L';return'V';}
 
-// ── PER-MATCH REFRESH (stub — triggers full update workflow) ───────────────
-function triggerUpdateForMatch(matchId){
-  // No per-match update available yet — runs full workflow same as Actualizar tab
-  showTab('update');
-  setTimeout(()=>triggerUpdate(),200);
+// ── KICKOFF CHECK (CLT = UTC-4) ────────────────────────────────────────────
+function isMatchStarted(m){
+  const MONTH={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+  try{
+    const [mon,day]=m.fecha.split(' ');
+    const [h,min]=m.hora.split(':').map(Number);
+    // CLT = UTC-4 → kickoff UTC = hora + 4h
+    const kickoffUTC=Date.UTC(2026,MONTH[mon],parseInt(day),h+4,min);
+    return Date.now()>=kickoffUTC;
+  }catch(e){return false;}
+}
+
+// ── FORMAT TIMESTAMP ───────────────────────────────────────────────────────
+function fmtUpdated(iso){
+  if(!iso)return'';
+  try{
+    const d=new Date(iso);
+    const now=new Date();
+    const diffMin=Math.round((now-d)/60000);
+    if(diffMin<1)return'ahora';
+    if(diffMin<60)return`hace ${diffMin}min`;
+    if(diffMin<1440){const h=Math.round(diffMin/60);return`hace ${h}h`;}
+    return d.toLocaleDateString('es-CL',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+  }catch(e){return'';}
+}
+
+// ── PER-MATCH REFRESH ──────────────────────────────────────────────────────
+async function triggerUpdateForMatch(matchIdx,btnEl){
+  const token=ghToken();
+  if(!token){alert('Sin token configurado');return;}
+  if(btnEl){btnEl.classList.add('spinning');btnEl.disabled=true;}
+  try{
+    const resp=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,{
+      method:'POST',
+      headers:{'Authorization':'token '+token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
+      body:JSON.stringify({ref:'main',inputs:{match_id:String(matchIdx)}})
+    });
+    if(resp.status===204){
+      if(btnEl){btnEl.title='Actualizando… vuelve en ~2 min';}
+      showUpdateStatus('info','Actualizando partido #'+matchIdx+'… (~2 min)');
+    } else {
+      const e=await resp.json();
+      showUpdateStatus('error','Error: '+(e.message||resp.status));
+      if(btnEl){btnEl.classList.remove('spinning');btnEl.disabled=false;}
+    }
+  }catch(e){
+    showUpdateStatus('error','Error: '+e.message);
+    if(btnEl){btnEl.classList.remove('spinning');btnEl.disabled=false;}
+  }
 }
 
 // ── ODDS TABLES ────────────────────────────────────────────────────────────
@@ -125,14 +169,20 @@ dateKeys.forEach(fecha=>{
   matchesContainer.className='day-matches';
   matchesContainer.id='matches_'+dayId;
 
-  byDate[fecha].forEach(m=>{
+  byDate[fecha].forEach((m,_mi)=>{
+    const mIdx=DATA.indexOf(m);
     const ovr=m.cs_overridden,lev=getLEV(m),lf=FLAGS[m.local]||'🏳',vf=FLAGS[m.visita]||'🏳';
     const levCls=lev==='L'?'lev-L':lev==='V'?'lev-V':'lev-E';
     const levTxt=lev==='E'?'Empate':m.win_pred;
     const id='m_'+m.slug.replace(/-/g,'_');
+    const started=isMatchStarted(m);
+    const tsHtml=m.last_updated?`<span class="match-ts">cuotas: ${fmtUpdated(m.last_updated)}</span>`:'';
+    const refreshBtn=started
+      ?`<span class="lock-badge">🔒 En curso</span>`
+      :`<button class="refresh-btn" id="rbtn_${id}" onclick="event.stopPropagation();triggerUpdateForMatch(${mIdx},this)" title="Actualizar cuotas de este partido">↻</button>`;
     const wrap=document.createElement('div');wrap.className='match-wrap';
     wrap.innerHTML=`
-    <div class="match-card${ovr?' ovr':''}" id="${id}">
+    <div class="match-card${ovr?' ovr':''}${started?' started':''}" id="${id}">
       <div class="card-main" onclick="toggle('${id}')">
         <div class="card-meta">
           <div class="meta-time">${m.hora} <span class="meta-tz">CLT</span></div>
@@ -158,7 +208,10 @@ dateKeys.forEach(fecha=>{
           </div>
         </div>
       </div>
-      <button class="refresh-btn" onclick="event.stopPropagation();triggerUpdateForMatch('${m.slug}')" title="Actualizar este partido">&#x21BB;</button>
+      <div class="card-footer">
+        ${tsHtml}
+        ${refreshBtn}
+      </div>
     </div>
     <div class="detail" id="det_${id}">${buildDetail(m)}</div>`;
     matchesContainer.appendChild(wrap);
@@ -506,18 +559,39 @@ a{{color:inherit;text-decoration:none}}
 }}
 .expand-arrow.rotated{{transform:rotate(180deg)}}
 
+/* Card footer — timestamp + refresh button */
+.card-footer{{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 12px 8px 12px;min-height:28px;
+}}
+.match-ts{{
+  font-size:10px;color:var(--text-muted);letter-spacing:.01em;
+}}
+
 /* Per-match refresh button */
 .refresh-btn{{
-  position:absolute;top:8px;right:8px;
-  width:28px;height:28px;
-  background:transparent;border:none;
-  color:var(--text-muted);font-size:15px;
+  min-width:68px;height:28px;
+  background:#f4f4f2;border:1px solid #e0e0da;
+  color:var(--text-muted);font-size:12px;font-weight:500;
   cursor:pointer;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  transition:background .15s,color .15s;
-  line-height:1;
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  transition:background .15s,color .15s,border-color .15s;
+  padding:0 10px;white-space:nowrap;
 }}
-.refresh-btn:active{{background:#f0f0ee;color:var(--accent)}}
+.refresh-btn:hover{{background:#eaeae6;color:var(--accent);border-color:var(--accent)}}
+.refresh-btn:active{{background:#dde8db;}}
+.refresh-btn.spinning{{pointer-events:none;opacity:.6;}}
+@keyframes spin{{from{{transform:rotate(0deg)}}to{{transform:rotate(360deg)}}}}
+.refresh-btn.spinning::before{{content:'↻';display:inline-block;animation:spin .8s linear infinite;margin-right:3px;}}
+
+/* Lock badge for started matches */
+.lock-badge{{
+  font-size:10px;color:#888;background:#f4f4f2;
+  border:1px solid #e0e0da;border-radius:5px;
+  padding:3px 8px;
+}}
+.match-card.started{{opacity:.85;}}
+.match-card.started .card-meta,.match-card.started .meta-time{{color:#aaa;}}
 
 /* ── DETAIL PANEL ─────────────────────────────────────────────────────────── */
 .detail{{

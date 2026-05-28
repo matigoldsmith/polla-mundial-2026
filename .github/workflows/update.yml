@@ -2,6 +2,12 @@ name: Actualizar Polla Mundial
 
 on:
   workflow_dispatch:
+    inputs:
+      match_id:
+        description: 'Índice del partido a actualizar (0-71). Vacío = todos.'
+        required: false
+        default: ''
+
   schedule:
     - cron: '0 11 * * *'
 
@@ -11,19 +17,30 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Instalar dependencias
         run: pip install -r requirements.txt
+
       - name: Actualizar cuotas
-        run: python update_polla.py
+        run: |
+          if [ -n "${{ github.event.inputs.match_id }}" ]; then
+            python update_polla.py --match-id ${{ github.event.inputs.match_id }}
+          else
+            python update_polla.py
+          fi
+
       - name: Regenerar HTML
         run: python rebuild_html.py
+
       - name: Commit y push
         run: |
           git config user.name "github-actions[bot]"
