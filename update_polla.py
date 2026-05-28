@@ -9,6 +9,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from bs4 import BeautifulSoup
 import cloudscraper
 
+try:
+    from curl_cffi import requests as cffi_requests
+    CURL_CFFI = True
+except ImportError:
+    CURL_CFFI = False
+
 DIR = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://www.oddschecker.com"
 TRUSTED = {'BF', 'B3', 'UN', 'OE', 'MA', 'VC', 'WA'}
@@ -125,17 +131,125 @@ MATCHES = [
 
 # ── Scraper ──────────────────────────────────────────────────────────────────
 
+class CffiSession:
+    """Thin wrapper around curl_cffi session that mimics requests API."""
+    def __init__(self):
+        self._s = cffi_requests.Session(impersonate="chrome120")
+        self.cookies = self._s.cookies
+        self.headers = self._s.headers
+    def get(self, url, **kw):
+        kw.setdefault('timeout', 25)
+        return self._s.get(url, **kw)
+    def cookies_update(self, d):
+        self._s.cookies.update(d)
+
 def make_scraper():
-    return cloudscraper.create_scraper(browser={'browser':'chrome','platform':'darwin','mobile':False})
+    if CURL_CFFI:
+        s = CffiSession()
+        s.headers.update({
+            'Accept-Language': 'en-GB,en;q=0.9',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        })
+        return s
+    sc = cloudscraper.create_scraper(browser={'browser':'chrome','platform':'darwin','mobile':False})
+    sc.headers.update({
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-GB,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1',
+    })
+    return sc
 
 def get_market_ids(sc, slug):
-    r = sc.get(f"{BASE}/football/world-cup/{slug}/winner", timeout=20)
-    soup = BeautifulSoup(r.text, 'html.parser')
+    url = f"{BASE}/football/world-cup/{slug}/winner"
+    # Retry up to 3 times — first request can get 403 from Cloudflare
+    html_text = ''
+    for attempt in range(3):
+        if attempt > 0:
+            wait = 4 * attempt
+            print(f"  ↩️  [{slug}] retry {attempt} (wait {wait}s)...")
+            time.sleep(wait)
+            sc = make_scraper()
+        r = sc.get(url, timeout=25)
+        if r.status_code == 200 and len(r.text) > 10000:
+            html_text = r.text
+            break
+        print(f"  ⚠️  [{slug}] attempt {attempt+1}: HTTP {r.status_code} / {len(r.text)} chars")
+    if not html_text:
+        html_text = r.text  # use whatever we got
+
+    soup = BeautifulSoup(html_text, 'html.parser')
     markets = {}
+
+    # Method 1: <section id="market_*"> (works for most matches)
     for sec in soup.find_all('section', id=re.compile(r'^market_')):
         mid = sec['id'].replace('market_','')
         h2 = sec.find('h2')
         markets[h2.get_text(strip=True) if h2 else ''] = mid
+    if markets:
+        return markets
+
+    # Method 2: any element with id="market_*"
+    for el in soup.find_all(id=re.compile(r'^market_')):
+        mid = el['id'].replace('market_','')
+        h2 = el.find('h2') or el.find('h3')
+        label = h2.get_text(strip=True) if h2 else el.get('data-market-name', '')
+        if mid and label:
+            markets[label] = mid
+    if markets:
+        return markets
+
+    # Method 3: data-market-id attributes
+    for el in soup.find_all(attrs={'data-market-id': True}):
+        mid = el['data-market-id']
+        label = el.get('data-market-name', '')
+        h2 = el.find('h2') or el.find('h3')
+        if h2:
+            label = h2.get_text(strip=True)
+        if mid and label:
+            markets[label] = mid
+    if markets:
+        return markets
+
+    # Method 4: search script tags for JSON market data
+    for script in soup.find_all('script'):
+        text = script.string or ''
+        if not text or 'market' not in text.lower():
+            continue
+        # Try various patterns for marketName+marketId
+        for pattern in [
+            r'"marketName"\s*:\s*"([^"]+)"[^}]{0,300}?"marketId"\s*:\s*["\']?(\d+)["\']?',
+            r'"name"\s*:\s*"([^"]+)"[^}]{0,300}?"id"\s*:\s*["\']?(\d+)["\']?',
+        ]:
+            for m in re.finditer(pattern, text, re.DOTALL):
+                name, mid = m.group(1), m.group(2)
+                if name in ('Win Market', 'Match Betting', 'Correct Score'):
+                    markets[name] = mid
+        if markets:
+            return markets
+
+    # Method 5: find market_ IDs anywhere in raw HTML and probe API
+    all_mids = list(dict.fromkeys(re.findall(r'market[_-](\d{5,})', html_text)))[:8]
+    if all_mids:
+        try:
+            odds = sc.get(f"{BASE}/api/markets/v2/all-odds?market-ids={','.join(all_mids)}&repub=OC", timeout=15).json()
+            if isinstance(odds, list):
+                for mkt in odds:
+                    name = mkt.get('marketName', '') or mkt.get('name', '')
+                    mid = str(mkt.get('marketId', mkt.get('id', '')))
+                    if name in ('Win Market', 'Match Betting'):
+                        markets['Win Market'] = mid
+                    elif 'Correct Score' in name:
+                        markets['Correct Score'] = mid
+        except Exception:
+            pass
+    if markets:
+        return markets
+
+    # Debug: print response info to help diagnose
+    sections_found = len(soup.find_all('section'))
+    print(f"  🔍 [{slug}] HTTP {r.status_code} | html={len(html_text)} chars | sections={sections_found} | snippet: {html_text[200:400]!r}")
     return markets
 
 def get_odds_api(sc, win_id, cs_id):
@@ -143,8 +257,13 @@ def get_odds_api(sc, win_id, cs_id):
     if not ids: return []
     return sc.get(f"{BASE}/api/markets/v2/all-odds?market-ids={ids}&repub=OC", timeout=15).json()
 
-def process_match(match):
+def process_match(match, cf_cookies=None):
     sc = make_scraper()
+    if cf_cookies:
+        try:
+            sc.cookies.update(cf_cookies)
+        except Exception:
+            pass
     slug = match['slug']
     try:
         markets = get_market_ids(sc, slug)
@@ -211,27 +330,45 @@ def process_match(match):
 
 # ── Procesamiento ─────────────────────────────────────────────────────────────
 
+def cf_warmup():
+    """Solve Cloudflare challenge and return cookies for reuse."""
+    sc = make_scraper()
+    try:
+        r = sc.get(f"{BASE}/football/world-cup", timeout=20)
+        print(f"CF warmup: HTTP {r.status_code} ({len(r.text)} chars)")
+        time.sleep(3)
+        return dict(sc.cookies)
+    except Exception as e:
+        print(f"CF warmup error: {e}")
+        return {}
+
 def scrape_all():
     print(f"Scrapeando {len(MATCHES)} partidos (6 workers en paralelo)...")
+    # Warmup CF session first
+    print("Calentando sesión Cloudflare...")
+    cf_cookies = cf_warmup()
+    print(f"CF cookies obtenidas: {list(cf_cookies.keys()) or 'ninguna'}")
+
     results_map = {}
     batches = [MATCHES[i:i+18] for i in range(0, len(MATCHES), 18)]
     for bi, batch in enumerate(batches):
         print(f"\nBatch {bi+1}/{len(batches)}...")
         with ThreadPoolExecutor(max_workers=6) as ex:
-            futures = {ex.submit(process_match,m): m['slug'] for m in batch}
+            futures = {ex.submit(process_match, m, cf_cookies): m['slug'] for m in batch}
             for fut in as_completed(futures):
                 r = fut.result()
                 results_map[r['slug']] = r
         time.sleep(1)
 
-    # Retry failures sequentially
+    # Retry failures sequentially with fresh CF session
     failed = [m for m in MATCHES if not results_map.get(m['slug'],{}).get('win_table')]
     if failed:
-        print(f"\nReintentando {len(failed)} fallidos...")
+        print(f"\nReintentando {len(failed)} fallidos (con nueva sesión CF)...")
+        cf_cookies2 = cf_warmup()
         for m in failed:
-            r = process_match(m)
+            r = process_match(m, cf_cookies2)
             results_map[m['slug']] = r
-            time.sleep(1.5)
+            time.sleep(2)
 
     return [results_map[m['slug']] for m in MATCHES if m['slug'] in results_map]
 
@@ -441,8 +578,12 @@ def main():
             print("❌ No existe polla_data_final.json — ejecuta sin --match-id primero.")
             sys.exit(1)
 
+        # Warmup CF session before single-match scrape
+        print("Calentando sesión Cloudflare...")
+        cf_cookies = cf_warmup()
+
         # Scrapear solo ese partido
-        raw_one = process_match(m)
+        raw_one = process_match(m, cf_cookies)
         if raw_one.get('win_table'):
             # Preservar last_updated del dato anterior si existe
             raw_one.setdefault('last_updated', data[idx].get('last_updated',''))
