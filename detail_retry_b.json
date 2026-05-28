@@ -1,0 +1,1072 @@
+[
+  {
+    "slug": "brazil-v-morocco",
+    "fecha": "Jun 13",
+    "hora": "18:00",
+    "ciudad": "Nueva York",
+    "j": 1,
+    "grp": "C",
+    "local": "Brasil",
+    "visita": "Marruecos",
+    "error": null,
+    "win_pred": "Brazil",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Brazil": 7
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 1,
+      "1-0": 5
+    },
+    "win_table": {
+      "BF": {
+        "Brazil": 1.65,
+        "Draw": 4.23,
+        "Morocco": 5.61
+      },
+      "MA": {
+        "Brazil": 1.63,
+        "Draw": 4.14,
+        "Morocco": 5.61
+      },
+      "UN": {
+        "Brazil": 1.6,
+        "Draw": 3.9,
+        "Morocco": 5.25
+      },
+      "WA": {
+        "Brazil": 1.6,
+        "Draw": 3.8,
+        "Morocco": 5.25
+      },
+      "B3": {
+        "Brazil": 1.57,
+        "Draw": 4,
+        "Morocco": 5.25
+      },
+      "VC": {
+        "Brazil": 1.57,
+        "Draw": 3.9,
+        "Morocco": 5.75
+      },
+      "OE": {
+        "Brazil": 1.56,
+        "Draw": 3.8,
+        "Morocco": 6
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "BF": 7.08,
+        "B3": 7,
+        "UN": 6.5,
+        "VC": 6,
+        "WA": 5.75,
+        "OE": 5.25
+      },
+      "2-0": {
+        "BF": 5.51,
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 7,
+        "WA": 7,
+        "OE": 6
+      },
+      "1-1": {
+        "BF": 8.45,
+        "B3": 8,
+        "UN": 7.5,
+        "VC": 7,
+        "WA": 7,
+        "OE": 6.5
+      },
+      "2-1": {
+        "BF": 9.04,
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 7.5,
+        "WA": 7.5,
+        "OE": 6.5
+      },
+      "3-0": {
+        "BF": 5.9,
+        "B3": 12,
+        "UN": 12,
+        "VC": 11,
+        "WA": 11,
+        "OE": 9.5
+      },
+      "0-0": {
+        "BF": 12.8,
+        "VC": 12,
+        "B3": 11,
+        "UN": 10.5,
+        "WA": 10,
+        "OE": 8.5
+      },
+      "3-1": {
+        "BF": 5.8,
+        "B3": 15,
+        "UN": 13,
+        "VC": 12,
+        "WA": 12,
+        "OE": 10
+      },
+      "2-2": {
+        "B3": 21,
+        "BF": 21,
+        "UN": 18,
+        "VC": 17,
+        "OE": 15,
+        "WA": 15
+      }
+    }
+  },
+  {
+    "slug": "england-v-croatia",
+    "fecha": "Jun 17",
+    "hora": "16:00",
+    "ciudad": "Dallas",
+    "j": 1,
+    "grp": "L",
+    "local": "Inglaterra",
+    "visita": "Croacia",
+    "error": null,
+    "win_pred": "England",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "England": 7
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 6
+    },
+    "win_table": {
+      "BF": {
+        "England": 1.75,
+        "Draw": 3.94,
+        "Croatia": 4.92
+      },
+      "MA": {
+        "England": 1.74,
+        "Draw": 3.89,
+        "Croatia": 4.82
+      },
+      "UN": {
+        "England": 1.73,
+        "Draw": 3.6,
+        "Croatia": 4.6
+      },
+      "VC": {
+        "England": 1.73,
+        "Draw": 3.6,
+        "Croatia": 4.8
+      },
+      "WA": {
+        "England": 1.73,
+        "Draw": 3.75,
+        "Croatia": 4.2
+      },
+      "B3": {
+        "England": 1.73,
+        "Draw": 3.7,
+        "Croatia": 4.75
+      },
+      "OE": {
+        "England": 1.69,
+        "Draw": 3.55,
+        "Croatia": 5.1
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "BF": 6.29,
+        "VC": 5.75,
+        "WA": 5.75,
+        "OE": 5.25
+      },
+      "1-1": {
+        "BF": 7.66,
+        "B3": 7.5,
+        "UN": 7,
+        "WA": 7,
+        "VC": 6.5,
+        "OE": 6
+      },
+      "2-0": {
+        "BF": 8.25,
+        "B3": 8,
+        "UN": 7.5,
+        "VC": 7.5,
+        "WA": 7.5,
+        "OE": 6.5
+      },
+      "2-1": {
+        "BF": 9.43,
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 8,
+        "WA": 7.5,
+        "OE": 7
+      },
+      "0-0": {
+        "VC": 10.5,
+        "BF": 10.3,
+        "B3": 9.5,
+        "UN": 9.5,
+        "WA": 9,
+        "OE": 8.5
+      },
+      "3-0": {
+        "BF": 8.25,
+        "B3": 15,
+        "UN": 13,
+        "VC": 13,
+        "WA": 13,
+        "OE": 11
+      },
+      "3-1": {
+        "BF": 8.06,
+        "B3": 15,
+        "UN": 15,
+        "VC": 14,
+        "WA": 13,
+        "OE": 11
+      },
+      "2-2": {
+        "BF": 19.6,
+        "B3": 19,
+        "UN": 18,
+        "VC": 16,
+        "WA": 15,
+        "OE": 13
+      }
+    }
+  },
+  {
+    "slug": "ghana-v-panama",
+    "fecha": "Jun 17",
+    "hora": "19:00",
+    "ciudad": "Toronto",
+    "j": 1,
+    "grp": "L",
+    "local": "Ghana",
+    "visita": "Panamá",
+    "error": null,
+    "win_pred": "Ghana",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Ghana": 7
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟡",
+    "cs_votes": {
+      "3-2": 1,
+      "1-1": 4,
+      "1-0": 1
+    },
+    "win_table": {
+      "BF": {
+        "Ghana": 2.06,
+        "Draw": 3.69,
+        "Panama": 3.74
+      },
+      "MA": {
+        "Ghana": 2.04,
+        "Draw": 3.65,
+        "Panama": 3.74
+      },
+      "B3": {
+        "Ghana": 2,
+        "Draw": 3.5,
+        "Panama": 3.6
+      },
+      "UN": {
+        "Ghana": 2,
+        "Draw": 3.4,
+        "Panama": 3.6
+      },
+      "WA": {
+        "Ghana": 2,
+        "Draw": 3.75,
+        "Panama": 3.25
+      },
+      "OE": {
+        "Ghana": 1.97,
+        "Draw": 3.35,
+        "Panama": 3.8
+      },
+      "VC": {
+        "Ghana": 1.95,
+        "Draw": 3.3,
+        "Panama": 3.9
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7,
+        "BF": 6.88,
+        "UN": 6.5,
+        "WA": 6.5,
+        "VC": 6,
+        "OE": 5.75
+      },
+      "1-1": {
+        "BF": 7.47,
+        "B3": 7,
+        "WA": 7,
+        "UN": 6.5,
+        "VC": 6,
+        "OE": 5.5
+      },
+      "2-1": {
+        "BF": 9.82,
+        "B3": 9.5,
+        "UN": 9,
+        "WA": 8.5,
+        "VC": 8,
+        "OE": 7
+      },
+      "2-0": {
+        "BF": 9.82,
+        "B3": 9.5,
+        "UN": 9,
+        "VC": 8.5,
+        "WA": 8,
+        "OE": 7.5
+      },
+      "0-0": {
+        "BF": 10.3,
+        "VC": 10,
+        "B3": 9,
+        "UN": 9,
+        "OE": 8.5,
+        "WA": 8.5
+      },
+      "3-1": {
+        "B3": 19,
+        "BF": 5.02,
+        "UN": 17,
+        "VC": 16,
+        "WA": 15,
+        "OE": 13
+      },
+      "3-0": {
+        "B3": 19,
+        "BF": 5.02,
+        "UN": 17,
+        "VC": 17,
+        "WA": 15,
+        "OE": 13
+      },
+      "2-2": {
+        "BF": 21,
+        "B3": 19,
+        "WA": 17,
+        "UN": 16,
+        "VC": 15,
+        "OE": 13
+      }
+    }
+  },
+  {
+    "slug": "belgium-v-iran",
+    "fecha": "Jun 21",
+    "hora": "15:00",
+    "ciudad": "Los Ángeles",
+    "j": 2,
+    "grp": "G",
+    "local": "Bélgica",
+    "visita": "Irán",
+    "error": null,
+    "win_pred": "Belgium",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Belgium": 5
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 4,
+      "2-1": 1
+    },
+    "win_table": {
+      "BF": {
+        "Belgium": 1.43,
+        "Draw": 4.43,
+        "Iran": 8.45
+      },
+      "B3": {
+        "Belgium": 1.42,
+        "Draw": 4.33,
+        "Iran": 6.5
+      },
+      "OE": {
+        "Belgium": 1.42,
+        "Draw": 4.35,
+        "Iran": 7.4
+      },
+      "UN": {
+        "Belgium": 1.42,
+        "Draw": 4.4,
+        "Iran": 7
+      },
+      "VC": {
+        "Belgium": 1.4,
+        "Draw": 4.4,
+        "Iran": 8
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 6.5,
+        "UN": 6,
+        "BF": 5.8,
+        "VC": 5.75,
+        "OE": 5
+      },
+      "2-0": {
+        "B3": 6.5,
+        "BF": 5.8,
+        "UN": 6,
+        "VC": 6,
+        "OE": 5.25
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 8.5,
+        "BF": 5.31,
+        "VC": 8,
+        "OE": 7
+      },
+      "1-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 8.5,
+        "BF": 8.06,
+        "OE": 7
+      },
+      "3-0": {
+        "BF": 6.1,
+        "B3": 9.5,
+        "UN": 9,
+        "VC": 9,
+        "OE": 8
+      },
+      "3-1": {
+        "B3": 13,
+        "UN": 13,
+        "BF": 5.9,
+        "VC": 11,
+        "OE": 10
+      },
+      "0-0": {
+        "VC": 13,
+        "BF": 11.8,
+        "B3": 11,
+        "UN": 11,
+        "OE": 9.5
+      },
+      "4-0": {
+        "B3": 17,
+        "UN": 17,
+        "VC": 17,
+        "OE": 15
+      }
+    }
+  },
+  {
+    "slug": "new-zealand-v-egypt",
+    "fecha": "Jun 21",
+    "hora": "21:00",
+    "ciudad": "Vancouver",
+    "j": 2,
+    "grp": "G",
+    "local": "Nueva Zelanda",
+    "visita": "Egipto",
+    "error": null,
+    "win_pred": "Egypt",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Egypt": 5
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 4,
+      "2-1": 1
+    },
+    "win_table": {
+      "B3": {
+        "Egypt": 1.7,
+        "Draw": 3.5,
+        "New Zealand": 5
+      },
+      "UN": {
+        "Egypt": 1.7,
+        "Draw": 3.6,
+        "New Zealand": 5
+      },
+      "VC": {
+        "Egypt": 1.7,
+        "Draw": 3.5,
+        "New Zealand": 5.5
+      },
+      "BF": {
+        "Egypt": 1.69,
+        "Draw": 3.84,
+        "New Zealand": 5.02
+      },
+      "OE": {
+        "Egypt": 1.68,
+        "Draw": 3.5,
+        "New Zealand": 5.25
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 6,
+        "BF": 5.9,
+        "UN": 5.5,
+        "VC": 5.25,
+        "OE": 4.75
+      },
+      "2-0": {
+        "BF": 4.53,
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 6.5,
+        "OE": 6
+      },
+      "1-1": {
+        "BF": 8.25,
+        "B3": 7,
+        "UN": 7,
+        "VC": 6.5,
+        "OE": 6
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 9,
+        "BF": 4.14,
+        "VC": 8,
+        "OE": 7
+      },
+      "0-0": {
+        "BF": 10.8,
+        "VC": 9.5,
+        "B3": 8,
+        "OE": 8,
+        "UN": 8
+      },
+      "3-0": {
+        "BF": 4.92,
+        "B3": 13,
+        "UN": 12,
+        "VC": 12,
+        "OE": 11
+      },
+      "3-1": {
+        "B3": 17,
+        "UN": 16,
+        "VC": 14,
+        "OE": 12,
+        "BF": 4.14
+      },
+      "2-2": {
+        "B3": 21,
+        "UN": 21,
+        "VC": 19,
+        "OE": 15,
+        "BF": 4.33
+      }
+    }
+  },
+  {
+    "slug": "portugal-v-uzbekistan",
+    "fecha": "Jun 23",
+    "hora": "13:00",
+    "ciudad": "Houston",
+    "j": 2,
+    "grp": "K",
+    "local": "Portugal",
+    "visita": "Uzbekistán",
+    "error": null,
+    "win_pred": "Portugal",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Portugal": 5
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 4,
+      "2-1": 1
+    },
+    "win_table": {
+      "BF": {
+        "Portugal": 1.23,
+        "Draw": 6.1,
+        "Uzbekistan": 14.2
+      },
+      "UN": {
+        "Portugal": 1.23,
+        "Draw": 6,
+        "Uzbekistan": 11
+      },
+      "B3": {
+        "Portugal": 1.22,
+        "Draw": 6,
+        "Uzbekistan": 10
+      },
+      "VC": {
+        "Portugal": 1.22,
+        "Draw": 6,
+        "Uzbekistan": 13
+      },
+      "OE": {
+        "Portugal": 1.21,
+        "Draw": 5.75,
+        "Uzbekistan": 14.5
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6.5,
+        "BF": 5.02,
+        "UN": 6,
+        "VC": 5.75,
+        "OE": 5.25
+      },
+      "1-0": {
+        "B3": 8,
+        "UN": 7.5,
+        "BF": 4.72,
+        "VC": 7,
+        "OE": 6.25
+      },
+      "3-0": {
+        "B3": 8,
+        "UN": 7.5,
+        "BF": 5.12,
+        "VC": 7,
+        "OE": 6
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 9,
+        "VC": 8.5,
+        "OE": 7.5,
+        "BF": 3.55
+      },
+      "3-1": {
+        "B3": 12,
+        "UN": 11,
+        "BF": 5.12,
+        "VC": 10,
+        "OE": 8.5
+      },
+      "1-1": {
+        "B3": 13,
+        "UN": 12,
+        "VC": 11.5,
+        "OE": 10,
+        "BF": 4.04
+      },
+      "4-0": {
+        "B3": 12,
+        "UN": 11,
+        "VC": 11,
+        "OE": 9
+      },
+      "0-0": {
+        "B3": 17,
+        "OE": 17,
+        "UN": 17,
+        "VC": 15,
+        "BF": 4.43
+      }
+    }
+  },
+  {
+    "slug": "morocco-v-haiti",
+    "fecha": "Jun 24",
+    "hora": "18:00",
+    "ciudad": "Atlanta",
+    "j": 3,
+    "grp": "C",
+    "local": "Marruecos",
+    "visita": "Haití",
+    "error": null,
+    "win_pred": "Morocco",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Morocco": 4
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 3,
+      "3-1": 1
+    },
+    "win_table": {
+      "B3": {
+        "Morocco": 1.33,
+        "Draw": 5,
+        "Haiti": 8
+      },
+      "BF": {
+        "Morocco": 1.33,
+        "Draw": 5.31,
+        "Haiti": 9.82
+      },
+      "UN": {
+        "Morocco": 1.33,
+        "Draw": 5,
+        "Haiti": 8.5
+      },
+      "VC": {
+        "Morocco": 1.3,
+        "Draw": 5,
+        "Haiti": 10
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6.5,
+        "BF": 6.1,
+        "UN": 6,
+        "VC": 5.75
+      },
+      "1-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "BF": 5.51,
+        "VC": 6
+      },
+      "3-0": {
+        "B3": 8.5,
+        "BF": 6.29,
+        "UN": 8,
+        "VC": 8
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 8.5,
+        "BF": 5.61,
+        "VC": 8
+      },
+      "1-1": {
+        "B3": 10,
+        "UN": 10,
+        "BF": 9.62,
+        "VC": 9.5
+      },
+      "3-1": {
+        "B3": 13,
+        "UN": 12,
+        "VC": 10.5,
+        "BF": 4.63
+      },
+      "0-0": {
+        "B3": 13,
+        "UN": 13,
+        "VC": 12,
+        "BF": 4.92
+      },
+      "4-0": {
+        "B3": 15,
+        "UN": 14,
+        "VC": 14
+      }
+    }
+  },
+  {
+    "slug": "norway-v-france",
+    "fecha": "Jun 26",
+    "hora": "15:00",
+    "ciudad": "Boston",
+    "j": 3,
+    "grp": "I",
+    "local": "Noruega",
+    "visita": "Francia",
+    "error": null,
+    "win_pred": "France",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "France": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "3-2": 1
+    },
+    "win_table": {
+      "B3": {
+        "France": 1.7,
+        "Draw": 3.6,
+        "Norway": 4.75
+      },
+      "BF": {
+        "France": 1.7,
+        "Draw": 3.65,
+        "Norway": 5.12
+      },
+      "UN": {
+        "France": 1.67,
+        "Draw": 3.75,
+        "Norway": 4.8
+      },
+      "VC": {
+        "France": 1.67,
+        "Draw": 3.75,
+        "Norway": 5
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7,
+        "UN": 7,
+        "BF": 6.29,
+        "VC": 6
+      },
+      "2-0": {
+        "B3": 8,
+        "BF": 4.72,
+        "UN": 7.5,
+        "VC": 7.5
+      },
+      "1-1": {
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 7,
+        "BF": 6.68
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "BF": 7.66,
+        "VC": 7.5
+      },
+      "0-0": {
+        "VC": 12,
+        "BF": 10.8,
+        "UN": 10.5,
+        "B3": 9.5
+      },
+      "3-0": {
+        "BF": 5.12,
+        "B3": 13,
+        "UN": 13,
+        "VC": 13
+      },
+      "3-1": {
+        "B3": 15,
+        "BF": 4.92,
+        "UN": 14,
+        "VC": 13
+      },
+      "2-2": {
+        "B3": 19,
+        "UN": 16,
+        "VC": 16,
+        "BF": 15.7
+      }
+    }
+  },
+  {
+    "slug": "senegal-v-iraq",
+    "fecha": "Jun 26",
+    "hora": "15:00",
+    "ciudad": "Toronto",
+    "j": 3,
+    "grp": "I",
+    "local": "Senegal",
+    "visita": "Irak",
+    "error": null,
+    "win_pred": "Senegal",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Senegal": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "2-2": 1
+    },
+    "win_table": {
+      "B3": {
+        "Senegal": 1.5,
+        "Draw": 4.1,
+        "Iraq": 5.75
+      },
+      "UN": {
+        "Senegal": 1.5,
+        "Draw": 4.2,
+        "Iraq": 6.5
+      },
+      "BF": {
+        "Senegal": 1.46,
+        "Draw": 4.04,
+        "Iraq": 6.88
+      },
+      "VC": {
+        "Senegal": 1.45,
+        "Draw": 4.1,
+        "Iraq": 7
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 6.5,
+        "UN": 6.5,
+        "VC": 5.75,
+        "BF": 5.7
+      },
+      "2-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "VC": 6.5,
+        "BF": 4.82
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 7.5,
+        "BF": 4.53
+      },
+      "1-1": {
+        "B3": 8.5,
+        "UN": 8,
+        "VC": 7.5,
+        "BF": 7.47
+      },
+      "3-0": {
+        "B3": 11,
+        "UN": 10,
+        "VC": 10,
+        "BF": 5.12
+      },
+      "0-0": {
+        "VC": 12,
+        "UN": 11,
+        "BF": 10.8,
+        "B3": 10
+      },
+      "3-1": {
+        "B3": 15,
+        "UN": 13,
+        "BF": 5.02,
+        "VC": 11.5
+      },
+      "2-2": {
+        "B3": 23,
+        "UN": 19,
+        "VC": 18,
+        "BF": 4.43
+      }
+    }
+  },
+  {
+    "slug": "cape-verde-v-saudi-arabia",
+    "fecha": "Jun 26",
+    "hora": "20:00",
+    "ciudad": "Houston",
+    "j": 3,
+    "grp": "H",
+    "local": "Cabo Verde",
+    "visita": "Arabia Saudita",
+    "error": null,
+    "win_pred": "Saudi Arabia",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Saudi Arabia": 3,
+      "Cape Verde": 1
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3,
+      "3-1": 1
+    },
+    "win_table": {
+      "VC": {
+        "Saudi Arabia": 2.62,
+        "Cape Verde": 2.75,
+        "Draw": 3.12
+      },
+      "B3": {
+        "Saudi Arabia": 2.6,
+        "Cape Verde": 2.62,
+        "Draw": 3.3
+      },
+      "BF": {
+        "Saudi Arabia": 2.57,
+        "Cape Verde": 2.55,
+        "Draw": 3.3
+      },
+      "UN": {
+        "Saudi Arabia": 2.55,
+        "Cape Verde": 2.7,
+        "Draw": 3.2
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6.5,
+        "BF": 6.29,
+        "UN": 6,
+        "VC": 5.75
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7.5,
+        "BF": 7.08,
+        "VC": 7
+      },
+      "0-0": {
+        "VC": 9,
+        "BF": 8.84,
+        "B3": 8,
+        "UN": 8
+      },
+      "2-1": {
+        "B3": 11,
+        "UN": 10.5,
+        "VC": 9.5,
+        "BF": 9.43
+      },
+      "2-0": {
+        "B3": 13,
+        "BF": 12.3,
+        "UN": 12,
+        "VC": 12
+      },
+      "2-2": {
+        "B3": 19,
+        "BF": 16.2,
+        "UN": 16,
+        "VC": 15
+      },
+      "3-1": {
+        "B3": 26,
+        "UN": 23,
+        "VC": 22,
+        "BF": 1.01
+      },
+      "3-0": {
+        "B3": 29,
+        "UN": 26,
+        "VC": 26,
+        "BF": 1.01
+      }
+    }
+  }
+]

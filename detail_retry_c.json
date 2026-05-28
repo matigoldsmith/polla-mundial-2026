@@ -1,0 +1,188 @@
+[
+  {
+    "slug": "new-zealand-v-belgium",
+    "fecha": "Jun 26",
+    "hora": "23:00",
+    "ciudad": "Vancouver",
+    "j": 3,
+    "grp": "G",
+    "local": "Nueva Zelanda",
+    "visita": "Bélgica",
+    "error": null,
+    "win_pred": "Belgium",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Belgium": 4
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 3,
+      "1-1": 1
+    },
+    "win_table": {
+      "B3": {
+        "Belgium": 1.27,
+        "Draw": 5.75,
+        "New Zealand": 9
+      },
+      "BF": {
+        "Belgium": 1.27,
+        "Draw": 5.7,
+        "New Zealand": 13.3
+      },
+      "UN": {
+        "Belgium": 1.27,
+        "Draw": 5.5,
+        "New Zealand": 9.5
+      },
+      "VC": {
+        "Belgium": 1.25,
+        "Draw": 5.5,
+        "New Zealand": 11.5
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6.5,
+        "UN": 6,
+        "BF": 5.12,
+        "VC": 5.5
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "BF": 4.72,
+        "VC": 6
+      },
+      "3-0": {
+        "B3": 8,
+        "UN": 7.5,
+        "VC": 7.5,
+        "BF": 5.31
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 9,
+        "VC": 8.5,
+        "BF": 4.82
+      },
+      "1-1": {
+        "B3": 12,
+        "UN": 11,
+        "VC": 10,
+        "BF": 3.94
+      },
+      "3-1": {
+        "B3": 12,
+        "UN": 11,
+        "BF": 5.21,
+        "VC": 10.5
+      },
+      "0-0": {
+        "B3": 15,
+        "UN": 15,
+        "VC": 13,
+        "BF": 4.33
+      },
+      "4-0": {
+        "B3": 13,
+        "UN": 13,
+        "VC": 12
+      }
+    }
+  },
+  {
+    "slug": "panama-v-england",
+    "fecha": "Jun 27",
+    "hora": "17:00",
+    "ciudad": "Nueva York",
+    "j": 3,
+    "grp": "L",
+    "local": "Panamá",
+    "visita": "Inglaterra",
+    "error": null,
+    "win_pred": "England",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "England": 4
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 3,
+      "1-0": 1
+    },
+    "win_table": {
+      "BF": {
+        "England": 1.23,
+        "Draw": 6.29,
+        "Panama": 15.7
+      },
+      "B3": {
+        "England": 1.22,
+        "Draw": 6.5,
+        "Panama": 11
+      },
+      "UN": {
+        "England": 1.2,
+        "Draw": 6.5,
+        "Panama": 12
+      },
+      "VC": {
+        "England": 1.2,
+        "Draw": 6.5,
+        "Panama": 13
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6,
+        "BF": 5.9,
+        "UN": 5.75,
+        "VC": 5.5
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 6.5,
+        "BF": 3.84
+      },
+      "3-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "BF": 6.29,
+        "VC": 6.5
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 9.5,
+        "BF": 5.8,
+        "VC": 9
+      },
+      "3-1": {
+        "B3": 12,
+        "UN": 11,
+        "VC": 10,
+        "BF": 4.63
+      },
+      "1-1": {
+        "B3": 13,
+        "UN": 13,
+        "VC": 11.5,
+        "BF": 4.63
+      },
+      "4-0": {
+        "B3": 11,
+        "UN": 10.5,
+        "VC": 10.5
+      },
+      "0-0": {
+        "B3": 17,
+        "UN": 17,
+        "VC": 14,
+        "BF": 5.12
+      }
+    }
+  }
+]

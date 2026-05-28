@@ -1,0 +1,4076 @@
+[
+  {
+    "slug": "mexico-v-south-africa",
+    "fecha": "Jun 11",
+    "j": 1,
+    "grp": "A",
+    "local": "México",
+    "visita": "Sudáfrica",
+    "error": null,
+    "win_pred": "Mexico",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Mexico": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 23
+    },
+    "win_by_bk": {
+      "CE": {
+        "val": "Mexico",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "FR": {
+        "val": "Mexico",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "WA": {
+        "val": "Mexico",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "BF": {
+        "val": "Mexico",
+        "dec": 1.49,
+        "frac": "4/9"
+      },
+      "B3": {
+        "val": "Mexico",
+        "dec": 1.48,
+        "frac": "12/25"
+      },
+      "KN": {
+        "val": "Mexico",
+        "dec": 1.48,
+        "frac": "12/25"
+      },
+      "LD": {
+        "val": "Mexico",
+        "dec": 1.48,
+        "frac": "10/21"
+      },
+      "MA": {
+        "val": "Mexico",
+        "dec": 1.48,
+        "frac": "4/9"
+      },
+      "CUS": {
+        "val": "Mexico",
+        "dec": 1.47,
+        "frac": "4/9"
+      },
+      "VE": {
+        "val": "Mexico",
+        "dec": 1.47,
+        "frac": "4/9"
+      },
+      "UN": {
+        "val": "Mexico",
+        "dec": 1.45,
+        "frac": "5/11"
+      },
+      "VC": {
+        "val": "Mexico",
+        "dec": 1.45,
+        "frac": "9/20"
+      },
+      "PP": {
+        "val": "Mexico",
+        "dec": 1.4444444,
+        "frac": "4/9"
+      },
+      "SK": {
+        "val": "Mexico",
+        "dec": 1.4444444,
+        "frac": "4/9"
+      },
+      "EE": {
+        "val": "Mexico",
+        "dec": 1.444,
+        "frac": "4/9"
+      },
+      "AKB": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "BRS": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "BTT": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "BY": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "G5": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "PUP": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "QN": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "S6": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "SI": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "SX": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "WH": {
+        "val": "Mexico",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "OE": {
+        "val": "Mexico",
+        "dec": 1.43,
+        "frac": "43/100"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BF": {
+        "val": "1-0",
+        "dec": 5.7,
+        "frac": "47/10"
+      },
+      "BAH": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5,
+        "frac": "4/1"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 5,
+        "frac": "4/1"
+      }
+    }
+  },
+  {
+    "slug": "south-korea-v-czech-republic",
+    "fecha": "Jun 11",
+    "j": 1,
+    "grp": "A",
+    "local": "Corea del Sur",
+    "visita": "Rep. Checa",
+    "error": null,
+    "win_pred": "South Korea",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "South Korea": 23,
+      "Czech Republic": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 22,
+      "3-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "South Korea",
+        "dec": 2.76,
+        "frac": "7/4"
+      },
+      "MA": {
+        "val": "South Korea",
+        "dec": 2.76,
+        "frac": "7/4"
+      },
+      "FR": {
+        "val": "Czech Republic",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "PP": {
+        "val": "Czech Republic",
+        "dec": 2.625,
+        "frac": "13/8"
+      },
+      "SK": {
+        "val": "Czech Republic",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "KN": {
+        "val": "South Korea",
+        "dec": 2.65,
+        "frac": "33/20"
+      },
+      "OE": {
+        "val": "South Korea",
+        "dec": 2.65,
+        "frac": "33/20"
+      },
+      "UN": {
+        "val": "South Korea",
+        "dec": 2.65,
+        "frac": "28/17"
+      },
+      "BTT": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "BY": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "CUS": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "G5": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "QN": {
+        "val": "Czech Republic",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "SI": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "SX": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "VE": {
+        "val": "South Korea",
+        "dec": 2.63,
+        "frac": "13/8"
+      },
+      "B3": {
+        "val": "South Korea",
+        "dec": 2.625,
+        "frac": "13/8"
+      },
+      "EE": {
+        "val": "South Korea",
+        "dec": 2.625,
+        "frac": "13/8"
+      },
+      "VC": {
+        "val": "South Korea",
+        "dec": 2.62,
+        "frac": "13/8"
+      },
+      "WH": {
+        "val": "South Korea",
+        "dec": 2.62,
+        "frac": "13/8"
+      },
+      "CE": {
+        "val": "South Korea",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "LD": {
+        "val": "South Korea",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "WA": {
+        "val": "South Korea",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "AKB": {
+        "val": "South Korea",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "BRS": {
+        "val": "South Korea",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "PUP": {
+        "val": "South Korea",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "S6": {
+        "val": "South Korea",
+        "dec": 2.5,
+        "frac": "6/4"
+      }
+    },
+    "cs_by_bk": {
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "1-1",
+        "dec": 6.49,
+        "frac": "549/100"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SI": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SX": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "CE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "WA": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-1",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "BAH": {
+        "val": "3-0",
+        "dec": 26,
+        "frac": "25/1"
+      }
+    }
+  },
+  {
+    "slug": "canada-v-bosnia-and-herzegovina",
+    "fecha": "Jun 12",
+    "j": 1,
+    "grp": "B",
+    "local": "Canadá",
+    "visita": "Bosnia",
+    "error": null,
+    "win_pred": "Canada",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Canada": 25
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 18
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Canada",
+        "dec": 1.86,
+        "frac": "5/6"
+      },
+      "KN": {
+        "val": "Canada",
+        "dec": 1.86,
+        "frac": "17/20"
+      },
+      "MA": {
+        "val": "Canada",
+        "dec": 1.86,
+        "frac": "5/6"
+      },
+      "CE": {
+        "val": "Canada",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "CUS": {
+        "val": "Canada",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "VE": {
+        "val": "Canada",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "BTT": {
+        "val": "Canada",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "G5": {
+        "val": "Canada",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "LD": {
+        "val": "Canada",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "OE": {
+        "val": "Canada",
+        "dec": 1.82,
+        "frac": "82/100"
+      },
+      "B3": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "BY": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "EE": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "FR": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "PP": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "QN": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "SK": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "UN": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "VC": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "WA": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "WH": {
+        "val": "Canada",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "AKB": {
+        "val": "Canada",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "BRS": {
+        "val": "Canada",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "PUP": {
+        "val": "Canada",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "S6": {
+        "val": "Canada",
+        "dec": 1.75,
+        "frac": "3/4"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "BF": {
+        "val": "1-0",
+        "dec": 6.1,
+        "frac": "509/100"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5,
+        "frac": "4/1"
+      }
+    }
+  },
+  {
+    "slug": "usa-v-paraguay",
+    "fecha": "Jun 12",
+    "j": 1,
+    "grp": "D",
+    "local": "USA",
+    "visita": "Paraguay",
+    "error": null,
+    "win_pred": "USA",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "USA": 27
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 1,
+      "1-1": 21
+    },
+    "win_by_bk": {
+      "B3": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "BF": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "BY": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "CE": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "FR": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "LD": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "MA": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "WA": {
+        "val": "USA",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "KN": {
+        "val": "USA",
+        "dec": 1.98,
+        "frac": "49/50"
+      },
+      "UN": {
+        "val": "USA",
+        "dec": 1.98,
+        "frac": "39/40"
+      },
+      "CUS": {
+        "val": "USA",
+        "dec": 1.97,
+        "frac": "19/20"
+      },
+      "OE": {
+        "val": "USA",
+        "dec": 1.97,
+        "frac": "97/100"
+      },
+      "VE": {
+        "val": "USA",
+        "dec": 1.97,
+        "frac": "19/20"
+      },
+      "BTT": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "G5": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "PP": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "QN": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "SI": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "SK": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "SX": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "VC": {
+        "val": "USA",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "AKB": {
+        "val": "USA",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "BRS": {
+        "val": "USA",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "PUP": {
+        "val": "USA",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "S6": {
+        "val": "USA",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "WH": {
+        "val": "USA",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "EE": {
+        "val": "USA",
+        "dec": 1.909,
+        "frac": "10/11"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "1-0",
+        "dec": 7.08,
+        "frac": "152/25"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BY": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WA": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "LD": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "OE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      }
+    }
+  },
+  {
+    "slug": "qatar-v-switzerland",
+    "fecha": "Jun 13",
+    "j": 1,
+    "grp": "B",
+    "local": "Qatar",
+    "visita": "Suiza",
+    "error": null,
+    "win_pred": "Switzerland",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Switzerland": 27
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 21,
+      "3-2": 1
+    },
+    "win_by_bk": {
+      "CE": {
+        "val": "Switzerland",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "BTT": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "CUS": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "G5": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "KN": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "VE": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "WA": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "WH": {
+        "val": "Switzerland",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "EE": {
+        "val": "Switzerland",
+        "dec": 1.286,
+        "frac": "2/7"
+      },
+      "BF": {
+        "val": "Switzerland",
+        "dec": 1.28,
+        "frac": "1/4"
+      },
+      "LD": {
+        "val": "Switzerland",
+        "dec": 1.28,
+        "frac": "2/7"
+      },
+      "MA": {
+        "val": "Switzerland",
+        "dec": 1.28,
+        "frac": "1/4"
+      },
+      "B3": {
+        "val": "Switzerland",
+        "dec": 1.27,
+        "frac": "27/100"
+      },
+      "OE": {
+        "val": "Switzerland",
+        "dec": 1.27,
+        "frac": "27/100"
+      },
+      "UN": {
+        "val": "Switzerland",
+        "dec": 1.27,
+        "frac": "3/11"
+      },
+      "AKB": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "BRS": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "BY": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "FR": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "PUP": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "QN": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "S6": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SI": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SK": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SX": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "VC": {
+        "val": "Switzerland",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "PP": {
+        "val": "Switzerland",
+        "dec": 1.2222222,
+        "frac": "2/9"
+      }
+    },
+    "cs_by_bk": {
+      "FR": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "3-2",
+        "dec": 5.12,
+        "frac": "103/25"
+      },
+      "B3": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SI": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SX": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "2-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "CE": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "EE": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "WA": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "OE": {
+        "val": "2-0",
+        "dec": 4.75,
+        "frac": "15/4"
+      }
+    }
+  },
+  {
+    "slug": "brazil-v-morocco",
+    "fecha": "Jun 13",
+    "j": 1,
+    "grp": "C",
+    "local": "Brasil",
+    "visita": "Marruecos",
+    "error": "no markets found",
+    "win": null,
+    "cs": null
+  },
+  {
+    "slug": "haiti-v-scotland",
+    "fecha": "Jun 14",
+    "j": 1,
+    "grp": "C",
+    "local": "Haití",
+    "visita": "Escocia",
+    "error": null,
+    "win_pred": "Scotland",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Scotland": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "3-2": 1,
+      "1-0": 18,
+      "2-0": 3,
+      "1-1": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Scotland",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "CE": {
+        "val": "Scotland",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "MA": {
+        "val": "Scotland",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "KN": {
+        "val": "Scotland",
+        "dec": 1.43,
+        "frac": "21/50"
+      },
+      "WA": {
+        "val": "Scotland",
+        "dec": 1.43,
+        "frac": "17/40"
+      },
+      "B3": {
+        "val": "Scotland",
+        "dec": 1.42,
+        "frac": "21/50"
+      },
+      "CUS": {
+        "val": "Scotland",
+        "dec": 1.42,
+        "frac": "21/50"
+      },
+      "OE": {
+        "val": "Scotland",
+        "dec": 1.42,
+        "frac": "21/50"
+      },
+      "UN": {
+        "val": "Scotland",
+        "dec": 1.42,
+        "frac": "5/12"
+      },
+      "VE": {
+        "val": "Scotland",
+        "dec": 1.42,
+        "frac": "21/50"
+      },
+      "AKB": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "BRS": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "BTT": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "BY": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "EE": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "FR": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "G5": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "LD": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "PP": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "PUP": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "QN": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "S6": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "SI": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "SK": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "SX": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "VC": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      },
+      "WH": {
+        "val": "Scotland",
+        "dec": 1.4,
+        "frac": "2/5"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "3-2",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BAH": {
+        "val": "1-1",
+        "dec": 8,
+        "frac": "7/1"
+      }
+    }
+  },
+  {
+    "slug": "australia-v-turkey",
+    "fecha": "Jun 14",
+    "j": 1,
+    "grp": "D",
+    "local": "Australia",
+    "visita": "Turquía",
+    "error": null,
+    "win_pred": "Turkey",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Turkey": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 1,
+      "1-0": 18,
+      "1-1": 3
+    },
+    "win_by_bk": {
+      "CE": {
+        "val": "Turkey",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "KN": {
+        "val": "Turkey",
+        "dec": 1.83,
+        "frac": "41/50"
+      },
+      "BF": {
+        "val": "Turkey",
+        "dec": 1.82,
+        "frac": "4/5"
+      },
+      "CUS": {
+        "val": "Turkey",
+        "dec": 1.82,
+        "frac": "4/5"
+      },
+      "VE": {
+        "val": "Turkey",
+        "dec": 1.82,
+        "frac": "4/5"
+      },
+      "MA": {
+        "val": "Turkey",
+        "dec": 1.81,
+        "frac": "4/5"
+      },
+      "EE": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "FR": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "LD": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "PP": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "QN": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "SI": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "SK": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "SX": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "UN": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "WH": {
+        "val": "Turkey",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "OE": {
+        "val": "Turkey",
+        "dec": 1.76,
+        "frac": "76/100"
+      },
+      "B3": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "BTT": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "BY": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "G5": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "VC": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "WA": {
+        "val": "Turkey",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "AKB": {
+        "val": "Turkey",
+        "dec": 1.72,
+        "frac": "8/11"
+      },
+      "BRS": {
+        "val": "Turkey",
+        "dec": 1.72,
+        "frac": "8/11"
+      },
+      "PUP": {
+        "val": "Turkey",
+        "dec": 1.72,
+        "frac": "8/11"
+      },
+      "S6": {
+        "val": "Turkey",
+        "dec": 1.72,
+        "frac": "8/11"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "2-0",
+        "dec": 6.49,
+        "frac": "549/100"
+      },
+      "B3": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      }
+    }
+  },
+  {
+    "slug": "germany-v-curacao",
+    "fecha": "Jun 14",
+    "j": 1,
+    "grp": "E",
+    "local": "Alemania",
+    "visita": "Curazao",
+    "error": null,
+    "win_pred": "Germany",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Germany": 27
+    },
+    "cs_pred": "3-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "3-0": 21,
+      "4-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Germany",
+        "dec": 1.06,
+        "frac": "1/16"
+      },
+      "CE": {
+        "val": "Germany",
+        "dec": 1.05,
+        "frac": "1/20"
+      },
+      "LD": {
+        "val": "Germany",
+        "dec": 1.05,
+        "frac": "1/20"
+      },
+      "MA": {
+        "val": "Germany",
+        "dec": 1.05,
+        "frac": "1/20"
+      },
+      "PP": {
+        "val": "Germany",
+        "dec": 1.030303,
+        "frac": "1/33"
+      },
+      "SK": {
+        "val": "Germany",
+        "dec": 1.030303,
+        "frac": "1/33"
+      },
+      "AKB": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "B3": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "BRS": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "BTT": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "EE": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "FR": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "G5": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "KN": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/40"
+      },
+      "OE": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "PUP": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "S6": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "SI": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "SX": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "VC": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "WA": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "WH": {
+        "val": "Germany",
+        "dec": 1.03,
+        "frac": "1/33"
+      },
+      "CUS": {
+        "val": "Germany",
+        "dec": 1.02,
+        "frac": "1/50"
+      },
+      "QN": {
+        "val": "Germany",
+        "dec": 1.02,
+        "frac": "1/50"
+      },
+      "UN": {
+        "val": "Germany",
+        "dec": 1.02,
+        "frac": "1/41"
+      },
+      "VE": {
+        "val": "Germany",
+        "dec": 1.02,
+        "frac": "1/50"
+      },
+      "BY": {
+        "val": "Germany",
+        "dec": 1.01,
+        "frac": "1/100"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CE": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "LD": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "3-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "3-0",
+        "dec": 6.49,
+        "frac": "549/100"
+      },
+      "CUS": {
+        "val": "3-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "3-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "3-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "3-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "3-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "WA": {
+        "val": "3-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "3-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "3-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "4-0",
+        "dec": 4.75,
+        "frac": "15/4"
+      }
+    }
+  },
+  {
+    "slug": "ivory-coast-v-ecuador",
+    "fecha": "Jun 14",
+    "j": 1,
+    "grp": "E",
+    "local": "C. de Marfil",
+    "visita": "Ecuador",
+    "error": null,
+    "win_pred": "Ecuador",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Ecuador": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 5,
+      "1-0": 17
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Ecuador",
+        "dec": 2.41,
+        "frac": "7/5"
+      },
+      "MA": {
+        "val": "Ecuador",
+        "dec": 2.39,
+        "frac": "11/8"
+      },
+      "BY": {
+        "val": "Ecuador",
+        "dec": 2.3,
+        "frac": "13/10"
+      },
+      "WA": {
+        "val": "Ecuador",
+        "dec": 2.3,
+        "frac": "13/10"
+      },
+      "KN": {
+        "val": "Ecuador",
+        "dec": 2.28,
+        "frac": "5/4"
+      },
+      "B3": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "BTT": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "CE": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "CUS": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "G5": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "LD": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "SI": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "SX": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "VC": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "VE": {
+        "val": "Ecuador",
+        "dec": 2.25,
+        "frac": "5/4"
+      },
+      "OE": {
+        "val": "Ecuador",
+        "dec": 2.22,
+        "frac": "122/100"
+      },
+      "AKB": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "BRS": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "EE": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "FR": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "PUP": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "QN": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "S6": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "UN": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "WH": {
+        "val": "Ecuador",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "PP": {
+        "val": "Ecuador",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "SK": {
+        "val": "Ecuador",
+        "dec": 2.15,
+        "frac": "23/20"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "509/100"
+      },
+      "B3": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "WA": {
+        "val": "1-1",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5,
+        "frac": "4/1"
+      }
+    }
+  },
+  {
+    "slug": "netherlands-v-japan",
+    "fecha": "Jun 14",
+    "j": 1,
+    "grp": "F",
+    "local": "Países Bajos",
+    "visita": "Japón",
+    "error": null,
+    "win_pred": "Netherlands",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Netherlands": 27
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 1,
+      "1-1": 21,
+      "1-0": 1
+    },
+    "win_by_bk": {
+      "KN": {
+        "val": "Netherlands",
+        "dec": 2.04,
+        "frac": "26/25"
+      },
+      "CUS": {
+        "val": "Netherlands",
+        "dec": 2.02,
+        "frac": "1/1"
+      },
+      "UN": {
+        "val": "Netherlands",
+        "dec": 2.02,
+        "frac": "42/41"
+      },
+      "VE": {
+        "val": "Netherlands",
+        "dec": 2.02,
+        "frac": "1/1"
+      },
+      "B3": {
+        "val": "Netherlands",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "CE": {
+        "val": "Netherlands",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "FR": {
+        "val": "Netherlands",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "LD": {
+        "val": "Netherlands",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "BF": {
+        "val": "Netherlands",
+        "dec": 1.98,
+        "frac": "20/21"
+      },
+      "MA": {
+        "val": "Netherlands",
+        "dec": 1.98,
+        "frac": "20/21"
+      },
+      "OE": {
+        "val": "Netherlands",
+        "dec": 1.97,
+        "frac": "97/100"
+      },
+      "BTT": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "EE": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "G5": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "QN": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "SI": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "SX": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "VC": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "WA": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "WH": {
+        "val": "Netherlands",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "AKB": {
+        "val": "Netherlands",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "BRS": {
+        "val": "Netherlands",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "PUP": {
+        "val": "Netherlands",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "S6": {
+        "val": "Netherlands",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "PP": {
+        "val": "Netherlands",
+        "dec": 1.9090909,
+        "frac": "10/11"
+      },
+      "SK": {
+        "val": "Netherlands",
+        "dec": 1.9090909,
+        "frac": "10/11"
+      },
+      "BY": {
+        "val": "Netherlands",
+        "dec": 1.87,
+        "frac": "20/23"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "2-0",
+        "dec": 5.21,
+        "frac": "421/100"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "BY": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "CE": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "LD": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WA": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "OE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BAH": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      }
+    }
+  },
+  {
+    "slug": "sweden-v-tunisia",
+    "fecha": "Jun 15",
+    "j": 1,
+    "grp": "F",
+    "local": "Suecia",
+    "visita": "Túnez",
+    "error": null,
+    "win_pred": "Sweden",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Sweden": 27,
+      "Draw": 1
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 19,
+      "1-1": 3,
+      "2-1": 1
+    },
+    "win_by_bk": {
+      "CE": {
+        "val": "Sweden",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "LD": {
+        "val": "Sweden",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "B3": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "BF": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "BTT": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "FR": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "G5": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "MA": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "20/21"
+      },
+      "UN": {
+        "val": "Sweden",
+        "dec": 1.95,
+        "frac": "19/20"
+      },
+      "KN": {
+        "val": "Sweden",
+        "dec": 1.94,
+        "frac": "23/25"
+      },
+      "CUS": {
+        "val": "Sweden",
+        "dec": 1.93,
+        "frac": "10/11"
+      },
+      "VC": {
+        "val": "Sweden",
+        "dec": 1.93,
+        "frac": "37/40"
+      },
+      "VE": {
+        "val": "Sweden",
+        "dec": 1.93,
+        "frac": "10/11"
+      },
+      "BY": {
+        "val": "Sweden",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "QN": {
+        "val": "Sweden",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "SI": {
+        "val": "Sweden",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "SX": {
+        "val": "Sweden",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "WH": {
+        "val": "Sweden",
+        "dec": 1.91,
+        "frac": "10/11"
+      },
+      "PP": {
+        "val": "Sweden",
+        "dec": 1.9090909,
+        "frac": "10/11"
+      },
+      "SK": {
+        "val": "Sweden",
+        "dec": 1.9090909,
+        "frac": "10/11"
+      },
+      "EE": {
+        "val": "Sweden",
+        "dec": 1.909,
+        "frac": "10/11"
+      },
+      "OE": {
+        "val": "Sweden",
+        "dec": 1.88,
+        "frac": "88/100"
+      },
+      "AKB": {
+        "val": "Sweden",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "BRS": {
+        "val": "Sweden",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "PUP": {
+        "val": "Sweden",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "S6": {
+        "val": "Sweden",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "WA": {
+        "val": "Sweden",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "BAH": {
+        "val": "Draw",
+        "dec": 3.3,
+        "frac": "23/10"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "1-0",
+        "dec": 6.29,
+        "frac": "529/100"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5,
+        "frac": "4/1"
+      },
+      "BAH": {
+        "val": "2-1",
+        "dec": 8.5,
+        "frac": "15/2"
+      }
+    }
+  },
+  {
+    "slug": "belgium-v-egypt",
+    "fecha": "Jun 15",
+    "j": 1,
+    "grp": "G",
+    "local": "Bélgica",
+    "visita": "Egipto",
+    "error": null,
+    "win_pred": "Belgium",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Belgium": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟡",
+    "cs_votes": {
+      "1-1": 7,
+      "1-0": 14,
+      "3-2": 1
+    },
+    "win_by_bk": {
+      "OE": {
+        "val": "Belgium",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "CUS": {
+        "val": "Belgium",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "KN": {
+        "val": "Belgium",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "VE": {
+        "val": "Belgium",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "BTT": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "BY": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "CE": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "FR": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "G5": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "LD": {
+        "val": "Belgium",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "B3": {
+        "val": "Belgium",
+        "dec": 1.667,
+        "frac": "4/6"
+      },
+      "EE": {
+        "val": "Belgium",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "PP": {
+        "val": "Belgium",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "UN": {
+        "val": "Belgium",
+        "dec": 1.65,
+        "frac": "11/17"
+      },
+      "VC": {
+        "val": "Belgium",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "WH": {
+        "val": "Belgium",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "BF": {
+        "val": "Belgium",
+        "dec": 1.63,
+        "frac": "4/7"
+      },
+      "MA": {
+        "val": "Belgium",
+        "dec": 1.63,
+        "frac": "4/7"
+      },
+      "QN": {
+        "val": "Belgium",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "SI": {
+        "val": "Belgium",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "SX": {
+        "val": "Belgium",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "SK": {
+        "val": "Belgium",
+        "dec": 1.6153846,
+        "frac": "8/13"
+      },
+      "AKB": {
+        "val": "Belgium",
+        "dec": 1.61,
+        "frac": "8/13"
+      },
+      "BRS": {
+        "val": "Belgium",
+        "dec": 1.61,
+        "frac": "8/13"
+      },
+      "PUP": {
+        "val": "Belgium",
+        "dec": 1.61,
+        "frac": "8/13"
+      },
+      "S6": {
+        "val": "Belgium",
+        "dec": 1.61,
+        "frac": "8/13"
+      },
+      "WA": {
+        "val": "Belgium",
+        "dec": 1.61,
+        "frac": "8/13"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-1",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 8,
+        "frac": "7/1"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "BF": {
+        "val": "3-2",
+        "dec": 6.88,
+        "frac": "147/25"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "OE": {
+        "val": "1-1",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      }
+    }
+  },
+  {
+    "slug": "spain-v-cape-verde",
+    "fecha": "Jun 15",
+    "j": 1,
+    "grp": "H",
+    "local": "España",
+    "visita": "Cabo Verde",
+    "error": "no markets found",
+    "win": null,
+    "cs": null
+  },
+  {
+    "slug": "saudi-arabia-v-uruguay",
+    "fecha": "Jun 15",
+    "j": 1,
+    "grp": "H",
+    "local": "Arabia Saudita",
+    "visita": "Uruguay",
+    "error": null,
+    "win_pred": "Uruguay",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Uruguay": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 21,
+      "2-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Uruguay",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "CE": {
+        "val": "Uruguay",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "CUS": {
+        "val": "Uruguay",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "KN": {
+        "val": "Uruguay",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "MA": {
+        "val": "Uruguay",
+        "dec": 1.52,
+        "frac": "1/2"
+      },
+      "VE": {
+        "val": "Uruguay",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "B3": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "BTT": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "BY": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "FR": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "G5": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "LD": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "PP": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "SI": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "SK": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "SX": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "WA": {
+        "val": "Uruguay",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "OE": {
+        "val": "Uruguay",
+        "dec": 1.49,
+        "frac": "49/100"
+      },
+      "UN": {
+        "val": "Uruguay",
+        "dec": 1.48,
+        "frac": "10/21"
+      },
+      "AKB": {
+        "val": "Uruguay",
+        "dec": 1.47,
+        "frac": "40/85"
+      },
+      "BRS": {
+        "val": "Uruguay",
+        "dec": 1.47,
+        "frac": "40/85"
+      },
+      "PUP": {
+        "val": "Uruguay",
+        "dec": 1.47,
+        "frac": "40/85"
+      },
+      "S6": {
+        "val": "Uruguay",
+        "dec": 1.47,
+        "frac": "40/85"
+      },
+      "VC": {
+        "val": "Uruguay",
+        "dec": 1.45,
+        "frac": "9/20"
+      },
+      "EE": {
+        "val": "Uruguay",
+        "dec": 1.444,
+        "frac": "4/9"
+      },
+      "QN": {
+        "val": "Uruguay",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "WH": {
+        "val": "Uruguay",
+        "dec": 1.44,
+        "frac": "4/9"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WA": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "iran-v-new-zealand",
+    "fecha": "Jun 16",
+    "j": 1,
+    "grp": "G",
+    "local": "Irán",
+    "visita": "Nueva Zelanda",
+    "error": null,
+    "win_pred": "Iran",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Iran": 27
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 1,
+      "1-0": 21
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Iran",
+        "dec": 1.9,
+        "frac": "9/10"
+      },
+      "FR": {
+        "val": "Iran",
+        "dec": 1.9,
+        "frac": "9/10"
+      },
+      "MA": {
+        "val": "Iran",
+        "dec": 1.9,
+        "frac": "9/10"
+      },
+      "SI": {
+        "val": "Iran",
+        "dec": 1.87,
+        "frac": "87/100"
+      },
+      "SX": {
+        "val": "Iran",
+        "dec": 1.87,
+        "frac": "87/100"
+      },
+      "CUS": {
+        "val": "Iran",
+        "dec": 1.86,
+        "frac": "17/20"
+      },
+      "KN": {
+        "val": "Iran",
+        "dec": 1.86,
+        "frac": "17/20"
+      },
+      "VE": {
+        "val": "Iran",
+        "dec": 1.86,
+        "frac": "17/20"
+      },
+      "B3": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "BTT": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "11/13"
+      },
+      "CE": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "G5": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "11/13"
+      },
+      "LD": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "UN": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "11/13"
+      },
+      "VC": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "WA": {
+        "val": "Iran",
+        "dec": 1.85,
+        "frac": "17/20"
+      },
+      "OE": {
+        "val": "Iran",
+        "dec": 1.84,
+        "frac": "84/100"
+      },
+      "EE": {
+        "val": "Iran",
+        "dec": 1.833,
+        "frac": "5/6"
+      },
+      "AKB": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "BRS": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "BY": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "PUP": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "QN": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "S6": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "WH": {
+        "val": "Iran",
+        "dec": 1.83,
+        "frac": "5/6"
+      },
+      "PP": {
+        "val": "Iran",
+        "dec": 1.8,
+        "frac": "4/5"
+      },
+      "SK": {
+        "val": "Iran",
+        "dec": 1.8,
+        "frac": "4/5"
+      }
+    },
+    "cs_by_bk": {
+      "BF": {
+        "val": "2-0",
+        "dec": 5.02,
+        "frac": "401/100"
+      },
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6.25,
+        "frac": "21/4"
+      },
+      "BY": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SI": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SX": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WA": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CE": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "OE": {
+        "val": "1-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      }
+    }
+  },
+  {
+    "slug": "france-v-senegal",
+    "fecha": "Jun 16",
+    "j": 1,
+    "grp": "I",
+    "local": "Francia",
+    "visita": "Senegal",
+    "error": "no markets found",
+    "win": null,
+    "cs": null
+  },
+  {
+    "slug": "iraq-v-norway",
+    "fecha": "Jun 16",
+    "j": 1,
+    "grp": "I",
+    "local": "Irak",
+    "visita": "Noruega",
+    "error": null,
+    "win_pred": "Norway",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Norway": 27
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 21,
+      "1-0": 1
+    },
+    "win_by_bk": {
+      "CE": {
+        "val": "Norway",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "LD": {
+        "val": "Norway",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SI": {
+        "val": "Norway",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SX": {
+        "val": "Norway",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "WA": {
+        "val": "Norway",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "BF": {
+        "val": "Norway",
+        "dec": 1.24,
+        "frac": "2/9"
+      },
+      "KN": {
+        "val": "Norway",
+        "dec": 1.24,
+        "frac": "6/25"
+      },
+      "MA": {
+        "val": "Norway",
+        "dec": 1.24,
+        "frac": "2/9"
+      },
+      "OE": {
+        "val": "Norway",
+        "dec": 1.24,
+        "frac": "24/100"
+      },
+      "CUS": {
+        "val": "Norway",
+        "dec": 1.23,
+        "frac": "2/9"
+      },
+      "UN": {
+        "val": "Norway",
+        "dec": 1.23,
+        "frac": "3/13"
+      },
+      "VE": {
+        "val": "Norway",
+        "dec": 1.23,
+        "frac": "2/9"
+      },
+      "SK": {
+        "val": "Norway",
+        "dec": 1.2222222,
+        "frac": "2/9"
+      },
+      "B3": {
+        "val": "Norway",
+        "dec": 1.222,
+        "frac": "2/9"
+      },
+      "EE": {
+        "val": "Norway",
+        "dec": 1.222,
+        "frac": "2/9"
+      },
+      "AKB": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "BRS": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "BY": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "FR": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "PUP": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "QN": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "S6": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "WH": {
+        "val": "Norway",
+        "dec": 1.22,
+        "frac": "2/9"
+      },
+      "BTT": {
+        "val": "Norway",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "G5": {
+        "val": "Norway",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "PP": {
+        "val": "Norway",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "VC": {
+        "val": "Norway",
+        "dec": 1.2,
+        "frac": "1/5"
+      }
+    },
+    "cs_by_bk": {
+      "FR": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "1-0",
+        "dec": 5.21,
+        "frac": "421/100"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "B3": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BY": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SI": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SX": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "2-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "CE": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "EE": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "LD": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "WA": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "OE": {
+        "val": "2-0",
+        "dec": 5,
+        "frac": "4/1"
+      }
+    }
+  }
+]

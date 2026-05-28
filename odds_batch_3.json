@@ -1,0 +1,2601 @@
+[
+  {
+    "slug": "curacao-v-ivory-coast",
+    "fecha": "Jun 25",
+    "j": 3,
+    "grp": "E",
+    "local": "Curazao",
+    "visita": "C. de Marfil",
+    "error": null,
+    "win_pred": "Ivory Coast",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Ivory Coast": 15
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 1,
+      "2-0": 13,
+      "1-1": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "CUS": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "EE": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "FR": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "KN": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "QN": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "VE": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "WH": {
+        "val": "Ivory Coast",
+        "dec": 1.3,
+        "frac": "3/10"
+      },
+      "BTT": {
+        "val": "Ivory Coast",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "G5": {
+        "val": "Ivory Coast",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "UN": {
+        "val": "Ivory Coast",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "VC": {
+        "val": "Ivory Coast",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "B3": {
+        "val": "Ivory Coast",
+        "dec": 1.286,
+        "frac": "2/7"
+      },
+      "PP": {
+        "val": "Ivory Coast",
+        "dec": 1.2857143,
+        "frac": "2/7"
+      },
+      "SK": {
+        "val": "Ivory Coast",
+        "dec": 1.2857143,
+        "frac": "2/7"
+      }
+    },
+    "cs_by_bk": {
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "QN": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "B3": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "EE": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "1-1",
+        "dec": 4.33,
+        "frac": "10/3"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5,
+        "frac": "4/1"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5,
+        "frac": "4/1"
+      }
+    }
+  },
+  {
+    "slug": "ecuador-v-germany",
+    "fecha": "Jun 25",
+    "j": 3,
+    "grp": "E",
+    "local": "Ecuador",
+    "visita": "Alemania",
+    "error": null,
+    "win_pred": "Germany",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Germany": 15
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 14,
+      "1-1": 1
+    },
+    "win_by_bk": {
+      "FR": {
+        "val": "Germany",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "BF": {
+        "val": "Germany",
+        "dec": 1.66,
+        "frac": "8/13"
+      },
+      "CUS": {
+        "val": "Germany",
+        "dec": 1.66,
+        "frac": "13/20"
+      },
+      "KN": {
+        "val": "Germany",
+        "dec": 1.66,
+        "frac": "13/20"
+      },
+      "VE": {
+        "val": "Germany",
+        "dec": 1.66,
+        "frac": "13/20"
+      },
+      "B3": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "EE": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "QN": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "UN": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "11/17"
+      },
+      "VC": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "WH": {
+        "val": "Germany",
+        "dec": 1.65,
+        "frac": "13/20"
+      },
+      "BTT": {
+        "val": "Germany",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "G5": {
+        "val": "Germany",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "PP": {
+        "val": "Germany",
+        "dec": 1.6153846,
+        "frac": "8/13"
+      },
+      "SK": {
+        "val": "Germany",
+        "dec": 1.6153846,
+        "frac": "8/13"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 7.5,
+        "frac": "13/2"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "BF": {
+        "val": "1-1",
+        "dec": 3.94,
+        "frac": "14/5"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.75,
+        "frac": "23/4"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.75,
+        "frac": "23/4"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6.75,
+        "frac": "23/4"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      }
+    }
+  },
+  {
+    "slug": "japan-v-sweden",
+    "fecha": "Jun 25",
+    "j": 3,
+    "grp": "F",
+    "local": "Japón",
+    "visita": "Suecia",
+    "error": null,
+    "win_pred": "Japan",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Japan": 15
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 14,
+      "3-1": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Japan",
+        "dec": 2.16,
+        "frac": "23/20"
+      },
+      "UN": {
+        "val": "Japan",
+        "dec": 2.08,
+        "frac": "13/12"
+      },
+      "B3": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "CUS": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "FR": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "KN": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "SK": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "VC": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "VE": {
+        "val": "Japan",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "BTT": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "EE": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "G5": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "PP": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "QN": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      },
+      "WH": {
+        "val": "Japan",
+        "dec": 2,
+        "frac": "1/1"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BAH": {
+        "val": "3-1",
+        "dec": 26,
+        "frac": "25/1"
+      }
+    }
+  },
+  {
+    "slug": "tunisia-v-netherlands",
+    "fecha": "Jun 25",
+    "j": 3,
+    "grp": "F",
+    "local": "Túnez",
+    "visita": "Países Bajos",
+    "error": null,
+    "win_pred": "Netherlands",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Netherlands": 15
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 14,
+      "2-2": 1
+    },
+    "win_by_bk": {
+      "SK": {
+        "val": "Netherlands",
+        "dec": 1.55,
+        "frac": "11/20"
+      },
+      "WH": {
+        "val": "Netherlands",
+        "dec": 1.55,
+        "frac": "11/20"
+      },
+      "UN": {
+        "val": "Netherlands",
+        "dec": 1.54,
+        "frac": "8/15"
+      },
+      "PP": {
+        "val": "Netherlands",
+        "dec": 1.5333333,
+        "frac": "8/15"
+      },
+      "B3": {
+        "val": "Netherlands",
+        "dec": 1.533,
+        "frac": "8/15"
+      },
+      "EE": {
+        "val": "Netherlands",
+        "dec": 1.533,
+        "frac": "8/15"
+      },
+      "BTT": {
+        "val": "Netherlands",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "FR": {
+        "val": "Netherlands",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "G5": {
+        "val": "Netherlands",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "QN": {
+        "val": "Netherlands",
+        "dec": 1.53,
+        "frac": "8/15"
+      },
+      "CUS": {
+        "val": "Netherlands",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "KN": {
+        "val": "Netherlands",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "VE": {
+        "val": "Netherlands",
+        "dec": 1.52,
+        "frac": "13/25"
+      },
+      "VC": {
+        "val": "Netherlands",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "BF": {
+        "val": "Netherlands",
+        "dec": 1.49,
+        "frac": "4/9"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6.4,
+        "frac": "27/5"
+      },
+      "EE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "2-2",
+        "dec": 4.53,
+        "frac": "7/2"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "paraguay-v-australia",
+    "fecha": "Jun 26",
+    "j": 3,
+    "grp": "D",
+    "local": "Paraguay",
+    "visita": "Australia",
+    "error": null,
+    "win_pred": "Paraguay",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Paraguay": 15
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟡",
+    "cs_votes": {
+      "1-1": 11,
+      "1-0": 3,
+      "3-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Paraguay",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "FR": {
+        "val": "Paraguay",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "VC": {
+        "val": "Paraguay",
+        "dec": 2.2,
+        "frac": "6/5"
+      },
+      "B3": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "BTT": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "15/13"
+      },
+      "EE": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "G5": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "15/13"
+      },
+      "PP": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "QN": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "SK": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "UN": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "15/13"
+      },
+      "WH": {
+        "val": "Paraguay",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "CUS": {
+        "val": "Paraguay",
+        "dec": 2.14,
+        "frac": "57/50"
+      },
+      "KN": {
+        "val": "Paraguay",
+        "dec": 2.14,
+        "frac": "57/50"
+      },
+      "VE": {
+        "val": "Paraguay",
+        "dec": 2.14,
+        "frac": "57/50"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "EE": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "WH": {
+        "val": "1-1",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "3-0",
+        "dec": 1.01,
+        "frac": "1/100"
+      }
+    }
+  },
+  {
+    "slug": "turkey-v-usa",
+    "fecha": "Jun 26",
+    "j": 3,
+    "grp": "D",
+    "local": "Turquía",
+    "visita": "USA",
+    "error": "no markets found",
+    "win": null,
+    "cs": null
+  },
+  {
+    "slug": "norway-v-france",
+    "fecha": "Jun 26",
+    "j": 3,
+    "grp": "I",
+    "local": "Noruega",
+    "visita": "Francia",
+    "error": null,
+    "win_pred": "France",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "France": 13
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟡",
+    "cs_votes": {
+      "1-0": 9,
+      "1-1": 3,
+      "3-2": 2
+    },
+    "win_by_bk": {
+      "B3": {
+        "val": "France",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "BF": {
+        "val": "France",
+        "dec": 1.7,
+        "frac": "4/6"
+      },
+      "FR": {
+        "val": "France",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "PP": {
+        "val": "France",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "SK": {
+        "val": "France",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "CUS": {
+        "val": "France",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "KN": {
+        "val": "France",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "VE": {
+        "val": "France",
+        "dec": 1.68,
+        "frac": "4/6"
+      },
+      "QN": {
+        "val": "France",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "UN": {
+        "val": "France",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "VC": {
+        "val": "France",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "BTT": {
+        "val": "France",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "G5": {
+        "val": "France",
+        "dec": 1.62,
+        "frac": "8/13"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "3-2",
+        "dec": 4.63,
+        "frac": "7/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BAH": {
+        "val": "3-2",
+        "dec": 23,
+        "frac": "22/1"
+      }
+    }
+  },
+  {
+    "slug": "senegal-v-iraq",
+    "fecha": "Jun 26",
+    "j": 3,
+    "grp": "I",
+    "local": "Senegal",
+    "visita": "Irak",
+    "error": null,
+    "win_pred": "Senegal",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Senegal": 13
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 12,
+      "2-2": 1
+    },
+    "win_by_bk": {
+      "CUS": {
+        "val": "Senegal",
+        "dec": 1.53,
+        "frac": "13/25"
+      },
+      "KN": {
+        "val": "Senegal",
+        "dec": 1.53,
+        "frac": "13/25"
+      },
+      "VE": {
+        "val": "Senegal",
+        "dec": 1.53,
+        "frac": "13/25"
+      },
+      "B3": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "FR": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "PP": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "QN": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "SK": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "UN": {
+        "val": "Senegal",
+        "dec": 1.5,
+        "frac": "1/2"
+      },
+      "BF": {
+        "val": "Senegal",
+        "dec": 1.48,
+        "frac": "4/9"
+      },
+      "VC": {
+        "val": "Senegal",
+        "dec": 1.45,
+        "frac": "9/20"
+      },
+      "BTT": {
+        "val": "Senegal",
+        "dec": 1.44,
+        "frac": "4/9"
+      },
+      "G5": {
+        "val": "Senegal",
+        "dec": 1.44,
+        "frac": "4/9"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BF": {
+        "val": "2-2",
+        "dec": 4.43,
+        "frac": "10/3"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "egypt-v-iran",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "G",
+    "local": "Egipto",
+    "visita": "Irán",
+    "error": null,
+    "win_pred": "Egypt",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Egypt": 13
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 12
+    },
+    "win_by_bk": {
+      "B3": {
+        "val": "Egypt",
+        "dec": 2.45,
+        "frac": "29/20"
+      },
+      "BF": {
+        "val": "Egypt",
+        "dec": 2.45,
+        "frac": "7/5"
+      },
+      "BTT": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "CUS": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "FR": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "G5": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "KN": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "PP": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "QN": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "SK": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "UN": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "VC": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "VE": {
+        "val": "Egypt",
+        "dec": 2.4,
+        "frac": "7/5"
+      }
+    },
+    "cs_by_bk": {
+      "FR": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "new-zealand-v-belgium",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "G",
+    "local": "Nueva Zelanda",
+    "visita": "Bélgica",
+    "error": null,
+    "win_pred": "Belgium",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Belgium": 13
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 12,
+      "1-1": 1,
+      "3-0": 1
+    },
+    "win_by_bk": {
+      "FR": {
+        "val": "Belgium",
+        "dec": 1.29,
+        "frac": "2/7"
+      },
+      "B3": {
+        "val": "Belgium",
+        "dec": 1.27,
+        "frac": "27/100"
+      },
+      "BF": {
+        "val": "Belgium",
+        "dec": 1.27,
+        "frac": "1/4"
+      },
+      "UN": {
+        "val": "Belgium",
+        "dec": 1.27,
+        "frac": "3/11"
+      },
+      "CUS": {
+        "val": "Belgium",
+        "dec": 1.26,
+        "frac": "1/4"
+      },
+      "KN": {
+        "val": "Belgium",
+        "dec": 1.26,
+        "frac": "1/4"
+      },
+      "VE": {
+        "val": "Belgium",
+        "dec": 1.26,
+        "frac": "1/4"
+      },
+      "BTT": {
+        "val": "Belgium",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "G5": {
+        "val": "Belgium",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "QN": {
+        "val": "Belgium",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "SK": {
+        "val": "Belgium",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "VC": {
+        "val": "Belgium",
+        "dec": 1.25,
+        "frac": "1/4"
+      },
+      "PP": {
+        "val": "Belgium",
+        "dec": 1.2222222,
+        "frac": "2/9"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BF": {
+        "val": "1-1",
+        "dec": 3.94,
+        "frac": "14/5"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "BAH": {
+        "val": "3-0",
+        "dec": 126,
+        "frac": "125/1"
+      }
+    }
+  },
+  {
+    "slug": "cape-verde-v-saudi-arabia",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "H",
+    "local": "Cabo Verde",
+    "visita": "Arabia Saudita",
+    "error": "no markets found",
+    "win": null,
+    "cs": null
+  },
+  {
+    "slug": "uruguay-v-spain",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "H",
+    "local": "Uruguay",
+    "visita": "España",
+    "error": null,
+    "win_pred": "Spain",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Spain": 13
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 12,
+      "3-2": 1,
+      "3-1": 1
+    },
+    "win_by_bk": {
+      "BTT": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "CUS": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "FR": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "G5": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "KN": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "QN": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "UN": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "VE": {
+        "val": "Spain",
+        "dec": 1.62,
+        "frac": "8/13"
+      },
+      "PP": {
+        "val": "Spain",
+        "dec": 1.6153846,
+        "frac": "8/13"
+      },
+      "SK": {
+        "val": "Spain",
+        "dec": 1.6153846,
+        "frac": "8/13"
+      },
+      "B3": {
+        "val": "Spain",
+        "dec": 1.615,
+        "frac": "8/13"
+      },
+      "BF": {
+        "val": "Spain",
+        "dec": 1.61,
+        "frac": "4/7"
+      },
+      "VC": {
+        "val": "Spain",
+        "dec": 1.6,
+        "frac": "3/5"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "BF": {
+        "val": "3-2",
+        "dec": 3.94,
+        "frac": "14/5"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 6.1,
+        "frac": "5/1"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BAH": {
+        "val": "3-1",
+        "dec": 12,
+        "frac": "11/1"
+      }
+    }
+  },
+  {
+    "slug": "colombia-v-portugal",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "K",
+    "local": "Colombia",
+    "visita": "Portugal",
+    "error": null,
+    "win_pred": "Portugal",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Portugal": 13
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 13
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Portugal",
+        "dec": 2.16,
+        "frac": "23/20"
+      },
+      "B3": {
+        "val": "Portugal",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "CUS": {
+        "val": "Portugal",
+        "dec": 2.14,
+        "frac": "57/50"
+      },
+      "KN": {
+        "val": "Portugal",
+        "dec": 2.14,
+        "frac": "57/50"
+      },
+      "VE": {
+        "val": "Portugal",
+        "dec": 2.14,
+        "frac": "57/50"
+      },
+      "FR": {
+        "val": "Portugal",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "PP": {
+        "val": "Portugal",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "UN": {
+        "val": "Portugal",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "VC": {
+        "val": "Portugal",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "BTT": {
+        "val": "Portugal",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "G5": {
+        "val": "Portugal",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "QN": {
+        "val": "Portugal",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "SK": {
+        "val": "Portugal",
+        "dec": 2.05,
+        "frac": "21/20"
+      }
+    },
+    "cs_by_bk": {
+      "FR": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BF": {
+        "val": "1-1",
+        "dec": 1.01,
+        "frac": "1/100"
+      }
+    }
+  },
+  {
+    "slug": "dr-congo-v-uzbekistan",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "K",
+    "local": "RD Congo",
+    "visita": "Uzbekistán",
+    "error": null,
+    "win_pred": "DR Congo",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "DR Congo": 13
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 12,
+      "3-1": 1
+    },
+    "win_by_bk": {
+      "FR": {
+        "val": "DR Congo",
+        "dec": 2.6,
+        "frac": "8/5"
+      },
+      "VC": {
+        "val": "DR Congo",
+        "dec": 2.55,
+        "frac": "31/20"
+      },
+      "BF": {
+        "val": "DR Congo",
+        "dec": 2.51,
+        "frac": "6/4"
+      },
+      "PP": {
+        "val": "DR Congo",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "QN": {
+        "val": "DR Congo",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "SK": {
+        "val": "DR Congo",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "UN": {
+        "val": "DR Congo",
+        "dec": 2.5,
+        "frac": "6/4"
+      },
+      "CUS": {
+        "val": "DR Congo",
+        "dec": 2.48,
+        "frac": "29/20"
+      },
+      "KN": {
+        "val": "DR Congo",
+        "dec": 2.48,
+        "frac": "29/20"
+      },
+      "VE": {
+        "val": "DR Congo",
+        "dec": 2.48,
+        "frac": "29/20"
+      },
+      "B3": {
+        "val": "DR Congo",
+        "dec": 2.45,
+        "frac": "29/20"
+      },
+      "BTT": {
+        "val": "DR Congo",
+        "dec": 2.4,
+        "frac": "7/5"
+      },
+      "G5": {
+        "val": "DR Congo",
+        "dec": 2.4,
+        "frac": "7/5"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "QN": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BF": {
+        "val": "3-1",
+        "dec": 1.01,
+        "frac": "1/100"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "croatia-v-ghana",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "L",
+    "local": "Croacia",
+    "visita": "Ghana",
+    "error": null,
+    "win_pred": "Croatia",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Croatia": 13
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 12,
+      "2-0": 1
+    },
+    "win_by_bk": {
+      "CUS": {
+        "val": "Croatia",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "KN": {
+        "val": "Croatia",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "VE": {
+        "val": "Croatia",
+        "dec": 1.75,
+        "frac": "3/4"
+      },
+      "FR": {
+        "val": "Croatia",
+        "dec": 1.73,
+        "frac": "8/11"
+      },
+      "UN": {
+        "val": "Croatia",
+        "dec": 1.73,
+        "frac": "8/11"
+      },
+      "B3": {
+        "val": "Croatia",
+        "dec": 1.727,
+        "frac": "8/11"
+      },
+      "BF": {
+        "val": "Croatia",
+        "dec": 1.7,
+        "frac": "4/6"
+      },
+      "PP": {
+        "val": "Croatia",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "QN": {
+        "val": "Croatia",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "SK": {
+        "val": "Croatia",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "VC": {
+        "val": "Croatia",
+        "dec": 1.7,
+        "frac": "7/10"
+      },
+      "BTT": {
+        "val": "Croatia",
+        "dec": 1.67,
+        "frac": "4/6"
+      },
+      "G5": {
+        "val": "Croatia",
+        "dec": 1.67,
+        "frac": "4/6"
+      }
+    },
+    "cs_by_bk": {
+      "B3": {
+        "val": "1-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "QN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "CUS": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "KN": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "VE": {
+        "val": "1-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "VC": {
+        "val": "1-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "BF": {
+        "val": "2-0",
+        "dec": 4.04,
+        "frac": "3/1"
+      },
+      "BTT": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "panama-v-england",
+    "fecha": "Jun 27",
+    "j": 3,
+    "grp": "L",
+    "local": "Panamá",
+    "visita": "Inglaterra",
+    "error": null,
+    "win_pred": "England",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "England": 13
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 12,
+      "1-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "England",
+        "dec": 1.23,
+        "frac": "2/9"
+      },
+      "B3": {
+        "val": "England",
+        "dec": 1.222,
+        "frac": "2/9"
+      },
+      "CUS": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "FR": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "KN": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "PP": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "QN": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "SK": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "UN": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "VC": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "VE": {
+        "val": "England",
+        "dec": 1.2,
+        "frac": "1/5"
+      },
+      "BTT": {
+        "val": "England",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "G5": {
+        "val": "England",
+        "dec": 1.17,
+        "frac": "1/6"
+      }
+    },
+    "cs_by_bk": {
+      "QN": {
+        "val": "2-0",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "FR": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "B3": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "1-0",
+        "dec": 3.84,
+        "frac": "14/5"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 5.8,
+        "frac": "24/5"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 5.75,
+        "frac": "19/4"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      }
+    }
+  },
+  {
+    "slug": "algeria-v-austria",
+    "fecha": "Jun 28",
+    "j": 3,
+    "grp": "J",
+    "local": "Argelia",
+    "visita": "Austria",
+    "error": null,
+    "win_pred": "Austria",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Austria": 13
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 12,
+      "3-0": 1
+    },
+    "win_by_bk": {
+      "BF": {
+        "val": "Austria",
+        "dec": 2.22,
+        "frac": "6/5"
+      },
+      "B3": {
+        "val": "Austria",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "FR": {
+        "val": "Austria",
+        "dec": 2.15,
+        "frac": "23/20"
+      },
+      "PP": {
+        "val": "Austria",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "QN": {
+        "val": "Austria",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "SK": {
+        "val": "Austria",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "UN": {
+        "val": "Austria",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "VC": {
+        "val": "Austria",
+        "dec": 2.1,
+        "frac": "11/10"
+      },
+      "CUS": {
+        "val": "Austria",
+        "dec": 2.08,
+        "frac": "27/25"
+      },
+      "KN": {
+        "val": "Austria",
+        "dec": 2.08,
+        "frac": "27/25"
+      },
+      "VE": {
+        "val": "Austria",
+        "dec": 2.08,
+        "frac": "27/25"
+      },
+      "BTT": {
+        "val": "Austria",
+        "dec": 2.05,
+        "frac": "21/20"
+      },
+      "G5": {
+        "val": "Austria",
+        "dec": 2.05,
+        "frac": "21/20"
+      }
+    },
+    "cs_by_bk": {
+      "QN": {
+        "val": "1-1",
+        "dec": 7,
+        "frac": "6/1"
+      },
+      "B3": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "FR": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "SK": {
+        "val": "1-1",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "CUS": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "KN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "PP": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "UN": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VC": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "VE": {
+        "val": "1-1",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "3-0",
+        "dec": 1.01,
+        "frac": "1/100"
+      },
+      "BTT": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "G5": {
+        "val": "1-1",
+        "dec": 5.5,
+        "frac": "9/2"
+      }
+    }
+  },
+  {
+    "slug": "jordan-v-argentina",
+    "fecha": "Jun 28",
+    "j": 3,
+    "grp": "J",
+    "local": "Jordania",
+    "visita": "Argentina",
+    "error": null,
+    "win_pred": "Argentina",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Argentina": 13
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 12,
+      "0-0": 1
+    },
+    "win_by_bk": {
+      "FR": {
+        "val": "Argentina",
+        "dec": 1.18,
+        "frac": "2/11"
+      },
+      "BF": {
+        "val": "Argentina",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "CUS": {
+        "val": "Argentina",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "KN": {
+        "val": "Argentina",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "UN": {
+        "val": "Argentina",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "VE": {
+        "val": "Argentina",
+        "dec": 1.17,
+        "frac": "1/6"
+      },
+      "B3": {
+        "val": "Argentina",
+        "dec": 1.167,
+        "frac": "1/6"
+      },
+      "QN": {
+        "val": "Argentina",
+        "dec": 1.15,
+        "frac": "2/13"
+      },
+      "VC": {
+        "val": "Argentina",
+        "dec": 1.15,
+        "frac": "2/13"
+      },
+      "PP": {
+        "val": "Argentina",
+        "dec": 1.1428572,
+        "frac": "1/7"
+      },
+      "SK": {
+        "val": "Argentina",
+        "dec": 1.1428572,
+        "frac": "1/7"
+      },
+      "BTT": {
+        "val": "Argentina",
+        "dec": 1.13,
+        "frac": "1/8"
+      },
+      "G5": {
+        "val": "Argentina",
+        "dec": 1.13,
+        "frac": "1/8"
+      }
+    },
+    "cs_by_bk": {
+      "QN": {
+        "val": "2-0",
+        "dec": 6.5,
+        "frac": "11/2"
+      },
+      "B3": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "FR": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "SK": {
+        "val": "2-0",
+        "dec": 6,
+        "frac": "5/1"
+      },
+      "BF": {
+        "val": "0-0",
+        "dec": 5.12,
+        "frac": "103/25"
+      },
+      "CUS": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "KN": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "VE": {
+        "val": "2-0",
+        "dec": 5.6,
+        "frac": "23/5"
+      },
+      "PP": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "UN": {
+        "val": "2-0",
+        "dec": 5.5,
+        "frac": "9/2"
+      },
+      "BTT": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "G5": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      },
+      "VC": {
+        "val": "2-0",
+        "dec": 5.25,
+        "frac": "17/4"
+      }
+    }
+  }
+]

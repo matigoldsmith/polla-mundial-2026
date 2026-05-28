@@ -1,0 +1,1268 @@
+[
+  {
+    "slug": "curacao-v-ivory-coast",
+    "fecha": "Jun 25",
+    "hora": "16:00",
+    "ciudad": "Philadelphia",
+    "j": 3,
+    "grp": "E",
+    "local": "Curazao",
+    "visita": "C. de Marfil",
+    "error": null,
+    "win_pred": "Ivory Coast",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Ivory Coast": 4
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 3,
+      "1-1": 1
+    },
+    "win_table": {
+      "BF": {
+        "Ivory Coast": 1.3,
+        "Draw": 5.12,
+        "Curacao": 11.8
+      },
+      "UN": {
+        "Ivory Coast": 1.29,
+        "Draw": 5.25,
+        "Curacao": 9.5
+      },
+      "VC": {
+        "Ivory Coast": 1.29,
+        "Draw": 5.25,
+        "Curacao": 10.5
+      },
+      "B3": {
+        "Ivory Coast": 1.29,
+        "Draw": 5,
+        "Curacao": 8.5
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6,
+        "BF": 5.8,
+        "UN": 5.5,
+        "VC": 5.5
+      },
+      "1-0": {
+        "B3": 7,
+        "BF": 5.41,
+        "UN": 6,
+        "VC": 6
+      },
+      "3-0": {
+        "B3": 8,
+        "BF": 6.1,
+        "UN": 7.5,
+        "VC": 7.5
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 9,
+        "VC": 8.5,
+        "BF": 5.61
+      },
+      "1-1": {
+        "B3": 11,
+        "UN": 10,
+        "VC": 9.5,
+        "BF": 4.33
+      },
+      "3-1": {
+        "B3": 13,
+        "UN": 12,
+        "BF": 6.1,
+        "VC": 10.5
+      },
+      "0-0": {
+        "BF": 14.2,
+        "UN": 13,
+        "B3": 12,
+        "VC": 12
+      },
+      "4-0": {
+        "B3": 13,
+        "UN": 13,
+        "VC": 13
+      }
+    }
+  },
+  {
+    "slug": "ecuador-v-germany",
+    "fecha": "Jun 25",
+    "hora": "16:00",
+    "ciudad": "Nueva York",
+    "j": 3,
+    "grp": "E",
+    "local": "Ecuador",
+    "visita": "Alemania",
+    "error": null,
+    "win_pred": "Germany",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Germany": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "1-1": 1
+    },
+    "win_table": {
+      "BF": {
+        "Germany": 1.66,
+        "Draw": 3.79,
+        "Ecuador": 5.21
+      },
+      "B3": {
+        "Germany": 1.65,
+        "Draw": 3.75,
+        "Ecuador": 5
+      },
+      "UN": {
+        "Germany": 1.65,
+        "Draw": 3.8,
+        "Ecuador": 5
+      },
+      "VC": {
+        "Germany": 1.65,
+        "Draw": 3.9,
+        "Ecuador": 5
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "BF": 4.92,
+        "VC": 6.5
+      },
+      "1-1": {
+        "B3": 7.5,
+        "UN": 7.5,
+        "VC": 7,
+        "BF": 3.94
+      },
+      "2-0": {
+        "B3": 8,
+        "BF": 5.7,
+        "UN": 7.5,
+        "VC": 7.5
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "BF": 5.12,
+        "VC": 7.5
+      },
+      "3-0": {
+        "B3": 13,
+        "UN": 12,
+        "VC": 12,
+        "BF": 4.72
+      },
+      "3-1": {
+        "B3": 15,
+        "UN": 13,
+        "VC": 12,
+        "BF": 4.82
+      },
+      "0-0": {
+        "VC": 13,
+        "BF": 11.8,
+        "B3": 11,
+        "UN": 11
+      },
+      "2-2": {
+        "B3": 17,
+        "UN": 16,
+        "VC": 15,
+        "BF": 5.02
+      }
+    }
+  },
+  {
+    "slug": "japan-v-sweden",
+    "fecha": "Jun 25",
+    "hora": "19:00",
+    "ciudad": "Dallas",
+    "j": 3,
+    "grp": "F",
+    "local": "Japón",
+    "visita": "Suecia",
+    "error": null,
+    "win_pred": "Japan",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Japan": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3
+    },
+    "win_table": {
+      "BF": {
+        "Japan": 2.16,
+        "Draw": 3.4,
+        "Sweden": 3.3
+      },
+      "UN": {
+        "Japan": 2.08,
+        "Draw": 3.3,
+        "Sweden": 3.5
+      },
+      "B3": {
+        "Japan": 2.05,
+        "Draw": 3.4,
+        "Sweden": 3.5
+      },
+      "VC": {
+        "Japan": 2.05,
+        "Draw": 3.4,
+        "Sweden": 3.5
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 7,
+        "UN": 6,
+        "VC": 6
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 6.5
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 9,
+        "VC": 8
+      },
+      "2-0": {
+        "B3": 10,
+        "UN": 9.5,
+        "VC": 9.5
+      },
+      "0-0": {
+        "VC": 10.5,
+        "B3": 9.5,
+        "UN": 9
+      },
+      "2-2": {
+        "B3": 17,
+        "UN": 15,
+        "VC": 14
+      },
+      "3-1": {
+        "B3": 19,
+        "UN": 17,
+        "VC": 16
+      },
+      "3-0": {
+        "B3": 19,
+        "UN": 18,
+        "VC": 18
+      }
+    }
+  },
+  {
+    "slug": "tunisia-v-netherlands",
+    "fecha": "Jun 25",
+    "hora": "19:00",
+    "ciudad": "Kansas City",
+    "j": 3,
+    "grp": "F",
+    "local": "Túnez",
+    "visita": "Países Bajos",
+    "error": null,
+    "win_pred": "Netherlands",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Netherlands": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "2-2": 1
+    },
+    "win_table": {
+      "UN": {
+        "Netherlands": 1.54,
+        "Draw": 4,
+        "Tunisia": 5.75
+      },
+      "B3": {
+        "Netherlands": 1.53,
+        "Draw": 4.1,
+        "Tunisia": 5.75
+      },
+      "BF": {
+        "Netherlands": 1.5,
+        "Draw": 4.04,
+        "Tunisia": 6.68
+      },
+      "VC": {
+        "Netherlands": 1.5,
+        "Draw": 4.1,
+        "Tunisia": 6.5
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "VC": 6,
+        "BF": 5.9
+      },
+      "2-0": {
+        "B3": 7,
+        "UN": 7,
+        "BF": 5.02,
+        "VC": 6.5
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 7.5,
+        "BF": 4.63
+      },
+      "1-1": {
+        "B3": 8.5,
+        "UN": 7.5,
+        "VC": 7.5,
+        "BF": 7.08
+      },
+      "3-0": {
+        "B3": 11,
+        "UN": 11,
+        "VC": 10.5,
+        "BF": 5.31
+      },
+      "3-1": {
+        "B3": 13,
+        "UN": 13,
+        "BF": 5.21,
+        "VC": 11.5
+      },
+      "0-0": {
+        "VC": 13,
+        "BF": 11.3,
+        "B3": 11,
+        "UN": 10.5
+      },
+      "2-2": {
+        "B3": 21,
+        "UN": 19,
+        "VC": 17,
+        "BF": 4.53
+      }
+    }
+  },
+  {
+    "slug": "paraguay-v-australia",
+    "fecha": "Jun 25",
+    "hora": "22:00",
+    "ciudad": "San Francisco",
+    "j": 3,
+    "grp": "D",
+    "local": "Paraguay",
+    "visita": "Australia",
+    "error": null,
+    "win_pred": "Paraguay",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Paraguay": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3,
+      "3-0": 1
+    },
+    "win_table": {
+      "VC": {
+        "Paraguay": 2.2,
+        "Draw": 3.2,
+        "Australia": 3.4
+      },
+      "BF": {
+        "Paraguay": 2.18,
+        "Draw": 3.06,
+        "Australia": 3.6
+      },
+      "B3": {
+        "Paraguay": 2.15,
+        "Draw": 3.2,
+        "Australia": 3.4
+      },
+      "UN": {
+        "Paraguay": 2.15,
+        "Draw": 3.2,
+        "Australia": 3.4
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 6,
+        "BF": 5.51
+      },
+      "1-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "BF": 6.1,
+        "VC": 6
+      },
+      "0-0": {
+        "VC": 9,
+        "B3": 8,
+        "UN": 8,
+        "BF": 7.66
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 9.5,
+        "VC": 8.5,
+        "BF": 8.25
+      },
+      "2-0": {
+        "B3": 10,
+        "BF": 9.82,
+        "UN": 9.5,
+        "VC": 9.5
+      },
+      "3-1": {
+        "B3": 21,
+        "BF": 1.01,
+        "UN": 19,
+        "VC": 18
+      },
+      "3-0": {
+        "B3": 21,
+        "VC": 20,
+        "UN": 19,
+        "BF": 1.01
+      },
+      "2-2": {
+        "B3": 17,
+        "UN": 17,
+        "VC": 16,
+        "BF": 14.7
+      }
+    }
+  },
+  {
+    "slug": "turkey-v-usa",
+    "fecha": "Jun 25",
+    "hora": "22:00",
+    "ciudad": "Los Ángeles",
+    "j": 3,
+    "grp": "D",
+    "local": "Turquía",
+    "visita": "USA",
+    "error": null,
+    "win_pred": "USA",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "USA": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3,
+      "3-1": 1
+    },
+    "win_table": {
+      "UN": {
+        "USA": 2.5,
+        "Turkey": 2.7,
+        "Draw": 3.35
+      },
+      "VC": {
+        "USA": 2.5,
+        "Turkey": 2.75,
+        "Draw": 3.3
+      },
+      "BF": {
+        "USA": 2.49,
+        "Turkey": 2.72,
+        "Draw": 3.16
+      },
+      "B3": {
+        "USA": 2.45,
+        "Turkey": 2.7,
+        "Draw": 3.4
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 7,
+        "UN": 6.5,
+        "VC": 6,
+        "BF": 5.8
+      },
+      "1-0": {
+        "B3": 9,
+        "UN": 8,
+        "VC": 8,
+        "BF": 7.86
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 10,
+        "BF": 9.04,
+        "VC": 9
+      },
+      "0-0": {
+        "VC": 11,
+        "B3": 10,
+        "UN": 10,
+        "BF": 9.62
+      },
+      "2-0": {
+        "B3": 13,
+        "BF": 12.3,
+        "UN": 12,
+        "VC": 12
+      },
+      "2-2": {
+        "B3": 15,
+        "UN": 14,
+        "VC": 13,
+        "BF": 12.8
+      },
+      "3-1": {
+        "B3": 21,
+        "UN": 21,
+        "VC": 19,
+        "BF": 1.01
+      },
+      "3-0": {
+        "B3": 26,
+        "UN": 26,
+        "VC": 26,
+        "BF": 1.01
+      }
+    }
+  },
+  {
+    "slug": "norway-v-france",
+    "fecha": "Jun 26",
+    "hora": "15:00",
+    "ciudad": "Boston",
+    "j": 3,
+    "grp": "I",
+    "local": "Noruega",
+    "visita": "Francia",
+    "error": "no markets",
+    "win_table": {},
+    "cs_top": {}
+  },
+  {
+    "slug": "senegal-v-iraq",
+    "fecha": "Jun 26",
+    "hora": "15:00",
+    "ciudad": "Toronto",
+    "j": 3,
+    "grp": "I",
+    "local": "Senegal",
+    "visita": "Irak",
+    "error": "no markets",
+    "win_table": {},
+    "cs_top": {}
+  },
+  {
+    "slug": "cape-verde-v-saudi-arabia",
+    "fecha": "Jun 26",
+    "hora": "20:00",
+    "ciudad": "Houston",
+    "j": 3,
+    "grp": "H",
+    "local": "Cabo Verde",
+    "visita": "Arabia Saudita",
+    "error": "no markets",
+    "win_table": {},
+    "cs_top": {}
+  },
+  {
+    "slug": "uruguay-v-spain",
+    "fecha": "Jun 26",
+    "hora": "20:00",
+    "ciudad": "Guadalajara",
+    "j": 3,
+    "grp": "H",
+    "local": "Uruguay",
+    "visita": "España",
+    "error": null,
+    "win_pred": "Spain",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Spain": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "3-2": 1
+    },
+    "win_table": {
+      "UN": {
+        "Spain": 1.62,
+        "Draw": 3.9,
+        "Uruguay": 5.25
+      },
+      "B3": {
+        "Spain": 1.61,
+        "Draw": 3.9,
+        "Uruguay": 5
+      },
+      "VC": {
+        "Spain": 1.6,
+        "Draw": 3.9,
+        "Uruguay": 5.25
+      },
+      "BF": {
+        "Spain": 1.59,
+        "Draw": 3.84,
+        "Uruguay": 4.92
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 7,
+        "UN": 7,
+        "VC": 6.5,
+        "BF": 6.1
+      },
+      "2-0": {
+        "B3": 8,
+        "UN": 7.5,
+        "BF": 4.14,
+        "VC": 7
+      },
+      "1-1": {
+        "B3": 8,
+        "UN": 7.5,
+        "VC": 7,
+        "BF": 6.88
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 7.5,
+        "BF": 7.27
+      },
+      "3-0": {
+        "B3": 13,
+        "UN": 12,
+        "VC": 12,
+        "BF": 4.33
+      },
+      "3-1": {
+        "B3": 15,
+        "UN": 13,
+        "BF": 4.23,
+        "VC": 12
+      },
+      "0-0": {
+        "VC": 13,
+        "BF": 11.3,
+        "B3": 11,
+        "UN": 11
+      },
+      "2-2": {
+        "B3": 19,
+        "UN": 17,
+        "VC": 16,
+        "BF": 15.2
+      }
+    }
+  },
+  {
+    "slug": "egypt-v-iran",
+    "fecha": "Jun 26",
+    "hora": "23:00",
+    "ciudad": "Seattle",
+    "j": 3,
+    "grp": "G",
+    "local": "Egipto",
+    "visita": "Irán",
+    "error": null,
+    "win_pred": "Egypt",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Egypt": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3
+    },
+    "win_table": {
+      "B3": {
+        "Egypt": 2.45,
+        "Draw": 2.88,
+        "Iran": 3.2
+      },
+      "BF": {
+        "Egypt": 2.43,
+        "Draw": 2.78,
+        "Iran": 3.2
+      },
+      "UN": {
+        "Egypt": 2.4,
+        "Draw": 2.95,
+        "Iran": 3.15
+      },
+      "VC": {
+        "Egypt": 2.4,
+        "Draw": 3,
+        "Iran": 3.2
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6,
+        "UN": 5.75,
+        "VC": 5.75
+      },
+      "1-0": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 5.75
+      },
+      "0-0": {
+        "VC": 7.5,
+        "UN": 6.5,
+        "B3": 6
+      },
+      "2-1": {
+        "B3": 11,
+        "UN": 10.5,
+        "VC": 9.5
+      },
+      "2-0": {
+        "B3": 11,
+        "UN": 10.5,
+        "VC": 10
+      },
+      "2-2": {
+        "B3": 19,
+        "UN": 18,
+        "VC": 18
+      },
+      "3-1": {
+        "B3": 26,
+        "UN": 23,
+        "VC": 22
+      },
+      "3-0": {
+        "B3": 26,
+        "UN": 23,
+        "VC": 23
+      }
+    }
+  },
+  {
+    "slug": "new-zealand-v-belgium",
+    "fecha": "Jun 26",
+    "hora": "23:00",
+    "ciudad": "Vancouver",
+    "j": 3,
+    "grp": "G",
+    "local": "Nueva Zelanda",
+    "visita": "Bélgica",
+    "error": "no markets",
+    "win_table": {},
+    "cs_top": {}
+  },
+  {
+    "slug": "panama-v-england",
+    "fecha": "Jun 27",
+    "hora": "17:00",
+    "ciudad": "Nueva York",
+    "j": 3,
+    "grp": "L",
+    "local": "Panamá",
+    "visita": "Inglaterra",
+    "error": "no markets",
+    "win_table": {},
+    "cs_top": {}
+  },
+  {
+    "slug": "croatia-v-ghana",
+    "fecha": "Jun 27",
+    "hora": "17:00",
+    "ciudad": "Philadelphia",
+    "j": 3,
+    "grp": "L",
+    "local": "Croacia",
+    "visita": "Ghana",
+    "error": null,
+    "win_pred": "Croatia",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Croatia": 4
+    },
+    "cs_pred": "1-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-0": 3,
+      "2-0": 1
+    },
+    "win_table": {
+      "UN": {
+        "Croatia": 1.73,
+        "Draw": 3.6,
+        "Ghana": 4.75
+      },
+      "B3": {
+        "Croatia": 1.73,
+        "Draw": 3.6,
+        "Ghana": 4.5
+      },
+      "VC": {
+        "Croatia": 1.7,
+        "Draw": 3.6,
+        "Ghana": 5
+      },
+      "BF": {
+        "Croatia": 1.68,
+        "Draw": 3.45,
+        "Ghana": 5.21
+      }
+    },
+    "cs_top": {
+      "1-0": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 5.75,
+        "BF": 5.51
+      },
+      "2-0": {
+        "B3": 8,
+        "UN": 7.5,
+        "BF": 4.14,
+        "VC": 7
+      },
+      "1-1": {
+        "B3": 7.5,
+        "UN": 7,
+        "VC": 6.5,
+        "BF": 6.29
+      },
+      "2-1": {
+        "B3": 9,
+        "UN": 8.5,
+        "VC": 8,
+        "BF": 7.47
+      },
+      "0-0": {
+        "VC": 10.5,
+        "BF": 9.04,
+        "B3": 9,
+        "UN": 9
+      },
+      "3-0": {
+        "B3": 15,
+        "BF": 4.33,
+        "UN": 13,
+        "VC": 13
+      },
+      "3-1": {
+        "B3": 17,
+        "UN": 15,
+        "BF": 4.23,
+        "VC": 14
+      },
+      "2-2": {
+        "B3": 21,
+        "UN": 18,
+        "VC": 17,
+        "BF": 16.2
+      }
+    }
+  },
+  {
+    "slug": "colombia-v-portugal",
+    "fecha": "Jun 27",
+    "hora": "19:30",
+    "ciudad": "Miami",
+    "j": 3,
+    "grp": "K",
+    "local": "Colombia",
+    "visita": "Portugal",
+    "error": null,
+    "win_pred": "Portugal",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Portugal": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 4
+    },
+    "win_table": {
+      "BF": {
+        "Portugal": 2.16,
+        "Draw": 3.2,
+        "Colombia": 3.45
+      },
+      "B3": {
+        "Portugal": 2.15,
+        "Draw": 3.25,
+        "Colombia": 3.4
+      },
+      "UN": {
+        "Portugal": 2.1,
+        "Draw": 3.25,
+        "Colombia": 3.45
+      },
+      "VC": {
+        "Portugal": 2.1,
+        "Draw": 3.3,
+        "Colombia": 3.5
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 6,
+        "BF": 1.01
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "BF": 6.68,
+        "VC": 6.5
+      },
+      "2-1": {
+        "B3": 9.5,
+        "UN": 9,
+        "VC": 8.5,
+        "BF": 1.01
+      },
+      "2-0": {
+        "B3": 11,
+        "BF": 1.01,
+        "UN": 9.5,
+        "VC": 9.5
+      },
+      "0-0": {
+        "VC": 10.5,
+        "BF": 9.04,
+        "B3": 9,
+        "UN": 9
+      },
+      "3-1": {
+        "B3": 19,
+        "UN": 18,
+        "VC": 16,
+        "BF": 1.01
+      },
+      "2-2": {
+        "B3": 15,
+        "UN": 15,
+        "VC": 14,
+        "BF": 13.3
+      },
+      "3-0": {
+        "B3": 21,
+        "UN": 19,
+        "VC": 19,
+        "BF": 1.01
+      }
+    }
+  },
+  {
+    "slug": "dr-congo-v-uzbekistan",
+    "fecha": "Jun 27",
+    "hora": "19:30",
+    "ciudad": "Atlanta",
+    "j": 3,
+    "grp": "K",
+    "local": "RD Congo",
+    "visita": "Uzbekistán",
+    "error": null,
+    "win_pred": "DR Congo",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "DR Congo": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3,
+      "3-1": 1
+    },
+    "win_table": {
+      "VC": {
+        "DR Congo": 2.55,
+        "Uzbekistan": 2.8,
+        "Draw": 3.12
+      },
+      "BF": {
+        "DR Congo": 2.51,
+        "Uzbekistan": 2.8,
+        "Draw": 3.01
+      },
+      "UN": {
+        "DR Congo": 2.5,
+        "Uzbekistan": 2.8,
+        "Draw": 3.2
+      },
+      "B3": {
+        "DR Congo": 2.45,
+        "Uzbekistan": 2.8,
+        "Draw": 3.3
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 5.75,
+        "BF": 5.7
+      },
+      "1-0": {
+        "B3": 7.5,
+        "BF": 7.08,
+        "UN": 7,
+        "VC": 7
+      },
+      "0-0": {
+        "VC": 9,
+        "BF": 8.25,
+        "B3": 8,
+        "UN": 8
+      },
+      "2-1": {
+        "B3": 11,
+        "UN": 10,
+        "VC": 9.5,
+        "BF": 9.43
+      },
+      "2-0": {
+        "BF": 12.8,
+        "B3": 12,
+        "VC": 11.5,
+        "UN": 11
+      },
+      "2-2": {
+        "B3": 19,
+        "UN": 16,
+        "VC": 15,
+        "BF": 14.7
+      },
+      "3-1": {
+        "B3": 23,
+        "UN": 23,
+        "VC": 21,
+        "BF": 1.01
+      },
+      "3-0": {
+        "B3": 26,
+        "UN": 26,
+        "VC": 26,
+        "BF": 1.01
+      }
+    }
+  },
+  {
+    "slug": "algeria-v-austria",
+    "fecha": "Jun 27",
+    "hora": "22:00",
+    "ciudad": "Kansas City",
+    "j": 3,
+    "grp": "J",
+    "local": "Argelia",
+    "visita": "Austria",
+    "error": null,
+    "win_pred": "Austria",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Austria": 4
+    },
+    "cs_pred": "1-1",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "1-1": 3,
+      "3-1": 1
+    },
+    "win_table": {
+      "BF": {
+        "Austria": 2.22,
+        "Draw": 3.01,
+        "Algeria": 3.4
+      },
+      "B3": {
+        "Austria": 2.15,
+        "Draw": 3.2,
+        "Algeria": 3.5
+      },
+      "UN": {
+        "Austria": 2.1,
+        "Draw": 3.2,
+        "Algeria": 3.45
+      },
+      "VC": {
+        "Austria": 2.1,
+        "Draw": 3.3,
+        "Algeria": 3.5
+      }
+    },
+    "cs_top": {
+      "1-1": {
+        "B3": 6.5,
+        "UN": 6,
+        "VC": 6,
+        "BF": 5.7
+      },
+      "1-0": {
+        "B3": 7.5,
+        "UN": 7,
+        "BF": 6.88,
+        "VC": 6.5
+      },
+      "0-0": {
+        "VC": 10,
+        "B3": 8.5,
+        "UN": 8.5,
+        "BF": 8.45
+      },
+      "2-1": {
+        "B3": 10,
+        "UN": 9.5,
+        "BF": 8.84,
+        "VC": 8.5
+      },
+      "2-0": {
+        "BF": 10.3,
+        "B3": 10,
+        "UN": 9.5,
+        "VC": 9.5
+      },
+      "3-1": {
+        "B3": 21,
+        "BF": 1.01,
+        "UN": 18,
+        "VC": 17
+      },
+      "3-0": {
+        "B3": 21,
+        "UN": 19,
+        "VC": 19,
+        "BF": 1.01
+      },
+      "2-2": {
+        "B3": 17,
+        "UN": 16,
+        "VC": 15,
+        "BF": 13.7
+      }
+    }
+  },
+  {
+    "slug": "jordan-v-argentina",
+    "fecha": "Jun 27",
+    "hora": "22:00",
+    "ciudad": "Dallas",
+    "j": 3,
+    "grp": "J",
+    "local": "Jordania",
+    "visita": "Argentina",
+    "error": null,
+    "win_pred": "Argentina",
+    "win_nivel": "🟢",
+    "win_votes": {
+      "Argentina": 4
+    },
+    "cs_pred": "2-0",
+    "cs_nivel": "🟢",
+    "cs_votes": {
+      "2-0": 3,
+      "0-0": 1
+    },
+    "win_table": {
+      "BF": {
+        "Argentina": 1.17,
+        "Draw": 7.47,
+        "Jordan": 21
+      },
+      "UN": {
+        "Argentina": 1.17,
+        "Draw": 7,
+        "Jordan": 14
+      },
+      "B3": {
+        "Argentina": 1.17,
+        "Draw": 7,
+        "Jordan": 12
+      },
+      "VC": {
+        "Argentina": 1.15,
+        "Draw": 7,
+        "Jordan": 17
+      }
+    },
+    "cs_top": {
+      "2-0": {
+        "B3": 6,
+        "BF": 5.7,
+        "UN": 5.5,
+        "VC": 5.25
+      },
+      "3-0": {
+        "B3": 7,
+        "UN": 6.5,
+        "BF": 6.1,
+        "VC": 6
+      },
+      "1-0": {
+        "B3": 8,
+        "BF": 5.61,
+        "UN": 7,
+        "VC": 7
+      },
+      "2-1": {
+        "B3": 11,
+        "UN": 10,
+        "BF": 5.7,
+        "VC": 9.5
+      },
+      "4-0": {
+        "B3": 10,
+        "UN": 9.5,
+        "VC": 9
+      },
+      "3-1": {
+        "B3": 12,
+        "BF": 6.1,
+        "UN": 11,
+        "VC": 10.5
+      },
+      "0-0": {
+        "UN": 18,
+        "B3": 17,
+        "VC": 16,
+        "BF": 5.12
+      },
+      "1-1": {
+        "B3": 15,
+        "BF": 14.2,
+        "UN": 14,
+        "VC": 13
+      }
+    }
+  }
+]
