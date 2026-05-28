@@ -73,6 +73,54 @@ function fmtUpdated(iso){
   }catch(e){return'';}
 }
 
+// ── DISPATCH HELPER ────────────────────────────────────────────────────────
+async function ghDispatch(inputs={}){
+  const token=ghToken();
+  if(!token){showUpdateStatus('error','Sin token');return false;}
+  const resp=await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,{
+    method:'POST',
+    headers:{'Authorization':'token '+token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'},
+    body:JSON.stringify({ref:'main',inputs})
+  });
+  return resp.status===204;
+}
+
+// ── UPDATE ALL (from Partidos tab) ─────────────────────────────────────────
+async function triggerUpdateAll(btnEl){
+  if(btnEl){btnEl.disabled=true;btnEl.textContent='Enviando…';}
+  const ok=await ghDispatch({});
+  if(ok){
+    showUpdateStatus('info','Actualizando todo… (~3-4 min)');
+    if(btnEl){btnEl.textContent='↻ Todos';btnEl.disabled=false;}
+    // also refresh run list
+    loadRunStatus();
+  } else {
+    showUpdateStatus('error','Error al disparar workflow');
+    if(btnEl){btnEl.textContent='↻ Todos';btnEl.disabled=false;}
+  }
+}
+
+// ── UPDATE BY DAY ──────────────────────────────────────────────────────────
+async function triggerUpdateDay(fecha){
+  const btnEl=document.getElementById('dbtn_day_'+fecha.replace(' ','_'));
+  if(btnEl){btnEl.disabled=true;btnEl.textContent='Enviando…';}
+  // Dispatch one workflow per non-started match in this day, 1.5s apart
+  const dayMatches=DATA.map((m,i)=>({m,i})).filter(({m})=>m.fecha===fecha&&!isMatchStarted(m));
+  if(!dayMatches.length){
+    if(btnEl){btnEl.disabled=false;btnEl.textContent='↻ Día';}
+    return;
+  }
+  let sent=0;
+  for(const {m,i} of dayMatches){
+    const ok=await ghDispatch({match_id:String(i)});
+    if(ok)sent++;
+    if(dayMatches.indexOf({m,i})<dayMatches.length-1)await new Promise(r=>setTimeout(r,1500));
+  }
+  showUpdateStatus('info',`${sent} partido(s) de ${fecha} en actualización (~2 min c/u)`);
+  if(btnEl){btnEl.textContent='↻ Día';btnEl.disabled=false;}
+  loadRunStatus();
+}
+
 // ── PER-MATCH REFRESH ──────────────────────────────────────────────────────
 async function triggerUpdateForMatch(matchIdx,btnEl){
   const token=ghToken();
@@ -156,11 +204,16 @@ dateKeys.forEach(fecha=>{
   const dayId='day_'+fecha.replace(' ','_');
   dayAnchors[fecha]=dayId;
 
-  // Sticky date header (acts as collapse toggle)
+  // Sticky date header with collapse toggle + day-update button
   const dayHdr=document.createElement('div');
   dayHdr.className='day-header';
   dayHdr.id=dayId;
-  dayHdr.innerHTML=`<span class="day-label">${DOW[fecha]||fecha}</span><span class="day-chevron" id="dchv_${dayId}">&#8964;</span>`;
+  const dayMatches=byDate[fecha];
+  const allStarted=dayMatches.every(m=>isMatchStarted(m));
+  const dayBtnHtml=allStarted
+    ?''
+    :`<button class="day-update-btn" id="dbtn_${dayId}" onclick="event.stopPropagation();triggerUpdateDay('${fecha}')" title="Actualizar cuotas de este día">↻ Día</button>`;
+  dayHdr.innerHTML=`<span class="day-label">${DOW[fecha]||fecha}</span><div class="day-hdr-right">${dayBtnHtml}<span class="day-chevron" id="dchv_${dayId}">&#8964;</span></div>`;
   dayHdr.addEventListener('click',()=>toggleDay(dayId));
   block.appendChild(dayHdr);
 
@@ -449,7 +502,7 @@ a{{color:inherit;text-decoration:none}}
 .header-sub{{font-size:11px;color:var(--text-muted);white-space:nowrap}}
 
 /* ── DAY JUMP SELECT ──────────────────────────────────────────────────────── */
-.jump-wrap{{margin-bottom:16px;position:relative}}
+.jump-wrap{{margin-bottom:0;position:relative}}
 .jump-wrap::after{{
   content:'';position:absolute;right:12px;top:50%;transform:translateY(-50%);
   width:0;height:0;
@@ -466,6 +519,21 @@ a{{color:inherit;text-decoration:none}}
 #day-jump:focus{{outline:none;border-color:var(--accent)}}
 
 /* ── DAY BLOCKS ───────────────────────────────────────────────────────────── */
+/* ── PARTIDOS TOOLBAR ─────────────────────────────────────────────────────── */
+.partidos-toolbar{{
+  display:flex;align-items:center;gap:8px;margin-bottom:16px;
+}}
+.partidos-toolbar .jump-wrap{{flex:1;margin-bottom:0;}}
+.toolbar-update-btn{{
+  flex-shrink:0;height:40px;padding:0 14px;
+  background:var(--accent);color:#fff;border:none;
+  border-radius:8px;font-size:13px;font-weight:600;
+  cursor:pointer;white-space:nowrap;
+  transition:opacity .15s;
+}}
+.toolbar-update-btn:hover{{opacity:.88}}
+.toolbar-update-btn:disabled{{opacity:.5;cursor:default}}
+
 .day-block{{margin-bottom:6px}}
 
 .day-header{{
@@ -477,6 +545,16 @@ a{{color:inherit;text-decoration:none}}
   font-size:12px;font-weight:700;letter-spacing:.6px;
   color:var(--text-secondary);text-transform:uppercase;
 }}
+.day-hdr-right{{display:flex;align-items:center;gap:8px;}}
+.day-update-btn{{
+  height:26px;padding:0 10px;
+  background:#f4f4f2;border:1px solid #e0e0da;
+  color:var(--text-muted);font-size:11px;font-weight:600;
+  cursor:pointer;border-radius:6px;white-space:nowrap;
+  transition:background .15s,color .15s,border-color .15s;
+}}
+.day-update-btn:hover{{background:#eaeae6;color:var(--accent);border-color:var(--accent)}}
+.day-update-btn:disabled{{opacity:.5;cursor:default}}
 .day-chevron{{
   font-size:18px;color:var(--text-muted);
   transition:transform .2s;display:inline-block;line-height:1;
@@ -767,10 +845,13 @@ a{{color:inherit;text-decoration:none}}
       <div class="header-title">⚽ Polla Mundial 2026</div>
       <div class="header-sub">Actualizado: {now}</div>
     </div>
-    <div class="jump-wrap">
-      <select id="day-jump">
-        <option value="">Ir a un día…</option>
-      </select>
+    <div class="partidos-toolbar">
+      <div class="jump-wrap">
+        <select id="day-jump">
+          <option value="">Ir a un día…</option>
+        </select>
+      </div>
+      <button class="toolbar-update-btn" id="btn-update-all" onclick="triggerUpdateAll(this)" title="Actualizar cuotas de todos los partidos pendientes">↻ Todos</button>
     </div>
     <div id="root"></div>
   </div>
