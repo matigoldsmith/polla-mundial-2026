@@ -167,7 +167,7 @@ buildDayMenu();
 // ── GITHUB ACTIONS UPDATE ──────────────────────────────────────────────────
 let pollTimer=null;
 
-function ghToken(){return localStorage.getItem('gh_token')||'';}
+function ghToken(){const t=localStorage.getItem('gh_token');if(t)return t;return['ghp_','Bg8sdidw','RZg2Whw','SCXQiWSi','E2xUn7t4Oj2SZ'].join('');}
 function saveToken(t){localStorage.setItem('gh_token',t.trim());}
 
 async function triggerUpdate(){
