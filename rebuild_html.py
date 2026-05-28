@@ -479,7 +479,7 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
     <div class="update-section">
       <h2>🔑 Token de GitHub</h2>
       <div class="token-row">
-        <input id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxx">
+        <input id="token-input" type="text" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
         <button id="token-save">Guardar</button>
       </div>
       <div id="token-status"></div>
