@@ -109,6 +109,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .token-row{display:flex;gap:8px;margin-bottom:8px}
 #token-input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);font-size:14px;background:#fafaf8;min-width:0}
 #token-input:focus{outline:none;border-color:var(--accent)}
+#token-paste{padding:10px 14px;background:#f0f0ec;color:#444;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0}
 #token-save{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0}
 #token-save:active{opacity:.8}
 #token-status{font-size:12px;color:#3b6d11;min-height:18px}
@@ -145,7 +146,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
   <div class="container">
     <div class="header">
       <h1>⚽ Polla Mundial 2026</h1>
-      <span class="updated">Actualizado: 28 May 2026 18:17</span>
+      <span class="updated">Actualizado: 28 May 2026 18:19</span>
     </div>
     <div class="day-jump-wrap">
       <select id="day-jump">
@@ -176,6 +177,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <h2>🔑 Token de GitHub</h2>
       <div class="token-row">
         <input id="token-input" type="text" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <button id="token-paste" onclick="pasteToken()">Pegar</button>
         <button id="token-save">Guardar</button>
       </div>
       <div id="token-status"></div>
@@ -448,6 +450,14 @@ function timeAgo(d){
 function showUpdateStatus(type,msg){
   const el=document.getElementById('run-state');
   el.innerHTML=`<div class="state-msg ${type==='error'?'state-err':''}">${msg}</div>`;
+}
+
+// Paste from clipboard
+async function pasteToken(){
+  try{
+    const text=await navigator.clipboard.readText();
+    if(text){document.getElementById('token-input').value=text.trim();document.getElementById('token-status').textContent='Pegado ✓';setTimeout(()=>{document.getElementById('token-status').textContent='';},1500);}
+  }catch(e){document.getElementById('token-status').textContent='Pega manualmente en el campo';}
 }
 
 // Token setup
