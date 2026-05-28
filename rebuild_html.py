@@ -88,14 +88,7 @@ function buildRecommendation(m){
 
 // ── DETAIL PANEL ───────────────────────────────────────────────────────────
 function buildDetail(m){
-  const ocW=`${BASE}/${m.slug}/winner`,ocC=`${BASE}/${m.slug}/correct-score`;
-  const links=[
-    `<a class="det-link" href="${ocW}" target="_blank">1X2 ↗</a>`,
-    `<a class="det-link" href="${ocC}" target="_blank">Marcador ↗</a>`,
-    ...BK_ORDER.filter(bk=>bk in(m.win_table||{})).map(bk=>`<a class="det-link" href="${BK_URLS[bk]}" target="_blank">${BK_NAMES[bk]} ↗</a>`)
-  ].join('');
-  return`<div class="detail-links">${links}</div>
-  ${buildRecommendation(m)}
+  return`${buildRecommendation(m)}
   <div class="det-section"><div class="det-title">Cuotas 1X2</div>${buildWinTable(m)}</div>
   <div class="det-section"><div class="det-title">Top marcadores · Recomendado: <strong class="rec-score">${m.cs_refined||'—'}</strong>${m.cs_overridden?' <span class="ovr-tag">(corregido)</span>':''}</div>${buildCSTable(m)}</div>`;
 }
