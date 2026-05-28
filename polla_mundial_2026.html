@@ -4,139 +4,335 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Polla Mundial 2026</title>
 <style>
 /* ── RESET & BASE ─────────────────────────────────────────────────────────── */
-:root{color-scheme:light;--bg:#f5f5f2;--card:#fff;--border:#e8e8e4;--text:#1a1a1a;--sub:#888;--accent:#2563eb;--nav-h:62px}
+:root{
+  --bg:#f7f7f5;
+  --card:#ffffff;
+  --border:#e5e5e3;
+  --border-light:#f0f0ee;
+  --text:#111111;
+  --text-secondary:#555555;
+  --text-muted:#999999;
+  --accent:#16a34a;
+  --accent-light:#f0fdf4;
+  --accent-border:#bbf7d0;
+  --nav-h:64px;
+  --radius:14px;
+}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding-bottom:var(--nav-h)}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.4;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 8px);
+}
+a{color:inherit;text-decoration:none}
 
 /* ── LAYOUT ───────────────────────────────────────────────────────────────── */
-.container{max-width:700px;margin:0 auto;padding:16px 12px 8px}
+.container{max-width:640px;margin:0 auto;padding:16px 14px 4px}
 
 /* ── HEADER ───────────────────────────────────────────────────────────────── */
-.header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
-.header h1{font-size:17px;font-weight:700;flex:1}
-.updated{font-size:11px;color:var(--sub);white-space:nowrap}
+.header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 0 14px;gap:10px;
+}
+.header-title{font-size:18px;font-weight:700;letter-spacing:-.3px}
+.header-sub{font-size:11px;color:var(--text-muted);white-space:nowrap}
 
-/* ── DAY JUMP ─────────────────────────────────────────────────────────────── */
-.day-jump-wrap{margin-bottom:12px}
-#day-jump{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-size:14px;color:var(--text);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}
+/* ── DAY JUMP SELECT ──────────────────────────────────────────────────────── */
+.jump-wrap{margin-bottom:16px;position:relative}
+.jump-wrap::after{
+  content:'';position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:0;height:0;
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-top:5px solid var(--text-muted);pointer-events:none;
+}
+#day-jump{
+  width:100%;padding:11px 36px 11px 14px;
+  border-radius:10px;border:1.5px solid var(--border);
+  background:var(--card);font-size:14px;font-family:inherit;
+  color:var(--text);appearance:none;-webkit-appearance:none;cursor:pointer;
+  font-weight:500;
+}
+#day-jump:focus{outline:none;border-color:var(--accent)}
 
-/* ── DAY HEADERS ──────────────────────────────────────────────────────────── */
-.day-block{margin-bottom:4px}
-.day-title{font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--sub);text-transform:uppercase;padding:16px 4px 6px;border-bottom:1px solid var(--border)}
+/* ── DAY BLOCKS ───────────────────────────────────────────────────────────── */
+.day-block{margin-bottom:6px}
 
-/* ── MATCH CARDS ──────────────────────────────────────────────────────────── */
-.match-wrap{margin-bottom:4px}
-.match{display:grid;grid-template-columns:60px 1fr auto;align-items:center;background:var(--card);border:.5px solid var(--border);border-radius:12px;padding:10px 12px;gap:10px;cursor:pointer;transition:background .15s;user-select:none;min-height:64px}
-.match:active{background:#f0f0ec}
-.match.ovr{border-left:3px solid #e0a020}
-.match.open{border-radius:12px 12px 0 0;border-bottom-color:transparent}
-.meta{font-size:10px;color:var(--sub);line-height:1.7}
-.hora{font-size:13px;font-weight:700;color:#333}
-.ciudad{font-size:10px;color:#aaa;line-height:1.4}
-.grp-badge{display:inline-block;font-size:9px;font-weight:600;background:#f0f0ec;color:#999;border-radius:4px;padding:1px 5px;margin-top:2px}
-.teams{min-width:0}
-.team-row{display:flex;align-items:center;gap:6px;padding:2px 0}
-.flag{font-size:16px;line-height:1;flex-shrink:0}
-.tname{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#333}
-.tname.bold{font-weight:700;color:var(--text)}
-.right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
-.result{font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;white-space:nowrap}
-.L{background:#eaf3de;color:#3b6d11}.E{background:#faeeda;color:#854f0b}.V{background:#faece7;color:#993c1d}
-.score{font-size:20px;font-weight:700;letter-spacing:2px;font-variant-numeric:tabular-nums;color:var(--text)}
-.score.ovr{color:#c08010}
-.bottom-row{display:flex;align-items:center;gap:6px}
-.cons{font-size:13px}
-.chevron{font-size:11px;color:#ccc;transition:transform .2s}
-.chevron.open{transform:rotate(180deg)}
+.day-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 4px 8px;cursor:pointer;user-select:none;
+  position:sticky;top:0;z-index:10;background:var(--bg);
+}
+.day-label{
+  font-size:12px;font-weight:700;letter-spacing:.6px;
+  color:var(--text-secondary);text-transform:uppercase;
+}
+.day-chevron{
+  font-size:18px;color:var(--text-muted);
+  transition:transform .2s;display:inline-block;line-height:1;
+}
+.day-chevron.rotated{transform:rotate(180deg)}
+
+.day-matches{transition:none}
+.day-matches.collapsed{display:none}
+
+/* ── MATCH WRAP ───────────────────────────────────────────────────────────── */
+.match-wrap{margin-bottom:5px}
+
+/* ── MATCH CARD ───────────────────────────────────────────────────────────── */
+.match-card{
+  background:var(--card);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  transition:border-color .15s;
+}
+.match-card.ovr{border-left:3px solid #d97706}
+.match-card.open{border-radius:var(--radius) var(--radius) 0 0;border-bottom-color:transparent}
+
+/* Main clickable row */
+.card-main{
+  display:grid;
+  grid-template-columns:58px 1fr auto;
+  align-items:center;
+  padding:12px 12px 12px 14px;
+  gap:10px;
+  cursor:pointer;
+  min-height:72px;
+}
+.card-main:active{background:#f8f8f7}
+
+/* Meta column */
+.card-meta{display:flex;flex-direction:column;gap:2px}
+.meta-time{font-size:14px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;line-height:1}
+.meta-tz{font-size:9px;font-weight:500;color:var(--text-muted);vertical-align:middle;margin-left:1px}
+.meta-city{font-size:10px;color:var(--text-muted);line-height:1.3;margin-top:1px}
+.meta-grp{
+  font-size:9px;font-weight:600;color:var(--text-muted);
+  background:#f2f2f0;border-radius:4px;padding:2px 5px;
+  display:inline-block;margin-top:3px;align-self:flex-start;
+}
+
+/* Teams column */
+.card-teams{min-width:0}
+.team-row{display:flex;align-items:center;gap:7px;padding:2px 0}
+.flag{font-size:18px;line-height:1;flex-shrink:0}
+.tname{
+  font-size:14px;font-weight:500;color:var(--text-secondary);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.tname.winner{font-weight:700;color:var(--text)}
+
+/* Right column */
+.card-right{
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  flex-shrink:0;min-width:56px;
+}
+.pred-score{
+  font-size:22px;font-weight:700;letter-spacing:2px;
+  font-variant-numeric:tabular-nums;color:var(--text);line-height:1;
+}
+.pred-score.pred-ovr{color:#b45309}
+.pred-badge{
+  font-size:10px;font-weight:600;padding:2px 8px;
+  border-radius:6px;white-space:nowrap;
+}
+.lev-L{background:#dcfce7;color:#15803d}
+.lev-E{background:#fef3c7;color:#92400e}
+.lev-V{background:#fee2e2;color:#b91c1c}
+.card-bottom{display:flex;align-items:center;gap:5px;margin-top:1px}
+.conf-dot{font-size:14px;line-height:1}
+.expand-arrow{
+  font-size:16px;color:var(--border);
+  transition:transform .2s;display:inline-block;line-height:1;
+}
+.expand-arrow.rotated{transform:rotate(180deg)}
+
+/* Per-match refresh button */
+.refresh-btn{
+  position:absolute;top:8px;right:8px;
+  width:28px;height:28px;
+  background:transparent;border:none;
+  color:var(--text-muted);font-size:15px;
+  cursor:pointer;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+  line-height:1;
+}
+.refresh-btn:active{background:#f0f0ee;color:var(--accent)}
 
 /* ── DETAIL PANEL ─────────────────────────────────────────────────────────── */
-.detail{display:none;background:var(--card);border:.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:14px 12px 16px}
+.detail{
+  display:none;
+  background:var(--card);
+  border:1.5px solid var(--border);border-top:none;
+  border-radius:0 0 var(--radius) var(--radius);
+  padding:14px 14px 18px;
+}
 .detail.open{display:block}
-.detail-links{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-.det-link{font-size:12px;color:var(--accent);text-decoration:none;background:#f0f4ff;border-radius:6px;padding:6px 10px;min-height:32px;display:flex;align-items:center}
-.det-link:active{background:#dde8ff}
-.det-section{margin-bottom:14px}
-.det-title{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.rec-score{color:#2a6a2a}
-.ovr-tag{font-size:10px;color:#c08010}
+.det-section{margin-bottom:16px}
+.det-section:last-child{margin-bottom:0}
+.det-title{
+  font-size:10px;font-weight:700;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;
+}
+.rec-score{color:#15803d}
+.ovr-tag{font-size:10px;color:#b45309}
 
 /* ── ODDS TABLES ──────────────────────────────────────────────────────────── */
-.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;border:1px solid #f0f0ec}
+.tbl-scroll{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border-radius:10px;border:1px solid var(--border-light);
+}
 .odds-table{width:100%;border-collapse:collapse;font-size:12px}
-.odds-table th{text-align:left;color:var(--sub);font-weight:600;padding:6px 8px;background:#fafaf8;white-space:nowrap;border-bottom:1px solid #f0f0ec}
-.odds-table td{padding:6px 8px;border-bottom:.5px solid #f8f8f5;white-space:nowrap}
+.odds-table th{
+  text-align:left;color:var(--text-muted);font-weight:600;
+  padding:7px 9px;background:#fafaf8;white-space:nowrap;
+  border-bottom:1px solid var(--border-light);
+}
+.odds-table td{padding:7px 9px;border-bottom:.5px solid var(--border-light);white-space:nowrap}
 .odds-table tr:last-child td{border-bottom:none}
-.bk-name a{color:#3b71c8;text-decoration:none;font-weight:500}
-.fave{background:#eaf3de;font-weight:700;color:#2a6a2a}
+.bk-name a{color:#2563eb;font-weight:500}
+.fave{background:#dcfce7;font-weight:700;color:#15803d}
 .score-col{font-weight:600;font-variant-numeric:tabular-nums}
-.best-score{color:#c08010}
-.no-data{font-size:12px;color:#aaa;font-style:italic;padding:8px 0}
+.best-score{color:#b45309}
+.no-data{font-size:12px;color:var(--text-muted);font-style:italic;padding:6px 0}
 
 /* ── RECOMMENDATION BARS ──────────────────────────────────────────────────── */
-.bars{margin-bottom:8px}
-.bar-row{display:flex;align-items:center;gap:8px;margin:4px 0}
+.bars{margin-bottom:10px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:5px 0}
 .bar-label{font-size:12px;font-weight:500;color:#666;min-width:34px;font-variant-numeric:tabular-nums}
-.bar-label.bar-win{font-weight:700;color:#2a6a2a}
-.bar-track{flex:1;background:#f0f0ec;border-radius:4px;height:10px}
-.bar-fill{height:100%;background:#ccc;border-radius:4px}
-.bar-fill.bar-fill-win{background:#5a9a3a}
-.bar-pct{font-size:11px;color:#999;min-width:70px;text-align:right}
-.bar-pct.bar-pct-win{color:#2a6a2a}
-.pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}
-.pill{font-size:11px;background:#f0f0ec;color:#888;border-radius:4px;padding:3px 7px}
-.pill.pill-win{background:#eaf3de;color:#3b6d11;font-weight:600}
-.nivel-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:5px;font-weight:500}
-.ovr-note{margin-top:8px;padding:8px 10px;background:#fff8e7;border-left:3px solid #c08010;border-radius:0 6px 6px 0;font-size:12px;line-height:1.5}
+.bar-label.bar-win{font-weight:700;color:#15803d}
+.bar-track{flex:1;background:#efefed;border-radius:4px;height:8px}
+.bar-fill{height:100%;background:#d1d5db;border-radius:4px}
+.bar-fill.bar-fill-win{background:var(--accent)}
+.bar-pct{font-size:11px;color:var(--text-muted);min-width:72px;text-align:right}
+.bar-pct.bar-pct-win{color:#15803d}
+.pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.pill{font-size:11px;background:#f2f2f0;color:#777;border-radius:5px;padding:3px 8px}
+.pill.pill-win{background:#dcfce7;color:#15803d;font-weight:600}
+.nivel-badge{
+  display:inline-block;font-size:11px;padding:4px 10px;
+  border-radius:6px;font-weight:500;
+}
+.ovr-note{
+  margin-top:10px;padding:10px 12px;
+  background:#fffbeb;border-left:3px solid #d97706;
+  border-radius:0 8px 8px 0;font-size:12px;line-height:1.6;
+}
 
 /* ── BOTTOM NAV ───────────────────────────────────────────────────────────── */
-#bottom-nav{position:fixed;bottom:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}
-.nav-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:none;background:transparent;color:var(--sub);font-size:10px;font-weight:500;cursor:pointer;transition:color .15s;padding:0;padding-bottom:4px}
-.nav-btn .nav-icon{font-size:22px;line-height:1}
-.nav-btn.active{color:var(--accent)}
-.nav-btn:active{opacity:.7}
+#bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid var(--border);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  z-index:100;
+  padding:8px 24px calc(8px + env(safe-area-inset-bottom,0px));
+  display:flex;justify-content:center;gap:10px;
+}
+.nav-pill{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 28px;border-radius:50px;
+  border:none;background:transparent;
+  color:var(--text-muted);font-size:13px;font-weight:600;
+  font-family:inherit;cursor:pointer;
+  transition:background .15s,color .15s;
+  min-height:44px;flex:1;max-width:180px;justify-content:center;
+}
+.nav-pill .nav-icon{font-size:18px;line-height:1}
+.nav-pill.active{
+  background:var(--accent-light);color:var(--accent);
+  border:1.5px solid var(--accent-border);
+}
+.nav-pill:active{opacity:.75}
 
 /* ── UPDATE TAB ───────────────────────────────────────────────────────────── */
 #tab-update{display:none}
-.update-section{background:var(--card);border-radius:14px;border:.5px solid var(--border);padding:16px;margin-bottom:12px}
-.update-section h2{font-size:15px;font-weight:600;margin-bottom:12px}
-.token-indicator{font-size:12px;margin-bottom:12px;padding:8px 10px;border-radius:8px;font-weight:500}
-.token-ok{background:#eaf3de;color:#3b6d11}
-.token-missing{background:#faeeda;color:#854f0b}
-.token-row{display:flex;gap:8px;margin-bottom:8px}
-#token-input{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);font-size:14px;background:#fafaf8;min-width:0}
+.update-card{
+  background:var(--card);border-radius:var(--radius);
+  border:1.5px solid var(--border);padding:18px;margin-bottom:12px;
+}
+.update-card-title{font-size:15px;font-weight:700;margin-bottom:14px;color:var(--text)}
+.token-indicator{
+  font-size:12px;font-weight:600;padding:9px 12px;
+  border-radius:8px;margin-bottom:14px;
+}
+.token-ok{background:#dcfce7;color:#15803d}
+.token-missing{background:#fef3c7;color:#92400e}
+.token-row{display:flex;gap:8px;margin-bottom:10px}
+#token-input{
+  flex:1;padding:11px 13px;border-radius:10px;
+  border:1.5px solid var(--border);font-size:14px;font-family:inherit;
+  background:#fafaf8;min-width:0;color:var(--text);
+}
 #token-input:focus{outline:none;border-color:var(--accent)}
-#token-paste{padding:10px 14px;background:#f0f0ec;color:#444;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0}
-#token-save{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0}
-#token-save:active{opacity:.8}
-#token-status{font-size:12px;color:#3b6d11;min-height:18px}
-.token-help{font-size:11px;color:var(--sub);line-height:1.5;margin-top:6px}
-.token-help a{color:var(--accent)}
-.update-btn{width:100%;padding:14px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:4px;transition:background .15s}
-.update-btn:active{background:#15803d}
-.update-btn:disabled{background:#9ca3af;cursor:not-allowed}
-#run-state{margin-top:10px;min-height:24px}
-.state-msg{font-size:13px;color:var(--sub);padding:8px 0}
-.state-err{color:#993c1d}
-.runs-title{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}
+#token-paste{
+  padding:11px 14px;background:#f2f2f0;color:#444;
+  border:none;border-radius:10px;font-size:14px;font-family:inherit;
+  font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;
+}
+#token-save{
+  padding:11px 16px;background:var(--accent);color:#fff;
+  border:none;border-radius:10px;font-size:14px;font-family:inherit;
+  font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;
+}
+#token-save:active{opacity:.85}
+#token-status{font-size:12px;color:var(--accent);min-height:18px;margin-top:2px}
+.update-main-btn{
+  width:100%;padding:16px;background:var(--accent);color:#fff;
+  border:none;border-radius:12px;font-size:17px;font-family:inherit;
+  font-weight:700;cursor:pointer;margin-top:6px;
+  transition:background .15s;letter-spacing:-.2px;
+}
+.update-main-btn:active{background:#15803d}
+.update-main-btn:disabled{background:#9ca3af;cursor:not-allowed}
+#run-state{margin-top:12px;min-height:22px}
+.state-msg{font-size:13px;color:var(--text-secondary);padding:6px 0}
+.state-err{color:#b91c1c}
+.runs-section-title{
+  font-size:11px;font-weight:700;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px;
+}
 #runs-list{display:flex;flex-direction:column;gap:8px}
-.run-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:#fafaf8;border:.5px solid var(--border)}
+.run-item{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 13px;border-radius:10px;
+  background:#fafaf8;border:1px solid var(--border-light);
+}
 .run-item.run-running{background:#eff6ff;border-color:#bfdbfe}
-.run-item.run-queued{background:#fafaf8}
-.run-item.run-ok{background:#f0fdf4;border-color:#bbf7d0}
+.run-item.run-ok{background:var(--accent-light);border-color:var(--accent-border)}
 .run-item.run-fail{background:#fff1f2;border-color:#fecdd3}
-.run-icon{font-size:20px;flex-shrink:0}
+.run-icon{font-size:20px;flex-shrink:0;line-height:1}
 .run-info{flex:1;min-width:0}
 .run-label{font-size:13px;font-weight:600}
-.run-time{font-size:11px;color:var(--sub)}
-.run-link{font-size:11px;color:var(--accent);text-decoration:none;white-space:nowrap;padding:4px 8px;background:#f0f4ff;border-radius:6px}
-.run-empty{font-size:12px;color:var(--sub);font-style:italic;padding:8px 0}
-#reload-banner{display:none;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:#dcfce7;border-radius:10px;border:1px solid #86efac;margin-bottom:10px}
-.reload-text{font-size:13px;color:#166534;font-weight:500}
-.reload-btn{padding:8px 14px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}
+.run-time{font-size:11px;color:var(--text-muted);margin-top:1px}
+.run-link{
+  font-size:11px;color:var(--accent);white-space:nowrap;
+  padding:5px 10px;background:var(--accent-light);
+  border:1px solid var(--accent-border);border-radius:7px;font-weight:600;
+}
+.run-empty{font-size:13px;color:var(--text-muted);font-style:italic;padding:6px 0}
+#reload-banner{
+  display:none;align-items:center;justify-content:space-between;
+  gap:10px;padding:13px 16px;background:var(--accent-light);
+  border-radius:12px;border:1.5px solid var(--accent-border);margin-bottom:14px;
+}
+.reload-text{font-size:13px;color:#15803d;font-weight:600}
+.reload-btn{
+  padding:9px 16px;background:var(--accent);color:#fff;
+  border:none;border-radius:8px;font-size:13px;font-family:inherit;
+  font-weight:700;cursor:pointer;
+}
 </style>
 </head>
 <body>
@@ -145,10 +341,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 <div id="tab-partidos">
   <div class="container">
     <div class="header">
-      <h1>⚽ Polla Mundial 2026</h1>
-      <span class="updated">Actualizado: 28 May 2026 18:37</span>
+      <div class="header-title">⚽ Polla Mundial 2026</div>
+      <div class="header-sub">Actualizado: 28 May 2026 18:40</div>
     </div>
-    <div class="day-jump-wrap">
+    <div class="jump-wrap">
       <select id="day-jump">
         <option value="">Ir a un día…</option>
       </select>
@@ -163,18 +359,24 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
     <div id="reload-banner">
       <span class="reload-text">✅ Actualización completada</span>
-      <button class="reload-btn" onclick="location.reload()">Recargar página</button>
+      <button class="reload-btn" onclick="location.reload()">Recargar</button>
     </div>
 
-    <div class="update-section">
-      <h2>🔄 Actualizar cuotas</h2>
+    <div class="update-card">
+      <div class="update-card-title">Actualizar cuotas</div>
       <div id="token-indicator" class="token-indicator token-missing">Token: no configurado</div>
+      <div class="token-row">
+        <input id="token-input" type="password" placeholder="GitHub token…">
+        <button id="token-paste" onclick="pasteToken()">Pegar</button>
+        <button id="token-save">Guardar</button>
+      </div>
+      <div id="token-status"></div>
       <div id="run-state"></div>
-      <button class="update-btn" id="btn-update" onclick="triggerUpdate()">Actualizar todo</button>
+      <button class="update-main-btn" id="btn-update" onclick="triggerUpdate()">Actualizar todo</button>
     </div>
 
-    <div class="update-section">
-      <div class="runs-title">Últimas ejecuciones</div>
+    <div class="update-card">
+      <div class="runs-section-title">Últimas ejecuciones</div>
       <div id="runs-list"><p class="run-empty">Cargando…</p></div>
     </div>
 
@@ -183,11 +385,11 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <!-- ── BOTTOM NAV ────────────────────────────────────────────────────────── -->
 <nav id="bottom-nav">
-  <button class="nav-btn active" id="nav-partidos" onclick="showTab('partidos')">
+  <button class="nav-pill active" id="nav-partidos" onclick="showTab('partidos')">
     <span class="nav-icon">📅</span>
     Partidos
   </button>
-  <button class="nav-btn" id="nav-update" onclick="showTab('update')">
+  <button class="nav-pill" id="nav-update" onclick="showTab('update')">
     <span class="nav-icon">🔄</span>
     Actualizar
   </button>
@@ -195,7 +397,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 
 <script>
 
-const DATA=[{"slug":"mexico-v-south-africa","fecha":"Jun 11","hora":"15:00","ciudad":"Ciudad de México","j":1,"grp":"A","local":"México","visita":"Sudáfrica","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"south-korea-v-czech-republic","fecha":"Jun 11","hora":"22:00","ciudad":"Guadalajara","j":1,"grp":"A","local":"Corea del Sur","visita":"Rep. Checa","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"canada-v-bosnia-and-herzegovina","fecha":"Jun 12","hora":"15:00","ciudad":"Toronto","j":1,"grp":"B","local":"Canadá","visita":"Bosnia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"usa-v-paraguay","fecha":"Jun 12","hora":"21:00","ciudad":"Los Ángeles","j":1,"grp":"D","local":"USA","visita":"Paraguay","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"australia-v-turkey","fecha":"Jun 13","hora":"00:00","ciudad":"Vancouver","j":1,"grp":"D","local":"Australia","visita":"Turquía","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"qatar-v-switzerland","fecha":"Jun 13","hora":"15:00","ciudad":"San Francisco","j":1,"grp":"B","local":"Qatar","visita":"Suiza","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"brazil-v-morocco","fecha":"Jun 13","hora":"18:00","ciudad":"Nueva York","j":1,"grp":"C","local":"Brasil","visita":"Marruecos","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"haiti-v-scotland","fecha":"Jun 13","hora":"21:00","ciudad":"Boston","j":1,"grp":"C","local":"Haití","visita":"Escocia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"germany-v-curacao","fecha":"Jun 14","hora":"13:00","ciudad":"Houston","j":1,"grp":"E","local":"Alemania","visita":"Curazao","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"netherlands-v-japan","fecha":"Jun 14","hora":"16:00","ciudad":"Dallas","j":1,"grp":"F","local":"Países Bajos","visita":"Japón","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"ivory-coast-v-ecuador","fecha":"Jun 14","hora":"19:00","ciudad":"Philadelphia","j":1,"grp":"E","local":"C. de Marfil","visita":"Ecuador","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"sweden-v-tunisia","fecha":"Jun 14","hora":"22:00","ciudad":"Monterrey","j":1,"grp":"F","local":"Suecia","visita":"Túnez","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"spain-v-cape-verde","fecha":"Jun 15","hora":"12:00","ciudad":"Atlanta","j":1,"grp":"H","local":"España","visita":"Cabo Verde","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"belgium-v-egypt","fecha":"Jun 15","hora":"15:00","ciudad":"Seattle","j":1,"grp":"G","local":"Bélgica","visita":"Egipto","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"saudi-arabia-v-uruguay","fecha":"Jun 15","hora":"18:00","ciudad":"Miami","j":1,"grp":"H","local":"Arabia Saudita","visita":"Uruguay","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"iran-v-new-zealand","fecha":"Jun 15","hora":"21:00","ciudad":"Los Ángeles","j":1,"grp":"G","local":"Irán","visita":"Nueva Zelanda","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"austria-v-jordan","fecha":"Jun 16","hora":"00:00","ciudad":"San Francisco","j":1,"grp":"J","local":"Austria","visita":"Jordania","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"france-v-senegal","fecha":"Jun 16","hora":"15:00","ciudad":"Nueva York","j":1,"grp":"I","local":"Francia","visita":"Senegal","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"iraq-v-norway","fecha":"Jun 16","hora":"18:00","ciudad":"Boston","j":1,"grp":"I","local":"Irak","visita":"Noruega","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"argentina-v-algeria","fecha":"Jun 16","hora":"21:00","ciudad":"Kansas City","j":1,"grp":"J","local":"Argentina","visita":"Argelia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"portugal-v-dr-congo","fecha":"Jun 17","hora":"13:00","ciudad":"Houston","j":1,"grp":"K","local":"Portugal","visita":"RD Congo","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"england-v-croatia","fecha":"Jun 17","hora":"16:00","ciudad":"Dallas","j":1,"grp":"L","local":"Inglaterra","visita":"Croacia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"ghana-v-panama","fecha":"Jun 17","hora":"19:00","ciudad":"Toronto","j":1,"grp":"L","local":"Ghana","visita":"Panamá","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"uzbekistan-v-colombia","fecha":"Jun 17","hora":"22:00","ciudad":"Ciudad de México","j":1,"grp":"K","local":"Uzbekistán","visita":"Colombia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"czech-republic-v-south-africa","fecha":"Jun 18","hora":"12:00","ciudad":"Atlanta","j":2,"grp":"A","local":"Rep. Checa","visita":"Sudáfrica","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"switzerland-v-bosnia-and-herzegovina","fecha":"Jun 18","hora":"15:00","ciudad":"Los Ángeles","j":2,"grp":"B","local":"Suiza","visita":"Bosnia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"canada-v-qatar","fecha":"Jun 18","hora":"18:00","ciudad":"Vancouver","j":2,"grp":"B","local":"Canadá","visita":"Qatar","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"mexico-v-south-korea","fecha":"Jun 18","hora":"21:00","ciudad":"Guadalajara","j":2,"grp":"A","local":"México","visita":"Corea del Sur","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"turkey-v-paraguay","fecha":"Jun 19","hora":"00:00","ciudad":"San Francisco","j":2,"grp":"D","local":"Turquía","visita":"Paraguay","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"usa-v-australia","fecha":"Jun 19","hora":"15:00","ciudad":"Seattle","j":2,"grp":"D","local":"USA","visita":"Australia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"scotland-v-morocco","fecha":"Jun 19","hora":"18:00","ciudad":"Boston","j":2,"grp":"C","local":"Escocia","visita":"Marruecos","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"brazil-v-haiti","fecha":"Jun 19","hora":"21:00","ciudad":"Philadelphia","j":2,"grp":"C","local":"Brasil","visita":"Haití","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"tunisia-v-japan","fecha":"Jun 20","hora":"00:00","ciudad":"Monterrey","j":2,"grp":"F","local":"Túnez","visita":"Japón","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"netherlands-v-sweden","fecha":"Jun 20","hora":"13:00","ciudad":"Houston","j":2,"grp":"F","local":"Países Bajos","visita":"Suecia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"germany-v-ivory-coast","fecha":"Jun 20","hora":"16:00","ciudad":"Toronto","j":2,"grp":"E","local":"Alemania","visita":"C. de Marfil","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"ecuador-v-curacao","fecha":"Jun 20","hora":"20:00","ciudad":"Kansas City","j":2,"grp":"E","local":"Ecuador","visita":"Curazao","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"spain-v-saudi-arabia","fecha":"Jun 21","hora":"12:00","ciudad":"Atlanta","j":2,"grp":"H","local":"España","visita":"Arabia Saudita","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"belgium-v-iran","fecha":"Jun 21","hora":"15:00","ciudad":"Los Ángeles","j":2,"grp":"G","local":"Bélgica","visita":"Irán","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"uruguay-v-cape-verde","fecha":"Jun 21","hora":"18:00","ciudad":"Miami","j":2,"grp":"H","local":"Uruguay","visita":"Cabo Verde","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"new-zealand-v-egypt","fecha":"Jun 21","hora":"21:00","ciudad":"Vancouver","j":2,"grp":"G","local":"Nueva Zelanda","visita":"Egipto","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"argentina-v-austria","fecha":"Jun 22","hora":"13:00","ciudad":"Dallas","j":2,"grp":"J","local":"Argentina","visita":"Austria","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"france-v-iraq","fecha":"Jun 22","hora":"17:00","ciudad":"Philadelphia","j":2,"grp":"I","local":"Francia","visita":"Irak","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"norway-v-senegal","fecha":"Jun 22","hora":"20:00","ciudad":"Nueva York","j":2,"grp":"I","local":"Noruega","visita":"Senegal","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"jordan-v-algeria","fecha":"Jun 22","hora":"23:00","ciudad":"San Francisco","j":2,"grp":"J","local":"Jordania","visita":"Argelia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"portugal-v-uzbekistan","fecha":"Jun 23","hora":"13:00","ciudad":"Houston","j":2,"grp":"K","local":"Portugal","visita":"Uzbekistán","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"colombia-v-dr-congo","fecha":"Jun 23","hora":"22:00","ciudad":"Guadalajara","j":2,"grp":"K","local":"Colombia","visita":"RD Congo","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"england-v-ghana","fecha":"Jun 23","hora":"16:00","ciudad":"Boston","j":2,"grp":"L","local":"Inglaterra","visita":"Ghana","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"panama-v-croatia","fecha":"Jun 23","hora":"19:00","ciudad":"Toronto","j":2,"grp":"L","local":"Panamá","visita":"Croacia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"switzerland-v-canada","fecha":"Jun 24","hora":"15:00","ciudad":"Vancouver","j":3,"grp":"B","local":"Suiza","visita":"Canadá","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"bosnia-and-herzegovina-v-qatar","fecha":"Jun 24","hora":"15:00","ciudad":"Seattle","j":3,"grp":"B","local":"Bosnia","visita":"Qatar","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"scotland-v-brazil","fecha":"Jun 24","hora":"18:00","ciudad":"Miami","j":3,"grp":"C","local":"Escocia","visita":"Brasil","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"morocco-v-haiti","fecha":"Jun 24","hora":"18:00","ciudad":"Atlanta","j":3,"grp":"C","local":"Marruecos","visita":"Haití","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"czech-republic-v-mexico","fecha":"Jun 24","hora":"21:00","ciudad":"Ciudad de México","j":3,"grp":"A","local":"Rep. Checa","visita":"México","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"south-africa-v-south-korea","fecha":"Jun 24","hora":"21:00","ciudad":"Monterrey","j":3,"grp":"A","local":"Sudáfrica","visita":"Corea del Sur","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"ecuador-v-germany","fecha":"Jun 25","hora":"16:00","ciudad":"Nueva York","j":3,"grp":"E","local":"Ecuador","visita":"Alemania","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"curacao-v-ivory-coast","fecha":"Jun 25","hora":"16:00","ciudad":"Philadelphia","j":3,"grp":"E","local":"Curazao","visita":"C. de Marfil","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"japan-v-sweden","fecha":"Jun 25","hora":"19:00","ciudad":"Dallas","j":3,"grp":"F","local":"Japón","visita":"Suecia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"tunisia-v-netherlands","fecha":"Jun 25","hora":"19:00","ciudad":"Kansas City","j":3,"grp":"F","local":"Túnez","visita":"Países Bajos","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"turkey-v-usa","fecha":"Jun 25","hora":"22:00","ciudad":"Los Ángeles","j":3,"grp":"D","local":"Turquía","visita":"USA","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"paraguay-v-australia","fecha":"Jun 25","hora":"22:00","ciudad":"San Francisco","j":3,"grp":"D","local":"Paraguay","visita":"Australia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"norway-v-france","fecha":"Jun 26","hora":"15:00","ciudad":"Boston","j":3,"grp":"I","local":"Noruega","visita":"Francia","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"senegal-v-iraq","fecha":"Jun 26","hora":"15:00","ciudad":"Toronto","j":3,"grp":"I","local":"Senegal","visita":"Irak","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"cape-verde-v-saudi-arabia","fecha":"Jun 26","hora":"20:00","ciudad":"Houston","j":3,"grp":"H","local":"Cabo Verde","visita":"Arabia Saudita","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"uruguay-v-spain","fecha":"Jun 26","hora":"20:00","ciudad":"Guadalajara","j":3,"grp":"H","local":"Uruguay","visita":"España","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"egypt-v-iran","fecha":"Jun 26","hora":"23:00","ciudad":"Seattle","j":3,"grp":"G","local":"Egipto","visita":"Irán","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"new-zealand-v-belgium","fecha":"Jun 26","hora":"23:00","ciudad":"Vancouver","j":3,"grp":"G","local":"Nueva Zelanda","visita":"Bélgica","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"panama-v-england","fecha":"Jun 27","hora":"17:00","ciudad":"Nueva York","j":3,"grp":"L","local":"Panamá","visita":"Inglaterra","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"croatia-v-ghana","fecha":"Jun 27","hora":"17:00","ciudad":"Philadelphia","j":3,"grp":"L","local":"Croacia","visita":"Ghana","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"colombia-v-portugal","fecha":"Jun 27","hora":"19:30","ciudad":"Miami","j":3,"grp":"K","local":"Colombia","visita":"Portugal","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"dr-congo-v-uzbekistan","fecha":"Jun 27","hora":"19:30","ciudad":"Atlanta","j":3,"grp":"K","local":"RD Congo","visita":"Uzbekistán","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"algeria-v-austria","fecha":"Jun 27","hora":"22:00","ciudad":"Kansas City","j":3,"grp":"J","local":"Argelia","visita":"Austria","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}},{"slug":"jordan-v-argentina","fecha":"Jun 27","hora":"22:00","ciudad":"Dallas","j":3,"grp":"J","local":"Jordania","visita":"Argentina","win_pred":"","win_nivel":"","cs_refined":"","cs_nivel":"","cs_overridden":false,"has_data":false,"win_table":{},"cs_top":{}}];
+const DATA=[{"slug":"mexico-v-south-africa","fecha":"Jun 11","hora":"15:00","ciudad":"Ciudad de México","j":1,"grp":"A","local":"México","visita":"Sudáfrica","win_pred":"México","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"México":1.49,"Empate":4.53,"Sudáfrica":7.66},"B3":{"México":1.48,"Empate":4.33,"Sudáfrica":6.5},"UN":{"México":1.45,"Empate":4,"Sudáfrica":6.5},"OE":{"México":1.43,"Empate":4.3,"Sudáfrica":7.4},"MA":{"México":1.48,"Empate":4.43,"Sudáfrica":7.66},"VC":{"México":1.45,"Empate":4.1,"Sudáfrica":7.5},"WA":{"México":1.5,"Empate":4.2,"Sudáfrica":5.75}},"cs_top":{"1-0":{"B3":6,"UN":5.75,"BF":5.7,"VC":5.25,"OE":5,"WA":5},"2-0":{"B3":6.5,"BF":6.49,"UN":6,"WA":6,"VC":5.75,"OE":5.25},"1-1":{"B3":9,"BF":8.84,"UN":8,"WA":8,"VC":7.5,"OE":6.5},"2-1":{"BF":8.45,"B3":9.5,"UN":8.5,"VC":8,"WA":7.5,"OE":7},"3-0":{"BF":9.82,"B3":10,"UN":9.5,"VC":9.5,"WA":9,"OE":8},"0-0":{"BF":11.3,"VC":11,"UN":10,"WA":10,"B3":9.5,"OE":9},"3-1":{"BF":9.82,"B3":15,"UN":13,"VC":12,"WA":12,"OE":10},"4-0":{"B3":21,"UN":19,"VC":19,"OE":17,"WA":17}}},{"slug":"south-korea-v-czech-republic","fecha":"Jun 11","hora":"22:00","ciudad":"Guadalajara","j":1,"grp":"A","local":"Corea del Sur","visita":"Rep. Checa","win_pred":"Corea del Sur","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Corea del Sur":2.76,"Rep. Checa":2.84,"Empate":3.2},"B3":{"Corea del Sur":2.62,"Rep. Checa":2.75,"Empate":3.1},"UN":{"Corea del Sur":2.65,"Rep. Checa":2.65,"Empate":3.1},"OE":{"Corea del Sur":2.65,"Rep. Checa":2.65,"Empate":3.15},"MA":{"Corea del Sur":2.74,"Rep. Checa":2.82,"Empate":3.16},"VC":{"Corea del Sur":2.62,"Rep. Checa":2.7,"Empate":3.2},"WA":{"Corea del Sur":2.6,"Rep. Checa":2.62,"Empate":3.2}},"cs_top":{"1-1":{"BF":6.49,"B3":6,"UN":6,"VC":5.75,"WA":5.5,"OE":5.25},"1-0":{"BF":8.45,"B3":8,"WA":8,"UN":7.5,"VC":7,"OE":6.25},"0-0":{"BF":9.62,"VC":9.5,"B3":8,"UN":8,"OE":7.5,"WA":7.5},"2-1":{"BF":10.8,"B3":11,"WA":11,"UN":10.5,"VC":9.5,"OE":8},"2-0":{"BF":15.2,"B3":13,"UN":12,"VC":12,"OE":10,"WA":10},"2-2":{"B3":17,"BF":16.7,"UN":16,"VC":15,"OE":13,"WA":13},"3-1":{"B3":26,"UN":23,"VC":21,"OE":19,"WA":17,"BF":6.68},"3-0":{"B3":29,"UN":29,"VC":26,"OE":23,"WA":21,"BF":6.88}}},{"slug":"canada-v-bosnia-and-herzegovina","fecha":"Jun 12","hora":"15:00","ciudad":"Toronto","j":1,"grp":"B","local":"Canadá","visita":"Bosnia","win_pred":"Canadá","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Canadá":1.83,"Empate":3.79,"Bosnia":4.63},"B3":{"Canadá":1.8,"Empate":3.75,"Bosnia":4.2},"UN":{"Canadá":1.8,"Empate":3.6,"Bosnia":4.25},"OE":{"Canadá":1.82,"Empate":3.55,"Bosnia":4.2},"MA":{"Canadá":1.82,"Empate":3.79,"Bosnia":4.63},"VC":{"Canadá":1.8,"Empate":3.4,"Bosnia":4.6},"WA":{"Canadá":1.8,"Empate":3.6,"Bosnia":4}},"cs_top":{"1-0":{"B3":6.5,"BF":5.9,"VC":5.75,"WA":5.75,"OE":5},"1-1":{"B3":7.5,"BF":7.47,"VC":6.5,"WA":6.5,"OE":5.75},"2-0":{"BF":8.25,"B3":8,"VC":7.5,"WA":7,"OE":6.5},"2-1":{"BF":9.82,"B3":9.5,"WA":8.5,"VC":8,"OE":7},"0-0":{"VC":10,"BF":9.82,"B3":9,"OE":8,"WA":8},"3-0":{"B3":15,"VC":14,"OE":12,"WA":12,"BF":7.47},"3-1":{"BF":9.43,"B3":17,"VC":15,"WA":15,"OE":13},"2-2":{"BF":22,"B3":21,"VC":17,"WA":17,"OE":15}}},{"slug":"usa-v-paraguay","fecha":"Jun 12","hora":"21:00","ciudad":"Los Ángeles","j":1,"grp":"D","local":"USA","visita":"Paraguay","win_pred":"USA","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟡","cs_overridden":true,"has_data":true,"win_table":{"BF":{"USA":2,"Empate":3.55,"Paraguay":4.04},"B3":{"USA":2,"Empate":3.4,"Paraguay":3.75},"UN":{"USA":1.98,"Empate":3.4,"Paraguay":3.6},"OE":{"USA":1.97,"Empate":3.35,"Paraguay":3.8},"MA":{"USA":2,"Empate":3.5,"Paraguay":3.94},"VC":{"USA":1.95,"Empate":3.4,"Paraguay":3.8},"WA":{"USA":1.95,"Empate":3.5,"Paraguay":3.5}},"cs_top":{"1-1":{"BF":7.27,"B3":6.5,"UN":6.5,"WA":6.5,"VC":6,"OE":5.75},"1-0":{"B3":7.5,"BF":7.08,"UN":7,"VC":6.5,"OE":6,"WA":5.75},"2-1":{"B3":9.5,"BF":9.23,"UN":9,"VC":8,"WA":7.5,"OE":7},"2-0":{"BF":10.3,"B3":9.5,"UN":9,"WA":9,"VC":8.5,"OE":8},"0-0":{"BF":11.3,"VC":10.5,"UN":9.5,"B3":9,"WA":9,"OE":8.5},"3-1":{"BF":7.66,"B3":17,"UN":17,"WA":17,"VC":15,"OE":12},"3-0":{"BF":7.66,"B3":19,"UN":17,"VC":17,"WA":17,"OE":15},"2-2":{"BF":19.6,"B3":17,"UN":16,"VC":15,"WA":15,"OE":12}}},{"slug":"australia-v-turkey","fecha":"Jun 13","hora":"00:00","ciudad":"Vancouver","j":1,"grp":"D","local":"Australia","visita":"Turquía","win_pred":"Turquía","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Turquía":1.82,"Empate":3.69,"Australia":4.92},"B3":{"Turquía":1.75,"Empate":3.6,"Australia":4.75},"UN":{"Turquía":1.8,"Empate":3.5,"Australia":4.35},"OE":{"Turquía":1.76,"Empate":3.6,"Australia":4.5},"MA":{"Turquía":1.81,"Empate":3.65,"Australia":4.82},"VC":{"Turquía":1.75,"Empate":3.6,"Australia":4.6},"WA":{"Turquía":1.75,"Empate":3.6,"Australia":4}},"cs_top":{"1-0":{"BF":7.27,"B3":7,"UN":6.5,"WA":6.5,"VC":6,"OE":5.25},"1-1":{"BF":7.47,"B3":7,"UN":6.5,"VC":6.5,"WA":6.5,"OE":6},"2-0":{"BF":6.49,"B3":8.5,"UN":8,"VC":7.5,"WA":7.5,"OE":6.5},"2-1":{"BF":9.23,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"0-0":{"BF":11.3,"VC":11,"WA":10,"B3":9.5,"UN":9.5,"OE":8.5},"3-0":{"BF":7.27,"B3":15,"UN":14,"VC":14,"WA":12,"OE":11},"3-1":{"BF":6.88,"B3":15,"UN":15,"VC":13,"WA":13,"OE":12},"2-2":{"BF":18.1,"B3":17,"UN":16,"VC":16,"WA":15,"OE":13}}},{"slug":"qatar-v-switzerland","fecha":"Jun 13","hora":"15:00","ciudad":"San Francisco","j":1,"grp":"B","local":"Qatar","visita":"Suiza","win_pred":"Suiza","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Suiza":1.28,"Empate":6.1,"Qatar":11.8},"B3":{"Suiza":1.27,"Empate":5.75,"Qatar":10},"UN":{"Suiza":1.27,"Empate":5.5,"Qatar":10},"OE":{"Suiza":1.27,"Empate":5.25,"Qatar":11},"MA":{"Suiza":1.28,"Empate":5.9,"Qatar":11.8},"VC":{"Suiza":1.25,"Empate":5.5,"Qatar":12},"WA":{"Suiza":1.29,"Empate":5.75,"Qatar":8}},"cs_top":{"2-0":{"BF":5.41,"B3":6,"UN":5.75,"VC":5.5,"WA":5.25,"OE":4.75},"1-0":{"BF":5.61,"B3":7,"UN":6.5,"WA":6.5,"VC":6,"OE":5.5},"3-0":{"BF":5.51,"B3":8,"UN":7.5,"VC":7,"WA":7,"OE":6.25},"2-1":{"BF":5.31,"B3":9.5,"UN":9,"VC":8.5,"WA":8.5,"OE":7.5},"3-1":{"BF":5.51,"B3":12,"UN":11,"VC":10.5,"WA":10,"OE":9.5},"1-1":{"BF":12.8,"B3":12,"UN":10.5,"VC":10.5,"WA":10,"OE":8.5},"4-0":{"B3":13,"UN":12,"VC":12,"WA":11,"OE":10},"0-0":{"BF":18.1,"UN":14,"B3":13,"VC":13,"WA":13,"OE":10}}},{"slug":"brazil-v-morocco","fecha":"Jun 13","hora":"18:00","ciudad":"Nueva York","j":1,"grp":"C","local":"Brasil","visita":"Marruecos","win_pred":"Brasil","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Brasil":1.65,"Empate":4.23,"Marruecos":5.61},"B3":{"Brasil":1.57,"Empate":4,"Marruecos":5.25},"UN":{"Brasil":1.6,"Empate":3.9,"Marruecos":5.25},"OE":{"Brasil":1.56,"Empate":3.8,"Marruecos":6},"MA":{"Brasil":1.63,"Empate":4.14,"Marruecos":5.61},"VC":{"Brasil":1.57,"Empate":3.9,"Marruecos":5.75},"WA":{"Brasil":1.6,"Empate":3.8,"Marruecos":5.25}},"cs_top":{"1-0":{"BF":7.08,"B3":7,"UN":6.5,"VC":6,"WA":5.75,"OE":5.25},"2-0":{"BF":5.51,"B3":7.5,"UN":7,"VC":7,"WA":7,"OE":6},"1-1":{"BF":8.45,"B3":8,"UN":7.5,"VC":7,"WA":7,"OE":6.5},"2-1":{"BF":9.04,"B3":9,"UN":8.5,"VC":7.5,"WA":7.5,"OE":6.5},"3-0":{"BF":5.9,"B3":12,"UN":12,"VC":11,"WA":11,"OE":9.5},"0-0":{"BF":12.8,"VC":12,"B3":11,"UN":10.5,"WA":10,"OE":8.5},"3-1":{"BF":5.8,"B3":15,"UN":13,"VC":12,"WA":12,"OE":10},"2-2":{"B3":21,"BF":21,"UN":18,"VC":17,"OE":15,"WA":15}}},{"slug":"haiti-v-scotland","fecha":"Jun 13","hora":"21:00","ciudad":"Boston","j":1,"grp":"C","local":"Haití","visita":"Escocia","win_pred":"Escocia","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Escocia":1.44,"Empate":5.12,"Haití":7.66},"B3":{"Escocia":1.42,"Empate":4.75,"Haití":6.25},"UN":{"Escocia":1.42,"Empate":4.5,"Haití":6.5},"OE":{"Escocia":1.42,"Empate":4.4,"Haití":7.3},"MA":{"Escocia":1.44,"Empate":5.02,"Haití":7.47},"VC":{"Escocia":1.4,"Empate":4.4,"Haití":7.5},"WA":{"Escocia":1.43,"Empate":4.75,"Haití":5.75}},"cs_top":{"2-0":{"BF":5.9,"B3":6.5,"UN":6.5,"VC":6,"WA":5.75,"OE":5.5},"1-0":{"BF":6.68,"B3":6.5,"UN":6.5,"VC":5.75,"WA":5.75,"OE":5.5},"2-1":{"BF":9.43,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"3-0":{"BF":5.9,"B3":10,"UN":9.5,"VC":9,"WA":8.5,"OE":7.5},"1-1":{"BF":10.3,"B3":9.5,"UN":8.5,"WA":8.5,"VC":8,"OE":7},"3-1":{"BF":5.9,"B3":13,"UN":12,"VC":11.5,"WA":11,"OE":10},"0-0":{"BF":13.3,"VC":13,"B3":12,"UN":12,"WA":11,"OE":10},"4-0":{"B3":19,"UN":18,"VC":18,"WA":17,"OE":13}}},{"slug":"germany-v-curacao","fecha":"Jun 14","hora":"13:00","ciudad":"Houston","j":1,"grp":"E","local":"Alemania","visita":"Curazao","win_pred":"Alemania","win_nivel":"🟢","cs_refined":"3-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Alemania":1.06,"Empate":21,"Curazao":39},"B3":{"Alemania":1.03,"Empate":17,"Curazao":41},"UN":{"Alemania":1.02,"Empate":17,"Curazao":41},"OE":{"Alemania":1.03,"Empate":14,"Curazao":33},"MA":{"Alemania":1.05,"Empate":21,"Curazao":39},"VC":{"Alemania":1.03,"Empate":13,"Curazao":56},"WA":{"Alemania":1.03,"Empate":19,"Curazao":41}},"cs_top":{"4-0":{"B3":6.5,"UN":6,"VC":5.75,"WA":5.75,"OE":4.75},"3-0":{"B3":6.5,"BF":6.49,"UN":6,"VC":5.75,"WA":5.75,"OE":5},"5-0":{"B3":8,"UN":7.5,"WA":7.5,"VC":7,"OE":6.25},"2-0":{"BF":7.66,"B3":8.5,"UN":8,"VC":7.5,"WA":7.5,"OE":6.5},"6-0":{"B3":12,"WA":11,"VC":10.5,"OE":8.5},"3-1":{"BF":7.66,"B3":17,"UN":14,"VC":14,"WA":13,"OE":12},"1-0":{"B3":17,"BF":7.66,"UN":15,"VC":15,"WA":15,"OE":12},"4-1":{"B3":17,"UN":14,"VC":14,"WA":13,"OE":12}}},{"slug":"netherlands-v-japan","fecha":"Jun 14","hora":"16:00","ciudad":"Dallas","j":1,"grp":"F","local":"Países Bajos","visita":"Japón","win_pred":"Países Bajos","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Países Bajos":2,"Empate":3.84,"Japón":3.74},"B3":{"Países Bajos":2,"Empate":3.75,"Japón":3.4},"UN":{"Países Bajos":2.02,"Empate":3.5,"Japón":3.45},"OE":{"Países Bajos":1.97,"Empate":3.5,"Japón":3.65},"MA":{"Países Bajos":2,"Empate":3.79,"Japón":3.74},"VC":{"Países Bajos":1.95,"Empate":3.5,"Japón":3.7},"WA":{"Países Bajos":1.95,"Empate":3.6,"Japón":3.4}},"cs_top":{"1-1":{"BF":7.66,"B3":7.5,"UN":6.5,"VC":6.5,"WA":6.5,"OE":5.75},"1-0":{"BF":8.64,"B3":8.5,"UN":8,"WA":8,"VC":7,"OE":6.5},"2-0":{"BF":5.21,"B3":10,"UN":10,"VC":9.5,"OE":8,"WA":8},"2-1":{"BF":9.62,"B3":9.5,"UN":9,"WA":8.5,"VC":8,"OE":7},"0-0":{"VC":13,"BF":12.8,"B3":12,"UN":11,"WA":11,"OE":9.5},"3-1":{"BF":5.41,"B3":17,"UN":16,"VC":14,"OE":12,"WA":12},"2-2":{"BF":16.7,"B3":15,"UN":14,"VC":13,"WA":13,"OE":12},"3-0":{"BF":5.41,"B3":19,"UN":18,"VC":17,"OE":15,"WA":13}}},{"slug":"ivory-coast-v-ecuador","fecha":"Jun 14","hora":"19:00","ciudad":"Philadelphia","j":1,"grp":"E","local":"C. de Marfil","visita":"Ecuador","win_pred":"Ecuador","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟡","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Ecuador":2.41,"Empate":2.96,"C. de Marfil":3.79},"B3":{"Ecuador":2.25,"Empate":3,"C. de Marfil":3.5},"UN":{"Ecuador":2.2,"Empate":3.05,"C. de Marfil":3.4},"OE":{"Ecuador":2.22,"Empate":3.1,"C. de Marfil":3.4},"MA":{"Ecuador":2.39,"Empate":2.94,"C. de Marfil":3.74},"VC":{"Ecuador":2.25,"Empate":3,"C. de Marfil":3.5},"WA":{"Ecuador":2.3,"Empate":2.7,"C. de Marfil":3.6}},"cs_top":{"1-1":{"BF":6.1,"B3":6,"UN":6,"VC":5.75,"OE":5.25,"WA":5.25},"1-0":{"BF":6.68,"B3":6,"UN":6,"WA":5.75,"VC":5.5,"OE":5},"0-0":{"VC":7.5,"UN":7,"BF":6.68,"B3":6.5,"OE":6.5,"WA":5.5},"2-0":{"BF":11.3,"B3":10,"UN":9.5,"VC":9,"WA":9,"OE":7.5},"2-1":{"B3":11,"BF":10.3,"UN":10,"WA":10,"VC":9,"OE":8},"3-0":{"B3":23,"UN":21,"VC":21,"OE":17,"WA":17,"BF":6.49},"3-1":{"B3":23,"UN":21,"VC":21,"WA":19,"OE":17,"BF":6.68},"2-2":{"B3":21,"BF":21,"UN":18,"VC":18,"OE":15,"WA":15}}},{"slug":"sweden-v-tunisia","fecha":"Jun 14","hora":"22:00","ciudad":"Monterrey","j":1,"grp":"F","local":"Suecia","visita":"Túnez","win_pred":"Suecia","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Suecia":1.95,"Empate":3.45,"Túnez":4.43},"B3":{"Suecia":1.95,"Empate":3.3,"Túnez":4},"UN":{"Suecia":1.95,"Empate":3.3,"Túnez":3.9},"OE":{"Suecia":1.88,"Empate":3.4,"Túnez":4.1},"MA":{"Suecia":1.94,"Empate":3.4,"Túnez":4.33},"VC":{"Suecia":1.93,"Empate":3.3,"Túnez":4.1},"WA":{"Suecia":1.85,"Empate":3.3,"Túnez":4}},"cs_top":{"1-0":{"B3":6.5,"BF":6.29,"UN":6,"VC":5.75,"WA":5.25,"OE":5},"1-1":{"BF":7.08,"B3":6.5,"UN":6.5,"VC":6,"WA":6,"OE":5.5},"2-0":{"BF":6.88,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"2-1":{"B3":9.5,"BF":9.23,"UN":9,"VC":8,"WA":7.5,"OE":7},"0-0":{"VC":9.5,"BF":9.43,"B3":8,"UN":8,"WA":8,"OE":7.5},"3-0":{"BF":7.86,"B3":17,"UN":16,"VC":16,"WA":15,"OE":13},"3-1":{"BF":7.66,"B3":19,"UN":18,"WA":17,"VC":16,"OE":13},"2-2":{"BF":19.1,"B3":19,"UN":18,"VC":16,"OE":15,"WA":15}}},{"slug":"spain-v-cape-verde","fecha":"Jun 15","hora":"12:00","ciudad":"Atlanta","j":1,"grp":"H","local":"España","visita":"Cabo Verde","win_pred":"España","win_nivel":"🟢","cs_refined":"3-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"España":1.1,"Empate":11.8,"Cabo Verde":33},"B3":{"España":1.08,"Empate":11,"Cabo Verde":21},"UN":{"España":1.08,"Empate":9.5,"Cabo Verde":26},"OE":{"España":1.09,"Empate":8.7,"Cabo Verde":30},"MA":{"España":1.1,"Empate":11.3,"Cabo Verde":35},"VC":{"España":1.06,"Empate":11,"Cabo Verde":29},"WA":{"España":1.08,"Empate":11,"Cabo Verde":23}},"cs_top":{"3-0":{"B3":6.5,"BF":6.29,"UN":6,"WA":5.5,"VC":5.4,"OE":4.75},"2-0":{"B3":7,"BF":6.29,"UN":6.5,"VC":5.75,"WA":5.75,"OE":5.25},"4-0":{"B3":7.5,"UN":7,"WA":7,"VC":6.5,"OE":5.75},"1-0":{"BF":6.1,"B3":11,"UN":10,"WA":10,"VC":9,"OE":8},"5-0":{"B3":11,"UN":11,"VC":10,"WA":10,"OE":9},"3-1":{"BF":6.49,"B3":13,"UN":12,"VC":11.5,"WA":11,"OE":10},"2-1":{"BF":6.1,"B3":15,"UN":13,"VC":13,"WA":13,"OE":10},"4-1":{"B3":17,"UN":14,"VC":14,"WA":13,"OE":12}}},{"slug":"belgium-v-egypt","fecha":"Jun 15","hora":"15:00","ciudad":"Seattle","j":1,"grp":"G","local":"Bélgica","visita":"Egipto","win_pred":"Bélgica","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🔴","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Bélgica":1.63,"Empate":3.94,"Egipto":5.51},"B3":{"Bélgica":1.67,"Empate":3.8,"Egipto":5},"UN":{"Bélgica":1.65,"Empate":3.9,"Egipto":4.8},"OE":{"Bélgica":1.7,"Empate":3.85,"Egipto":4.5},"MA":{"Bélgica":1.63,"Empate":3.94,"Egipto":5.51},"VC":{"Bélgica":1.65,"Empate":3.9,"Egipto":5},"WA":{"Bélgica":1.61,"Empate":4,"Egipto":4.75}},"cs_top":{"1-0":{"B3":8,"UN":7.5,"BF":7.47,"OE":6.5,"VC":6.5,"WA":6.5},"1-1":{"BF":8.06,"B3":7.5,"UN":7.5,"VC":7,"WA":7,"OE":6.25},"2-0":{"BF":7.27,"B3":8.5,"UN":8,"VC":7.5,"WA":7.5,"OE":7},"2-1":{"B3":9,"UN":8.5,"BF":8.45,"VC":7.5,"WA":7.5,"OE":6.5},"3-0":{"BF":8.06,"B3":13,"UN":13,"VC":12,"OE":11,"WA":11},"3-1":{"BF":7.66,"B3":15,"UN":13,"VC":12,"WA":12,"OE":11},"0-0":{"BF":13.3,"VC":13,"B3":12,"UN":12,"WA":11,"OE":10},"2-2":{"B3":17,"BF":16.7,"UN":16,"VC":15,"WA":15,"OE":12}}},{"slug":"saudi-arabia-v-uruguay","fecha":"Jun 15","hora":"18:00","ciudad":"Miami","j":1,"grp":"H","local":"Arabia Saudita","visita":"Uruguay","win_pred":"Uruguay","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Uruguay":1.53,"Empate":4.43,"Arabia Saudita":7.08},"B3":{"Uruguay":1.5,"Empate":4.33,"Arabia Saudita":6.25},"UN":{"Uruguay":1.48,"Empate":4.2,"Arabia Saudita":6.5},"OE":{"Uruguay":1.49,"Empate":4.1,"Arabia Saudita":6.4},"MA":{"Uruguay":1.52,"Empate":4.33,"Arabia Saudita":7.08},"VC":{"Uruguay":1.45,"Empate":4.2,"Arabia Saudita":7},"WA":{"Uruguay":1.5,"Empate":4.2,"Arabia Saudita":5.75}},"cs_top":{"1-0":{"BF":5.8,"B3":6.5,"UN":6.5,"WA":6.5,"VC":5.75,"OE":5.5},"2-0":{"B3":7,"BF":6.29,"UN":6.5,"VC":6,"OE":5.75,"WA":5.75},"2-1":{"BF":6.1,"B3":9,"WA":9,"UN":8.5,"VC":8,"OE":6.5},"1-1":{"BF":9.23,"B3":8.5,"UN":8,"VC":7.5,"WA":7.5,"OE":6.5},"3-0":{"B3":11,"BF":6.68,"UN":10,"VC":10,"OE":8.5,"WA":8.5},"0-0":{"BF":12.8,"VC":12,"B3":11,"UN":11,"WA":10,"OE":9.5},"3-1":{"B3":15,"BF":6.68,"UN":13,"VC":11.5,"WA":11,"OE":10},"2-2":{"B3":21,"UN":21,"VC":19,"WA":17,"OE":15,"BF":6.1}}},{"slug":"iran-v-new-zealand","fecha":"Jun 15","hora":"21:00","ciudad":"Los Ángeles","j":1,"grp":"G","local":"Irán","visita":"Nueva Zelanda","win_pred":"Irán","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Irán":1.9,"Empate":3.5,"Nueva Zelanda":4.53},"B3":{"Irán":1.85,"Empate":3.5,"Nueva Zelanda":4.2},"UN":{"Irán":1.85,"Empate":3.45,"Nueva Zelanda":4.2},"OE":{"Irán":1.84,"Empate":3.35,"Nueva Zelanda":4.4},"MA":{"Irán":1.89,"Empate":3.45,"Nueva Zelanda":4.43},"VC":{"Irán":1.85,"Empate":3.4,"Nueva Zelanda":4.33},"WA":{"Irán":1.85,"Empate":3.4,"Nueva Zelanda":4}},"cs_top":{"1-0":{"BF":6.68,"B3":6.5,"UN":6,"WA":6,"VC":5.75,"OE":5.25},"1-1":{"BF":7.27,"B3":7,"UN":6.5,"VC":6.5,"WA":6.5,"OE":5.5},"2-0":{"BF":5.31,"B3":8.5,"UN":8,"VC":7.5,"WA":7.5,"OE":6.5},"2-1":{"BF":9.62,"B3":9.5,"UN":9,"WA":8.5,"VC":8,"OE":7},"0-0":{"BF":9.82,"VC":9.5,"B3":8.5,"UN":8.5,"OE":8,"WA":8},"3-0":{"BF":5.61,"B3":15,"UN":15,"VC":15,"OE":13,"WA":13},"3-1":{"BF":5.51,"B3":17,"UN":17,"VC":15,"WA":15,"OE":13},"2-2":{"BF":19.6,"B3":19,"UN":18,"VC":17,"WA":15,"OE":13}}},{"slug":"austria-v-jordan","fecha":"Jun 16","hora":"00:00","ciudad":"San Francisco","j":1,"grp":"J","local":"Austria","visita":"Jordania","win_pred":"Austria","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Austria":1.35,"Empate":5.8,"Jordania":8.84},"B3":{"Austria":1.33,"Empate":5.5,"Jordania":8},"UN":{"Austria":1.33,"Empate":5.25,"Jordania":8},"OE":{"Austria":1.33,"Empate":5,"Jordania":8.2},"MA":{"Austria":1.34,"Empate":5.7,"Jordania":9.04},"VC":{"Austria":1.3,"Empate":5.25,"Jordania":9.5},"WA":{"Austria":1.3,"Empate":5.5,"Jordania":7.5}},"cs_top":{"2-0":{"BF":4.43,"B3":7,"UN":6.5,"VC":6.5,"WA":6.5,"OE":5.5},"1-0":{"BF":4.63,"B3":8,"UN":7.5,"WA":7.5,"VC":7,"OE":6.5},"3-0":{"BF":4.53,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"2-1":{"B3":9.5,"BF":4.63,"UN":8.5,"VC":8,"WA":8,"OE":7},"3-1":{"BF":4.43,"B3":12,"UN":11,"VC":10,"WA":10,"OE":9},"1-1":{"BF":11.3,"B3":11,"UN":10,"VC":9.5,"WA":9,"OE":8},"4-0":{"B3":15,"UN":14,"VC":14,"OE":12,"WA":12},"0-0":{"BF":19.6,"UN":16,"B3":15,"WA":15,"VC":14,"OE":11}}},{"slug":"france-v-senegal","fecha":"Jun 16","hora":"15:00","ciudad":"Nueva York","j":1,"grp":"I","local":"Francia","visita":"Senegal","win_pred":"Francia","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Francia":1.46,"Empate":4.82,"Senegal":7.47},"B3":{"Francia":1.44,"Empate":4.5,"Senegal":6.5},"UN":{"Francia":1.45,"Empate":4.4,"Senegal":6.5},"OE":{"Francia":1.43,"Empate":4.2,"Senegal":7.5},"MA":{"Francia":1.45,"Empate":4.72,"Senegal":7.47},"VC":{"Francia":1.44,"Empate":4.33,"Senegal":7},"WA":{"Francia":1.43,"Empate":4.5,"Senegal":6.5}},"cs_top":{"1-0":{"B3":7,"BF":4.63,"UN":6.5,"VC":6,"WA":5.75,"OE":5.5},"2-0":{"BF":4.92,"B3":7,"UN":6.5,"WA":6.5,"VC":6,"OE":5.5},"2-1":{"B3":9,"UN":8.5,"BF":4.82,"VC":8,"WA":7.5,"OE":6.5},"1-1":{"BF":9.82,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"3-0":{"BF":5.21,"B3":10,"UN":9.5,"VC":9.5,"WA":9,"OE":8},"3-1":{"BF":5.12,"B3":13,"UN":12,"VC":11.5,"WA":11,"OE":9.5},"0-0":{"BF":13.7,"VC":13,"B3":12,"UN":12,"WA":11,"OE":9.5},"2-2":{"B3":21,"UN":21,"VC":19,"WA":17,"OE":15,"BF":4.82}}},{"slug":"iraq-v-norway","fecha":"Jun 16","hora":"18:00","ciudad":"Boston","j":1,"grp":"I","local":"Irak","visita":"Noruega","win_pred":"Noruega","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Noruega":1.24,"Empate":6.68,"Irak":13.3},"B3":{"Noruega":1.22,"Empate":6,"Irak":11},"UN":{"Noruega":1.23,"Empate":6,"Irak":11},"OE":{"Noruega":1.24,"Empate":6.25,"Irak":9.5},"MA":{"Noruega":1.25,"Empate":6.68,"Irak":13.7},"VC":{"Noruega":1.2,"Empate":6.5,"Irak":13},"WA":{"Noruega":1.25,"Empate":6.5,"Irak":9}},"cs_top":{"2-0":{"BF":5.61,"B3":6,"UN":5.75,"VC":5.5,"WA":5.25,"OE":5},"3-0":{"BF":5.8,"B3":7.5,"UN":7,"WA":7,"VC":6.5,"OE":6},"1-0":{"WA":8,"BF":5.21,"B3":7.5,"UN":7,"VC":6.5,"OE":6},"2-1":{"BF":5.31,"B3":10,"WA":10,"UN":9.5,"VC":9,"OE":7.5},"3-1":{"B3":12,"BF":5.7,"UN":11,"VC":10.5,"OE":9,"WA":9},"4-0":{"B3":12,"UN":11,"WA":11,"VC":10.5,"OE":9},"1-1":{"BF":13.3,"B3":12,"UN":12,"VC":11.5,"WA":11,"OE":9.5},"0-0":{"BF":18.6,"UN":16,"B3":15,"WA":15,"VC":14,"OE":11}}},{"slug":"argentina-v-algeria","fecha":"Jun 16","hora":"21:00","ciudad":"Kansas City","j":1,"grp":"J","local":"Argentina","visita":"Argelia","win_pred":"Argentina","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟡","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Argentina":1.41,"Empate":4.72,"Argelia":9.04},"B3":{"Argentina":1.42,"Empate":4.5,"Argelia":7},"UN":{"Argentina":1.4,"Empate":4.5,"Argelia":7.5},"OE":{"Argentina":1.41,"Empate":4.3,"Argelia":8},"MA":{"Argentina":1.4,"Empate":4.63,"Argelia":9.04},"VC":{"Argentina":1.4,"Empate":4.4,"Argelia":8},"WA":{"Argentina":1.43,"Empate":4.2,"Argelia":7}},"cs_top":{"1-0":{"B3":6.5,"BF":6.1,"UN":6,"WA":6,"VC":5.5,"OE":5},"2-0":{"B3":6.5,"BF":6.29,"UN":6,"VC":5.75,"WA":5.75,"OE":5.25},"2-1":{"B3":9.5,"BF":6.1,"UN":8.5,"VC":8,"WA":8,"OE":7},"1-1":{"BF":9.43,"B3":9,"UN":8.5,"VC":8.5,"WA":7.5,"OE":7},"3-0":{"BF":6.49,"B3":9.5,"UN":9,"VC":8.5,"WA":8.5,"OE":8},"3-1":{"BF":6.49,"B3":13,"UN":13,"VC":11.5,"WA":11,"OE":10},"0-0":{"VC":13,"BF":12.8,"UN":11,"B3":10,"WA":10,"OE":9.5},"4-0":{"B3":19,"UN":17,"VC":17,"OE":15,"WA":15}}},{"slug":"portugal-v-dr-congo","fecha":"Jun 17","hora":"13:00","ciudad":"Houston","j":1,"grp":"K","local":"Portugal","visita":"RD Congo","win_pred":"Portugal","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Portugal":1.27,"Empate":6.49,"RD Congo":12.3},"B3":{"Portugal":1.25,"Empate":6.25,"RD Congo":10},"UN":{"Portugal":1.25,"Empate":5.75,"RD Congo":10},"OE":{"Portugal":1.26,"Empate":5.75,"RD Congo":9.5},"MA":{"Portugal":1.26,"Empate":6.29,"RD Congo":12.3},"VC":{"Portugal":1.22,"Empate":6,"RD Congo":12},"WA":{"Portugal":1.25,"Empate":5.75,"RD Congo":10}},"cs_top":{"2-0":{"BF":6.88,"B3":6.5,"WA":6.5,"UN":6,"VC":5.75,"OE":5.25},"1-0":{"BF":7.66,"B3":8,"UN":7.5,"WA":7.5,"VC":7,"OE":6.5},"3-0":{"BF":8.45,"B3":8,"UN":7.5,"VC":7,"WA":7,"OE":6.5},"2-1":{"B3":10,"BF":7.86,"UN":9,"VC":8.5,"WA":8.5,"OE":7.5},"3-1":{"BF":8.84,"B3":12,"UN":11,"VC":10,"WA":10,"OE":8.5},"1-1":{"B3":13,"BF":12.8,"UN":11,"VC":11,"WA":10,"OE":9},"4-0":{"B3":12,"UN":12,"VC":11.5,"WA":11,"OE":10},"0-0":{"B3":17,"UN":17,"WA":15,"VC":14,"OE":11,"BF":7.08}}},{"slug":"england-v-croatia","fecha":"Jun 17","hora":"16:00","ciudad":"Dallas","j":1,"grp":"L","local":"Inglaterra","visita":"Croacia","win_pred":"Inglaterra","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Inglaterra":1.75,"Empate":3.94,"Croacia":4.92},"B3":{"Inglaterra":1.73,"Empate":3.7,"Croacia":4.75},"UN":{"Inglaterra":1.73,"Empate":3.6,"Croacia":4.6},"OE":{"Inglaterra":1.69,"Empate":3.55,"Croacia":5.1},"MA":{"Inglaterra":1.74,"Empate":3.89,"Croacia":4.82},"VC":{"Inglaterra":1.73,"Empate":3.6,"Croacia":4.8},"WA":{"Inglaterra":1.73,"Empate":3.75,"Croacia":4.2}},"cs_top":{"1-0":{"B3":7,"UN":6.5,"BF":6.29,"VC":5.75,"WA":5.75,"OE":5.25},"1-1":{"BF":7.66,"B3":7.5,"UN":7,"WA":7,"VC":6.5,"OE":6},"2-0":{"BF":8.25,"B3":8,"UN":7.5,"VC":7.5,"WA":7.5,"OE":6.5},"2-1":{"BF":9.43,"B3":9,"UN":8.5,"VC":8,"WA":7.5,"OE":7},"0-0":{"VC":10.5,"BF":10.3,"B3":9.5,"UN":9.5,"WA":9,"OE":8.5},"3-0":{"BF":8.25,"B3":15,"UN":13,"VC":13,"WA":13,"OE":11},"3-1":{"BF":8.06,"B3":15,"UN":15,"VC":14,"WA":13,"OE":11},"2-2":{"BF":19.6,"B3":19,"UN":18,"VC":16,"WA":15,"OE":13}}},{"slug":"ghana-v-panama","fecha":"Jun 17","hora":"19:00","ciudad":"Toronto","j":1,"grp":"L","local":"Ghana","visita":"Panamá","win_pred":"Ghana","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟡","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Ghana":2.06,"Empate":3.69,"Panamá":3.74},"B3":{"Ghana":2,"Empate":3.5,"Panamá":3.6},"UN":{"Ghana":2,"Empate":3.4,"Panamá":3.6},"OE":{"Ghana":1.97,"Empate":3.35,"Panamá":3.8},"MA":{"Ghana":2.04,"Empate":3.65,"Panamá":3.74},"VC":{"Ghana":1.95,"Empate":3.3,"Panamá":3.9},"WA":{"Ghana":2,"Empate":3.75,"Panamá":3.25}},"cs_top":{"1-0":{"B3":7,"BF":6.88,"UN":6.5,"WA":6.5,"VC":6,"OE":5.75},"1-1":{"BF":7.47,"B3":7,"WA":7,"UN":6.5,"VC":6,"OE":5.5},"2-1":{"BF":9.82,"B3":9.5,"UN":9,"WA":8.5,"VC":8,"OE":7},"2-0":{"BF":9.82,"B3":9.5,"UN":9,"VC":8.5,"WA":8,"OE":7.5},"0-0":{"BF":10.3,"VC":10,"B3":9,"UN":9,"OE":8.5,"WA":8.5},"3-1":{"B3":19,"BF":5.02,"UN":17,"VC":16,"WA":15,"OE":13},"3-0":{"B3":19,"BF":5.02,"UN":17,"VC":17,"WA":15,"OE":13},"2-2":{"BF":21,"B3":19,"WA":17,"UN":16,"VC":15,"OE":13}}},{"slug":"uzbekistan-v-colombia","fecha":"Jun 17","hora":"22:00","ciudad":"Ciudad de México","j":1,"grp":"K","local":"Uzbekistán","visita":"Colombia","win_pred":"Colombia","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Colombia":1.41,"Empate":5.02,"Uzbekistán":8.84},"B3":{"Colombia":1.4,"Empate":4.5,"Uzbekistán":7.5},"UN":{"Colombia":1.4,"Empate":4.6,"Uzbekistán":7},"OE":{"Colombia":1.39,"Empate":4.5,"Uzbekistán":7.7},"MA":{"Colombia":1.4,"Empate":4.92,"Uzbekistán":8.84},"VC":{"Colombia":1.4,"Empate":4.4,"Uzbekistán":8},"WA":{"Colombia":1.36,"Empate":4.5,"Uzbekistán":8}},"cs_top":{"1-0":{"B3":6.5,"BF":6.29,"UN":6,"VC":5.5,"WA":5.25,"OE":5},"2-0":{"BF":6.29,"B3":6.5,"UN":6,"WA":6,"VC":5.75,"OE":5},"2-1":{"BF":6.1,"B3":9,"UN":8.5,"VC":8,"WA":8,"OE":7},"3-0":{"BF":6.49,"B3":9.5,"UN":9,"VC":8.5,"WA":8,"OE":7.5},"1-1":{"BF":10.8,"B3":9,"UN":9,"VC":8.5,"WA":8,"OE":7.5},"3-1":{"BF":6.49,"B3":13,"UN":13,"WA":12,"VC":11.5,"OE":10},"0-0":{"BF":13.7,"VC":13,"B3":11,"UN":11,"WA":10,"OE":9.5},"4-0":{"B3":19,"UN":17,"VC":17,"WA":15,"OE":13}}},{"slug":"czech-republic-v-south-africa","fecha":"Jun 18","hora":"12:00","ciudad":"Atlanta","j":2,"grp":"A","local":"Rep. Checa","visita":"Sudáfrica","win_nivel":"🟢","cs_nivel":"🟢","cs_top":{"1-0":{"B3":6.5,"UN":6.5,"BF":6.49,"VC":5.75,"OE":5.25},"2-0":{"BF":4.04,"B3":9,"UN":8.5,"VC":8.5,"OE":7},"0-0":{"VC":9,"B3":8,"UN":8,"BF":7.66,"OE":7.5},"2-1":{"B3":9.5,"BF":9.43,"UN":9,"VC":8.5,"OE":7},"3-1":{"BF":4.23,"B3":19,"UN":18,"VC":16,"OE":13},"3-0":{"BF":4.33,"B3":19,"UN":17,"VC":17,"OE":13},"2-2":{"B3":19,"BF":18.6,"UN":17,"VC":16,"OE":13},"3-2":{"B3":34,"UN":34,"VC":29,"OE":26,"BF":4.14}},"win_pred":"Rep. Checa","cs_refined":"1-0","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Rep. Checa":2,"Empate":3.16,"Sudáfrica":4.14},"B3":{"Rep. Checa":1.95,"Empate":3.2,"Sudáfrica":4},"UN":{"Rep. Checa":1.98,"Empate":3.2,"Sudáfrica":3.9},"OE":{"Rep. Checa":1.96,"Empate":3.25,"Sudáfrica":3.95},"VC":{"Rep. Checa":2,"Empate":3.25,"Sudáfrica":3.9}}},{"slug":"switzerland-v-bosnia-and-herzegovina","fecha":"Jun 18","hora":"15:00","ciudad":"Los Ángeles","j":2,"grp":"B","local":"Suiza","visita":"Bosnia","win_pred":"Suiza","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Suiza":1.55,"Empate":3.89,"Bosnia":6.49},"B3":{"Suiza":1.53,"Empate":3.9,"Bosnia":5.5},"UN":{"Suiza":1.55,"Empate":4,"Bosnia":5.75},"OE":{"Suiza":1.54,"Empate":3.9,"Bosnia":6},"VC":{"Suiza":1.53,"Empate":3.9,"Bosnia":6.5}},"cs_top":{"1-0":{"B3":6.5,"BF":6.29,"VC":5.5,"OE":5},"2-0":{"BF":5.7,"B3":7,"VC":6.5,"OE":5.75},"2-1":{"B3":9,"VC":8,"OE":7,"BF":4.14},"1-1":{"BF":8.06,"B3":8,"VC":7.5,"OE":6.5},"3-0":{"BF":6.1,"B3":11,"VC":10.5,"OE":9},"0-0":{"BF":11.8,"VC":11,"B3":9.5,"OE":9},"3-1":{"BF":5.9,"B3":15,"VC":12,"OE":10},"2-2":{"B3":21,"BF":21,"VC":18,"OE":15}}},{"slug":"canada-v-qatar","fecha":"Jun 18","hora":"18:00","ciudad":"Vancouver","j":2,"grp":"B","local":"Canadá","visita":"Qatar","win_pred":"Canadá","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Canadá":1.48,"Empate":4.23,"Qatar":8.06},"B3":{"Canadá":1.4,"Empate":4.33,"Qatar":7.5},"UN":{"Canadá":1.42,"Empate":4.35,"Qatar":7.5},"OE":{"Canadá":1.46,"Empate":4.1,"Qatar":7},"VC":{"Canadá":1.4,"Empate":4.33,"Qatar":8.5}},"cs_top":{"1-0":{"B3":5.5,"BF":5.41,"UN":5.25,"VC":5,"OE":4.75},"2-0":{"B3":6,"BF":5.9,"UN":5.75,"VC":5.4,"OE":5},"2-1":{"B3":9.5,"UN":9,"BF":5.9,"VC":8,"OE":7},"1-1":{"B3":9,"UN":8.5,"VC":8,"BF":7.86,"OE":6.5},"3-0":{"BF":6.88,"B3":9,"UN":9,"VC":8.5,"OE":8},"0-0":{"VC":11,"B3":9.5,"UN":9.5,"OE":8.5,"BF":4.53},"3-1":{"B3":15,"UN":14,"VC":12,"OE":11,"BF":5.21},"4-0":{"B3":19,"UN":18,"VC":17,"OE":15}}},{"slug":"mexico-v-south-korea","fecha":"Jun 18","hora":"21:00","ciudad":"Guadalajara","j":2,"grp":"A","local":"México","visita":"Corea del Sur","win_pred":"México","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"México":1.82,"Empate":3.3,"Corea del Sur":4.82},"B3":{"México":1.8,"Empate":3.4,"Corea del Sur":4.5},"UN":{"México":1.82,"Empate":3.4,"Corea del Sur":4.5},"OE":{"México":1.8,"Empate":3.35,"Corea del Sur":4.6},"VC":{"México":1.8,"Empate":3.4,"Corea del Sur":4.6}},"cs_top":{"1-0":{"B3":6.5,"BF":6.29,"UN":6,"VC":5.5,"OE":5},"1-1":{"B3":7,"BF":6.88,"UN":6.5,"VC":6.5,"OE":5.75},"2-0":{"BF":5.31,"B3":8,"UN":8,"VC":7.5,"OE":6.5},"2-1":{"B3":9.5,"BF":9.04,"UN":9,"VC":8,"OE":7},"0-0":{"BF":9.62,"VC":9.5,"UN":8.5,"B3":8,"OE":8},"3-0":{"BF":5.8,"B3":15,"UN":14,"VC":14,"OE":12},"3-1":{"BF":5.61,"B3":17,"UN":16,"VC":15,"OE":13},"2-2":{"BF":19.1,"B3":19,"UN":17,"VC":17,"OE":13}}},{"slug":"turkey-v-paraguay","fecha":"Jun 19","hora":"00:00","ciudad":"San Francisco","j":2,"grp":"D","local":"Turquía","visita":"Paraguay","win_pred":"Turquía","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟡","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Turquía":2.23,"Empate":3.01,"Paraguay":3.4},"B3":{"Turquía":2.2,"Empate":3.1,"Paraguay":3.4},"UN":{"Turquía":2.2,"Empate":3.15,"Paraguay":3.35},"OE":{"Turquía":2.22,"Empate":3.15,"Paraguay":3.3},"VC":{"Turquía":2.2,"Empate":3.2,"Paraguay":3.4}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":6,"BF":5.7,"OE":5.25},"1-0":{"B3":7,"BF":6.88,"UN":6.5,"VC":6,"OE":5.5},"0-0":{"VC":9,"BF":8.45,"UN":8,"B3":7.5,"OE":7.5},"2-1":{"B3":10,"UN":9.5,"BF":8.84,"VC":8.5,"OE":7.5},"2-0":{"BF":11.8,"B3":10,"UN":9.5,"VC":9.5,"OE":8},"2-2":{"BF":17.2,"B3":17,"UN":16,"VC":16,"OE":13},"3-1":{"BF":4.63,"B3":21,"UN":19,"VC":18,"OE":17},"3-0":{"B3":21,"UN":21,"VC":20,"OE":17,"BF":4.43}}},{"slug":"usa-v-australia","fecha":"Jun 19","hora":"15:00","ciudad":"Seattle","j":2,"grp":"D","local":"USA","visita":"Australia","win_pred":"USA","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"USA":1.73,"Empate":3.79,"Australia":4.92},"B3":{"USA":1.7,"Empate":3.5,"Australia":4.75},"UN":{"USA":1.73,"Empate":3.6,"Australia":4.6},"OE":{"USA":1.69,"Empate":3.65,"Australia":4.9},"VC":{"USA":1.73,"Empate":3.6,"Australia":4.8}},"cs_top":{"1-0":{"B3":7,"UN":6.5,"BF":6.49,"VC":6,"OE":5.5},"2-0":{"BF":4.53,"B3":8,"UN":7.5,"VC":7.5,"OE":6.5},"1-1":{"BF":7.86,"B3":7,"UN":7,"VC":6.5,"OE":6},"2-1":{"B3":9,"BF":8.64,"UN":8.5,"VC":8,"OE":7},"0-0":{"BF":11.8,"VC":11,"UN":10,"B3":9.5,"OE":8.5},"3-0":{"BF":4.82,"B3":15,"UN":13,"VC":13,"OE":11},"3-1":{"BF":4.72,"B3":15,"UN":15,"VC":13,"OE":11},"2-2":{"BF":19.6,"B3":19,"UN":17,"VC":16,"OE":13}}},{"slug":"scotland-v-morocco","fecha":"Jun 19","hora":"18:00","ciudad":"Boston","j":2,"grp":"C","local":"Escocia","visita":"Marruecos","win_pred":"Marruecos","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🔴","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Marruecos":2,"Empate":3.11,"Escocia":3.94},"B3":{"Marruecos":2,"Empate":3.1,"Escocia":3.75},"UN":{"Marruecos":2.05,"Empate":3.15,"Escocia":3.75},"OE":{"Marruecos":2.1,"Empate":3.15,"Escocia":3.6},"VC":{"Marruecos":2.05,"Empate":3.25,"Escocia":3.75}},"cs_top":{"1-0":{"B3":6.5,"UN":6.5,"BF":3.94,"VC":6,"OE":5.5},"1-1":{"B3":6.5,"BF":6.29,"UN":6,"VC":6,"OE":5.25},"0-0":{"VC":9,"B3":7.5,"OE":7.5,"UN":7.5,"BF":3.79},"2-1":{"B3":9.5,"UN":9.5,"BF":9.43,"VC":8.5,"OE":7.5},"2-0":{"BF":10.3,"B3":9.5,"UN":9,"VC":8.5,"OE":8},"2-2":{"B3":17,"UN":17,"VC":16,"OE":13,"BF":4.53},"3-1":{"BF":5.12,"B3":19,"UN":19,"VC":17,"OE":15},"3-0":{"BF":5.31,"B3":19,"UN":18,"VC":18,"OE":15}}},{"slug":"brazil-v-haiti","fecha":"Jun 19","hora":"21:00","ciudad":"Philadelphia","j":2,"grp":"C","local":"Brasil","visita":"Haití","win_pred":"Brasil","win_nivel":"🟢","cs_refined":"3-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Brasil":1.07,"Empate":16.7,"Haití":33},"B3":{"Brasil":1.06,"Empate":17,"Haití":26},"OE":{"Brasil":1.07,"Empate":10.5,"Haití":27},"VC":{"Brasil":1.04,"Empate":13,"Haití":31}},"cs_top":{"3-0":{"B3":6.5,"BF":5.8,"VC":5.75,"OE":5},"4-0":{"B3":7,"VC":6,"OE":5.25},"2-0":{"B3":7.5,"BF":7.27,"VC":7,"OE":6},"5-0":{"B3":9.5,"VC":8.5,"OE":7.5},"1-0":{"B3":13,"VC":12,"OE":10},"2-1":{"B3":17,"VC":15,"OE":12},"3-1":{"B3":15,"BF":12.8,"VC":12,"OE":10},"4-1":{"B3":15,"VC":13,"OE":11}}},{"slug":"tunisia-v-japan","fecha":"Jun 20","hora":"00:00","ciudad":"Monterrey","j":2,"grp":"F","local":"Túnez","visita":"Japón","win_pred":"Japón","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Japón":1.86,"Empate":3.25,"Túnez":4.82},"B3":{"Japón":1.75,"Empate":3.4,"Túnez":4.75},"UN":{"Japón":1.84,"Empate":3.3,"Túnez":4.4},"OE":{"Japón":1.84,"Empate":3.35,"Túnez":4.4},"VC":{"Japón":1.8,"Empate":3.4,"Túnez":4.5}},"cs_top":{"1-0":{"BF":6.29,"B3":6,"UN":6,"VC":5.5,"OE":5},"1-1":{"B3":7,"BF":6.88,"UN":6.5,"VC":6.5,"OE":5.5},"2-0":{"BF":4.43,"B3":8,"UN":8,"VC":7.5,"OE":6.5},"0-0":{"VC":9.5,"BF":9.23,"B3":8,"UN":8,"OE":7.5},"2-1":{"B3":9.5,"BF":9.23,"UN":9,"VC":8,"OE":7},"3-0":{"BF":4.82,"B3":15,"UN":15,"VC":14,"OE":13},"3-1":{"BF":4.72,"B3":17,"UN":17,"VC":15,"OE":13},"2-2":{"B3":21,"BF":19.1,"UN":18,"VC":17,"OE":15}}},{"slug":"netherlands-v-sweden","fecha":"Jun 20","hora":"13:00","ciudad":"Houston","j":2,"grp":"F","local":"Países Bajos","visita":"Suecia","win_pred":"Países Bajos","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Países Bajos":1.63,"Empate":3.79,"Suecia":5.51},"B3":{"Países Bajos":1.61,"Empate":4,"Suecia":4.75},"UN":{"Países Bajos":1.65,"Empate":3.9,"Suecia":4.8},"OE":{"Países Bajos":1.62,"Empate":3.75,"Suecia":5.3},"VC":{"Países Bajos":1.6,"Empate":3.9,"Suecia":5.5}},"cs_top":{"1-0":{"B3":7,"BF":6.68,"UN":6.5,"VC":6,"OE":5.75},"2-0":{"B3":7.5,"UN":7.5,"VC":7,"OE":6.5,"BF":3.55},"1-1":{"B3":8,"BF":7.86,"UN":7.5,"VC":7,"OE":6.25},"2-1":{"B3":9,"UN":8.5,"BF":8.45,"VC":7.5,"OE":6.5},"3-0":{"BF":4.92,"B3":12,"UN":12,"VC":11.5,"OE":10},"0-0":{"BF":12.3,"VC":12,"B3":11,"UN":10.5,"OE":9},"3-1":{"BF":4.82,"B3":15,"UN":14,"VC":12,"OE":10},"2-2":{"B3":21,"BF":17.7,"UN":17,"VC":16,"OE":13}}},{"slug":"germany-v-ivory-coast","fecha":"Jun 20","hora":"16:00","ciudad":"Toronto","j":2,"grp":"E","local":"Alemania","visita":"C. de Marfil","win_pred":"Alemania","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Alemania":1.53,"Empate":4.04,"C. de Marfil":5.9},"B3":{"Alemania":1.55,"Empate":4,"C. de Marfil":5.25},"UN":{"Alemania":1.54,"Empate":4.2,"C. de Marfil":5.5},"OE":{"Alemania":1.56,"Empate":4.1,"C. de Marfil":5.4},"VC":{"Alemania":1.55,"Empate":4.1,"C. de Marfil":5.75}},"cs_top":{"2-0":{"BF":5.21,"B3":8,"UN":7.5,"VC":7,"OE":6.25},"1-0":{"B3":7.5,"BF":7.47,"UN":7,"VC":6.5,"OE":6},"1-1":{"BF":8.45,"B3":8,"UN":8,"VC":7.5,"OE":6.5},"2-1":{"B3":9,"BF":8.64,"UN":8.5,"VC":7.5,"OE":6.5},"3-0":{"BF":5.51,"B3":12,"UN":11,"VC":11,"OE":9.5},"3-1":{"BF":5.41,"B3":13,"UN":13,"VC":11.5,"OE":10},"0-0":{"BF":14.2,"VC":13,"B3":12,"UN":12,"OE":10},"2-2":{"B3":19,"BF":17.7,"UN":17,"VC":16,"OE":13}}},{"slug":"ecuador-v-curacao","fecha":"Jun 20","hora":"20:00","ciudad":"Kansas City","j":2,"grp":"E","local":"Ecuador","visita":"Curazao","win_pred":"Ecuador","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Ecuador":1.22,"Empate":6.29,"Curazao":17.2},"B3":{"Ecuador":1.25,"Empate":5.5,"Curazao":11},"UN":{"Ecuador":1.25,"Empate":5.5,"Curazao":11},"OE":{"Ecuador":1.23,"Empate":5.25,"Curazao":14.5},"VC":{"Ecuador":1.22,"Empate":6,"Curazao":13}},"cs_top":{"2-0":{"B3":6,"UN":5.5,"VC":5.25,"BF":4.72,"OE":4.75},"1-0":{"B3":6.5,"UN":6.5,"VC":5.75,"BF":4.43,"OE":5.25},"3-0":{"B3":7.5,"UN":7,"VC":6.5,"BF":4.82,"OE":6},"2-1":{"B3":10,"UN":9.5,"BF":4.63,"VC":9,"OE":7.5},"3-1":{"B3":13,"UN":12,"BF":4.82,"VC":11,"OE":9.5},"1-1":{"BF":11.3,"B3":11,"UN":11,"VC":11,"OE":9},"4-0":{"B3":12,"UN":12,"VC":11,"OE":9.5},"0-0":{"BF":14.2,"UN":13,"B3":12,"VC":12,"OE":10}}},{"slug":"spain-v-saudi-arabia","fecha":"Jun 21","hora":"12:00","ciudad":"Atlanta","j":2,"grp":"H","local":"España","visita":"Arabia Saudita","win_pred":"España","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"España":1.12,"Empate":9.62,"Arabia Saudita":35},"B3":{"España":1.1,"Empate":9,"Arabia Saudita":26},"UN":{"España":1.1,"Empate":8.5,"Arabia Saudita":23},"OE":{"España":1.12,"Empate":7.5,"Arabia Saudita":25},"VC":{"España":1.09,"Empate":9.5,"Arabia Saudita":26}},"cs_top":{"2-0":{"BF":4.92,"B3":5.5,"UN":5.25,"VC":5,"OE":4.5},"3-0":{"B3":6,"UN":5.5,"BF":5.02,"VC":5.25,"OE":4.75},"1-0":{"B3":8,"UN":7,"VC":7,"BF":4.72,"OE":6.5},"4-0":{"B3":8,"UN":7.5,"VC":7.5,"OE":6.25},"2-1":{"B3":13,"UN":12,"VC":12,"OE":9.5,"BF":3.94},"3-1":{"B3":15,"UN":13,"BF":5.02,"VC":12,"OE":10},"5-0":{"B3":13,"UN":13,"VC":13,"OE":10},"0-0":{"OE":21,"UN":19,"B3":17,"VC":17,"BF":4.33}}},{"slug":"belgium-v-iran","fecha":"Jun 21","hora":"15:00","ciudad":"Los Ángeles","j":2,"grp":"G","local":"Bélgica","visita":"Irán","win_pred":"Bélgica","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Bélgica":1.43,"Empate":4.43,"Irán":8.45},"B3":{"Bélgica":1.42,"Empate":4.33,"Irán":6.5},"UN":{"Bélgica":1.42,"Empate":4.4,"Irán":7},"OE":{"Bélgica":1.42,"Empate":4.35,"Irán":7.4},"VC":{"Bélgica":1.4,"Empate":4.4,"Irán":8}},"cs_top":{"1-0":{"B3":6.5,"UN":6,"BF":5.8,"VC":5.75,"OE":5},"2-0":{"B3":6.5,"BF":5.8,"UN":6,"VC":6,"OE":5.25},"2-1":{"B3":9.5,"UN":8.5,"BF":5.31,"VC":8,"OE":7},"1-1":{"B3":9,"UN":8.5,"VC":8.5,"BF":8.06,"OE":7},"3-0":{"BF":6.1,"B3":9.5,"UN":9,"VC":9,"OE":8},"3-1":{"B3":13,"UN":13,"BF":5.9,"VC":11,"OE":10},"0-0":{"VC":13,"BF":11.8,"B3":11,"UN":11,"OE":9.5},"4-0":{"B3":17,"UN":17,"VC":17,"OE":15}}},{"slug":"uruguay-v-cape-verde","fecha":"Jun 21","hora":"18:00","ciudad":"Miami","j":2,"grp":"H","local":"Uruguay","visita":"Cabo Verde","win_pred":"Uruguay","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Uruguay":1.43,"Empate":4.33,"Cabo Verde":8.45},"B3":{"Uruguay":1.45,"Empate":4.33,"Cabo Verde":6.5},"UN":{"Uruguay":1.45,"Empate":4.35,"Cabo Verde":6.5},"OE":{"Uruguay":1.44,"Empate":4.33,"Cabo Verde":7},"VC":{"Uruguay":1.44,"Empate":4.2,"Cabo Verde":7.5}},"cs_top":{"1-0":{"B3":6.5,"UN":6,"VC":5.75,"BF":5.61,"OE":5.25},"2-0":{"B3":7,"UN":6.5,"BF":4.63,"VC":6,"OE":5.25},"2-1":{"B3":9,"UN":8.5,"VC":8,"BF":4.33,"OE":7},"1-1":{"B3":9,"UN":8.5,"VC":8,"BF":7.86,"OE":7},"3-0":{"B3":10,"UN":9.5,"VC":9.5,"BF":4.72,"OE":8},"3-1":{"B3":13,"UN":13,"BF":4.72,"VC":11.5,"OE":10},"0-0":{"VC":13,"BF":11.3,"B3":11,"UN":11,"OE":9.5},"4-0":{"B3":19,"UN":18,"VC":18,"OE":15}}},{"slug":"new-zealand-v-egypt","fecha":"Jun 21","hora":"21:00","ciudad":"Vancouver","j":2,"grp":"G","local":"Nueva Zelanda","visita":"Egipto","win_pred":"Egipto","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Egipto":1.69,"Empate":3.84,"Nueva Zelanda":5.02},"B3":{"Egipto":1.7,"Empate":3.5,"Nueva Zelanda":5},"UN":{"Egipto":1.7,"Empate":3.6,"Nueva Zelanda":5},"OE":{"Egipto":1.68,"Empate":3.5,"Nueva Zelanda":5.25},"VC":{"Egipto":1.7,"Empate":3.5,"Nueva Zelanda":5.5}},"cs_top":{"1-0":{"B3":6,"BF":5.9,"UN":5.5,"VC":5.25,"OE":4.75},"2-0":{"BF":4.53,"B3":7.5,"UN":7,"VC":6.5,"OE":6},"1-1":{"BF":8.25,"B3":7,"UN":7,"VC":6.5,"OE":6},"2-1":{"B3":9.5,"UN":9,"BF":4.14,"VC":8,"OE":7},"0-0":{"BF":10.8,"VC":9.5,"B3":8,"OE":8,"UN":8},"3-0":{"BF":4.92,"B3":13,"UN":12,"VC":12,"OE":11},"3-1":{"B3":17,"UN":16,"VC":14,"OE":12,"BF":4.14},"2-2":{"B3":21,"UN":21,"VC":19,"OE":15,"BF":4.33}}},{"slug":"argentina-v-austria","fecha":"Jun 22","hora":"13:00","ciudad":"Dallas","j":2,"grp":"J","local":"Argentina","visita":"Austria","win_pred":"Argentina","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Argentina":1.65,"Empate":3.69,"Austria":5.51},"B3":{"Argentina":1.61,"Empate":3.75,"Austria":5.25},"UN":{"Argentina":1.65,"Empate":3.75,"Austria":5.25},"OE":{"Argentina":1.62,"Empate":3.65,"Austria":5.6},"VC":{"Argentina":1.61,"Empate":3.8,"Austria":5.5}},"cs_top":{"1-0":{"B3":7,"BF":6.68,"UN":6.5,"VC":6,"OE":5.25},"2-0":{"B3":7.5,"UN":7.5,"VC":7,"OE":6.25,"BF":3.69},"1-1":{"B3":7.5,"BF":7.47,"UN":7,"VC":7,"OE":6.25},"2-1":{"B3":9,"UN":8.5,"BF":8.45,"VC":7.5,"OE":6.5},"0-0":{"VC":12,"B3":10,"UN":10,"OE":8.5,"BF":4.04},"3-0":{"BF":5.31,"B3":13,"UN":12,"VC":12,"OE":10},"3-1":{"BF":5.21,"B3":15,"UN":14,"VC":12,"OE":11},"2-2":{"B3":19,"UN":18,"BF":17.7,"VC":16,"OE":15}}},{"slug":"france-v-iraq","fecha":"Jun 22","hora":"17:00","ciudad":"Philadelphia","j":2,"grp":"I","local":"Francia","visita":"Irak","win_pred":"Francia","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Francia":1.14,"Empate":9.43,"Irak":23},"B3":{"Francia":1.1,"Empate":9,"Irak":21},"UN":{"Francia":1.12,"Empate":8,"Irak":21},"OE":{"Francia":1.13,"Empate":7,"Irak":23},"VC":{"Francia":1.09,"Empate":9,"Irak":26}},"cs_top":{"2-0":{"B3":5.5,"UN":5.25,"VC":5,"OE":4.75},"3-0":{"B3":6,"BF":5.61,"UN":5.5,"VC":5.25,"OE":5},"1-0":{"B3":7.5,"UN":7.5,"VC":7,"OE":6.5},"4-0":{"B3":8,"UN":8,"VC":7.5,"OE":6.5},"2-1":{"B3":13,"UN":12,"VC":11.5,"OE":9.5},"3-1":{"B3":13,"BF":12.8,"UN":12,"VC":11.5,"OE":10},"5-0":{"B3":13,"UN":13,"VC":13,"OE":11},"1-1":{"B3":19,"UN":17,"VC":17,"OE":11}}},{"slug":"norway-v-senegal","fecha":"Jun 22","hora":"20:00","ciudad":"Nueva York","j":2,"grp":"I","local":"Noruega","visita":"Senegal","win_pred":"Noruega","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Noruega":2.18,"Empate":3.4,"Senegal":3.25},"B3":{"Noruega":2.1,"Empate":3.3,"Senegal":3.4},"UN":{"Noruega":2.08,"Empate":3.35,"Senegal":3.45},"OE":{"Noruega":2.08,"Empate":3.45,"Senegal":3.3},"VC":{"Noruega":2.1,"Empate":3.4,"Senegal":3.4}},"cs_top":{"1-1":{"BF":7.27,"B3":6.5,"UN":6.5,"VC":6.5,"OE":5.75},"1-0":{"B3":8.5,"BF":8.25,"UN":8,"VC":7.5,"OE":6.5},"2-1":{"B3":9.5,"BF":9.43,"UN":9,"VC":8,"OE":7},"2-0":{"B3":11,"BF":4.04,"UN":10,"VC":10,"OE":8.5},"0-0":{"VC":12,"BF":11.8,"UN":10.5,"B3":10,"OE":9.5},"3-1":{"B3":19,"UN":16,"VC":15,"OE":13,"BF":4.04},"2-2":{"BF":15.2,"B3":15,"UN":14,"VC":13,"OE":12},"3-0":{"B3":21,"VC":19,"UN":18,"OE":15,"BF":4.04}}},{"slug":"jordan-v-algeria","fecha":"Jun 22","hora":"23:00","ciudad":"San Francisco","j":2,"grp":"J","local":"Jordania","visita":"Argelia","win_pred":"Argelia","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Argelia":1.65,"Empate":3.6,"Jordania":5.8},"B3":{"Argelia":1.65,"Empate":3.7,"Jordania":5},"UN":{"Argelia":1.65,"Empate":3.75,"Jordania":5.25},"OE":{"Argelia":1.62,"Empate":3.75,"Jordania":5.3},"VC":{"Argelia":1.61,"Empate":3.8,"Jordania":5.5}},"cs_top":{"1-0":{"B3":7,"BF":6.88,"UN":6.5,"VC":6,"OE":5.25},"2-0":{"B3":8,"BF":4.82,"UN":7,"VC":7,"OE":6},"1-1":{"B3":7.5,"BF":7.47,"UN":7,"VC":7,"OE":6.25},"2-1":{"B3":9,"BF":8.64,"UN":8.5,"VC":7.5,"OE":6.5},"3-0":{"B3":13,"UN":12,"VC":12,"OE":10,"BF":4.14},"0-0":{"VC":12,"BF":11.8,"B3":10,"UN":10,"OE":9},"3-1":{"BF":5.02,"B3":15,"UN":14,"VC":12,"OE":11},"2-2":{"B3":19,"BF":18.1,"UN":18,"VC":16,"OE":15}}},{"slug":"portugal-v-uzbekistan","fecha":"Jun 23","hora":"13:00","ciudad":"Houston","j":2,"grp":"K","local":"Portugal","visita":"Uzbekistán","win_pred":"Portugal","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Portugal":1.23,"Empate":6.1,"Uzbekistán":14.2},"B3":{"Portugal":1.22,"Empate":6,"Uzbekistán":10},"UN":{"Portugal":1.23,"Empate":6,"Uzbekistán":11},"OE":{"Portugal":1.21,"Empate":5.75,"Uzbekistán":14.5},"VC":{"Portugal":1.22,"Empate":6,"Uzbekistán":13}},"cs_top":{"2-0":{"B3":6.5,"BF":5.02,"UN":6,"VC":5.75,"OE":5.25},"1-0":{"B3":8,"UN":7.5,"BF":4.72,"VC":7,"OE":6.25},"3-0":{"B3":8,"UN":7.5,"BF":5.12,"VC":7,"OE":6},"2-1":{"B3":10,"UN":9,"VC":8.5,"OE":7.5,"BF":3.55},"3-1":{"B3":12,"UN":11,"BF":5.12,"VC":10,"OE":8.5},"1-1":{"B3":13,"UN":12,"VC":11.5,"OE":10,"BF":4.04},"4-0":{"B3":12,"UN":11,"VC":11,"OE":9},"0-0":{"B3":17,"OE":17,"UN":17,"VC":15,"BF":4.43}}},{"slug":"colombia-v-dr-congo","fecha":"Jun 23","hora":"22:00","ciudad":"Guadalajara","j":2,"grp":"K","local":"Colombia","visita":"RD Congo","win_pred":"Colombia","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Colombia":1.49,"Empate":4.04,"RD Congo":8.64},"B3":{"Colombia":1.48,"Empate":3.9,"RD Congo":6.5},"UN":{"Colombia":1.5,"Empate":4,"RD Congo":7},"OE":{"Colombia":1.48,"Empate":3.9,"RD Congo":7.4},"VC":{"Colombia":1.45,"Empate":4,"RD Congo":7.5}},"cs_top":{"1-0":{"B3":5.5,"UN":5.25,"VC":5,"BF":4.82,"OE":4.5},"2-0":{"B3":6,"UN":6,"BF":5.61,"VC":5.75,"OE":5.25},"1-1":{"B3":8.5,"UN":8,"BF":7.66,"VC":7.5,"OE":6.5},"0-0":{"VC":10,"UN":8.5,"B3":8,"OE":8,"BF":4.04},"2-1":{"B3":9.5,"UN":9,"BF":5.21,"VC":8,"OE":7},"3-0":{"B3":10,"UN":10,"VC":9.5,"OE":8.5,"BF":4.23},"3-1":{"B3":15,"UN":15,"BF":5.8,"VC":13,"OE":11},"2-2":{"B3":26,"UN":23,"VC":22,"OE":19,"BF":5.21}}},{"slug":"england-v-ghana","fecha":"Jun 23","hora":"16:00","ciudad":"Boston","j":2,"grp":"L","local":"Inglaterra","visita":"Ghana","win_pred":"Inglaterra","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Inglaterra":1.29,"Empate":5.7,"Ghana":10.8},"B3":{"Inglaterra":1.3,"Empate":5,"Ghana":9},"UN":{"Inglaterra":1.3,"Empate":5.25,"Ghana":9},"OE":{"Inglaterra":1.28,"Empate":4.9,"Ghana":12},"VC":{"Inglaterra":1.29,"Empate":5.25,"Ghana":10.5}},"cs_top":{"2-0":{"B3":6.5,"BF":6.1,"UN":6,"VC":5.75,"OE":5},"1-0":{"B3":7.5,"UN":7,"VC":6.5,"BF":6.29,"OE":5.5},"3-0":{"B3":8.5,"UN":8,"VC":7.5,"OE":6.5,"BF":4.33},"2-1":{"B3":9.5,"UN":9,"VC":8,"OE":7.5,"BF":4.82},"1-1":{"B3":10,"UN":10,"VC":10,"BF":9.82,"OE":8.5},"3-1":{"B3":12,"BF":7.08,"UN":11,"VC":10,"OE":9},"4-0":{"B3":15,"UN":13,"VC":13,"OE":11},"0-0":{"BF":16.2,"UN":14,"B3":13,"VC":13,"OE":10}}},{"slug":"panama-v-croatia","fecha":"Jun 23","hora":"19:00","ciudad":"Toronto","j":2,"grp":"L","local":"Panamá","visita":"Croacia","win_pred":"Croacia","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Croacia":1.5,"Empate":3.94,"Panamá":7.47},"B3":{"Croacia":1.48,"Empate":3.9,"Panamá":6.25},"UN":{"Croacia":1.5,"Empate":4,"Panamá":6.5},"OE":{"Croacia":1.48,"Empate":3.9,"Panamá":7.2},"VC":{"Croacia":1.45,"Empate":4.1,"Panamá":7}},"cs_top":{"1-0":{"BF":6.1,"B3":6,"UN":6,"VC":5.4,"OE":5},"2-0":{"B3":6.5,"UN":6.5,"BF":4.23,"VC":6,"OE":5.5},"2-1":{"B3":9,"UN":8.5,"VC":8,"BF":4.04,"OE":7},"1-1":{"B3":8.5,"UN":8,"VC":7.5,"BF":7.08,"OE":6.5},"3-0":{"B3":11,"UN":10,"BF":4.43,"VC":9.5,"OE":8.5},"0-0":{"VC":11,"UN":10,"BF":9.82,"B3":9.5,"OE":8.5},"3-1":{"B3":15,"UN":13,"BF":4.43,"VC":12,"OE":10},"4-0":{"B3":21,"VC":20,"UN":19,"OE":17}}},{"slug":"switzerland-v-canada","fecha":"Jun 24","hora":"15:00","ciudad":"Vancouver","j":3,"grp":"B","local":"Suiza","visita":"Canadá","win_pred":"Suiza","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Suiza":2.1,"Empate":3.11,"Canadá":3.89},"B3":{"Suiza":2,"Empate":3.3,"Canadá":3.6},"UN":{"Suiza":2.1,"Empate":3.25,"Canadá":3.5},"VC":{"Suiza":2.05,"Empate":3.3,"Canadá":3.6}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":6,"BF":5.51},"1-0":{"B3":7,"UN":7,"VC":6.5,"BF":6.1},"2-1":{"B3":9.5,"UN":9,"BF":8.06,"VC":8},"0-0":{"VC":10.5,"B3":9,"UN":9,"BF":8.25},"2-0":{"B3":9.5,"UN":9.5,"BF":9.43,"VC":9},"3-1":{"B3":19,"UN":18,"VC":16},"3-0":{"B3":19,"UN":19,"VC":18},"2-2":{"B3":17,"UN":15,"VC":15,"BF":13.7}}},{"slug":"bosnia-and-herzegovina-v-qatar","fecha":"Jun 24","hora":"15:00","ciudad":"Seattle","j":3,"grp":"B","local":"Bosnia","visita":"Qatar","win_pred":"Bosnia","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟡","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Bosnia":1.7,"Empate":3.55,"Qatar":5.21},"B3":{"Bosnia":1.7,"Empate":3.5,"Qatar":4.75},"UN":{"Bosnia":1.73,"Empate":3.5,"Qatar":4.8},"VC":{"Bosnia":1.67,"Empate":3.6,"Qatar":5.25}},"cs_top":{"1-0":{"B3":6.5,"VC":5.75,"BF":5.61},"2-0":{"B3":8,"BF":4.14,"VC":7},"1-1":{"B3":7,"VC":6.5,"BF":6.29},"2-1":{"B3":9,"VC":8,"BF":7.47},"0-0":{"VC":10.5,"BF":9.43,"B3":9},"3-0":{"B3":13,"VC":13,"BF":4.43},"3-1":{"B3":17,"BF":4.33,"VC":13},"2-2":{"B3":19,"VC":17,"BF":16.2}}},{"slug":"scotland-v-brazil","fecha":"Jun 24","hora":"18:00","ciudad":"Miami","j":3,"grp":"C","local":"Escocia","visita":"Brasil","win_pred":"Brasil","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟡","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Brasil":1.38,"Empate":4.92,"Escocia":9.04},"B3":{"Brasil":1.38,"Empate":4.5,"Escocia":7.5},"VC":{"Brasil":1.36,"Empate":4.6,"Escocia":8.5}},"cs_top":{"2-0":{"B3":6.5,"VC":5.75,"BF":4.82},"1-0":{"BF":4.33,"B3":7,"VC":6},"2-1":{"B3":9.5,"BF":4.53,"VC":8},"3-0":{"B3":9,"VC":8.5,"BF":5.02},"1-1":{"B3":9.5,"BF":8.84,"VC":8.5},"3-1":{"B3":13,"VC":11,"BF":4.92},"0-0":{"BF":13.7,"VC":13,"B3":12},"2-2":{"B3":23,"VC":20,"BF":4.43}}},{"slug":"morocco-v-haiti","fecha":"Jun 24","hora":"18:00","ciudad":"Atlanta","j":3,"grp":"C","local":"Marruecos","visita":"Haití","win_pred":"Marruecos","win_nivel":"🟢","cs_refined":"2-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Marruecos":1.33,"Empate":5.31,"Haití":9.82},"B3":{"Marruecos":1.33,"Empate":5,"Haití":8},"UN":{"Marruecos":1.33,"Empate":5,"Haití":8.5},"VC":{"Marruecos":1.3,"Empate":5,"Haití":10}},"cs_top":{"2-0":{"B3":6.5,"BF":6.1,"UN":6,"VC":5.75},"1-0":{"B3":7,"UN":6.5,"BF":5.51,"VC":6},"3-0":{"B3":8.5,"BF":6.29,"UN":8,"VC":8},"2-1":{"B3":9.5,"UN":8.5,"BF":5.61,"VC":8},"1-1":{"B3":10,"UN":10,"BF":9.62,"VC":9.5},"3-1":{"B3":13,"UN":12,"VC":10.5,"BF":4.63},"0-0":{"B3":13,"UN":13,"VC":12,"BF":4.92},"4-0":{"B3":15,"UN":14,"VC":14}}},{"slug":"czech-republic-v-mexico","fecha":"Jun 24","hora":"21:00","ciudad":"Ciudad de México","j":3,"grp":"A","local":"Rep. Checa","visita":"México","win_pred":"México","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟡","cs_overridden":false,"has_data":true,"win_table":{"BF":{"México":2.08,"Empate":3.06,"Rep. Checa":3.74},"B3":{"México":1.91,"Empate":3.3,"Rep. Checa":3.8},"UN":{"México":1.98,"Empate":3.3,"Rep. Checa":3.8},"VC":{"México":2,"Empate":3.3,"Rep. Checa":3.8}},"cs_top":{"1-1":{"B3":7,"UN":6.5,"VC":6},"1-0":{"B3":7,"UN":7,"VC":6},"2-1":{"B3":9.5,"UN":9,"VC":8},"2-0":{"B3":9,"UN":9,"VC":8.5},"0-0":{"VC":10,"B3":9,"UN":9},"2-2":{"B3":17,"UN":16,"VC":15},"3-0":{"B3":17,"UN":17,"VC":17},"3-1":{"B3":19,"UN":17,"VC":16}}},{"slug":"south-africa-v-south-korea","fecha":"Jun 24","hora":"21:00","ciudad":"Monterrey","j":3,"grp":"A","local":"Sudáfrica","visita":"Corea del Sur","win_pred":"Corea del Sur","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Corea del Sur":2.08,"Empate":3.2,"Sudáfrica":3.69},"B3":{"Corea del Sur":2.1,"Empate":3.25,"Sudáfrica":3.4},"UN":{"Corea del Sur":2.1,"Empate":3.25,"Sudáfrica":3.45},"VC":{"Corea del Sur":2.1,"Empate":3.3,"Sudáfrica":3.5}},"cs_top":{"1-0":{"B3":7,"UN":7,"VC":6.5},"1-1":{"B3":6.5,"UN":6,"VC":6,"BF":5.9},"2-1":{"B3":9.5,"UN":9.5,"VC":8.5},"0-0":{"VC":10,"BF":8.84,"B3":8.5,"UN":8.5},"2-0":{"B3":10,"BF":9.82,"UN":9.5,"VC":9},"3-1":{"B3":19,"UN":18,"VC":16},"3-0":{"B3":21,"UN":19,"VC":18},"2-2":{"B3":17,"UN":16,"VC":15,"BF":14.7}}},{"slug":"ecuador-v-germany","fecha":"Jun 25","hora":"16:00","ciudad":"Nueva York","j":3,"grp":"E","local":"Ecuador","visita":"Alemania","win_pred":"Alemania","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Alemania":1.66,"Empate":3.79,"Ecuador":5.21},"B3":{"Alemania":1.65,"Empate":3.75,"Ecuador":5},"UN":{"Alemania":1.65,"Empate":3.8,"Ecuador":5},"VC":{"Alemania":1.65,"Empate":3.9,"Ecuador":5}},"cs_top":{"1-0":{"B3":7.5,"UN":7,"BF":4.92,"VC":6.5},"1-1":{"B3":7.5,"UN":7.5,"VC":7,"BF":3.94},"2-0":{"B3":8,"BF":5.7,"UN":7.5,"VC":7.5},"2-1":{"B3":9,"UN":8.5,"BF":5.12,"VC":7.5},"3-0":{"B3":13,"UN":12,"VC":12,"BF":4.72},"3-1":{"B3":15,"UN":13,"VC":12,"BF":4.82},"0-0":{"VC":13,"BF":11.8,"B3":11,"UN":11},"2-2":{"B3":17,"UN":16,"VC":15,"BF":5.02}}},{"slug":"curacao-v-ivory-coast","fecha":"Jun 25","hora":"16:00","ciudad":"Philadelphia","j":3,"grp":"E","local":"Curazao","visita":"C. de Marfil","win_pred":"C. de Marfil","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"C. de Marfil":1.3,"Empate":5.12,"Curazao":11.8},"B3":{"C. de Marfil":1.29,"Empate":5,"Curazao":8.5},"UN":{"C. de Marfil":1.29,"Empate":5.25,"Curazao":9.5},"VC":{"C. de Marfil":1.29,"Empate":5.25,"Curazao":10.5}},"cs_top":{"2-0":{"B3":6,"BF":5.8,"UN":5.5,"VC":5.5},"1-0":{"B3":7,"BF":5.41,"UN":6,"VC":6},"3-0":{"B3":8,"BF":6.1,"UN":7.5,"VC":7.5},"2-1":{"B3":10,"UN":9,"VC":8.5,"BF":5.61},"1-1":{"B3":11,"UN":10,"VC":9.5,"BF":4.33},"3-1":{"B3":13,"UN":12,"BF":6.1,"VC":10.5},"0-0":{"BF":14.2,"UN":13,"B3":12,"VC":12},"4-0":{"B3":13,"UN":13,"VC":13}}},{"slug":"japan-v-sweden","fecha":"Jun 25","hora":"19:00","ciudad":"Dallas","j":3,"grp":"F","local":"Japón","visita":"Suecia","win_pred":"Japón","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Japón":2.16,"Empate":3.4,"Suecia":3.3},"B3":{"Japón":2.05,"Empate":3.4,"Suecia":3.5},"UN":{"Japón":2.08,"Empate":3.3,"Suecia":3.5},"VC":{"Japón":2.05,"Empate":3.4,"Suecia":3.5}},"cs_top":{"1-1":{"B3":7,"UN":6,"VC":6},"1-0":{"B3":7.5,"UN":7,"VC":6.5},"2-1":{"B3":9.5,"UN":9,"VC":8},"2-0":{"B3":10,"UN":9.5,"VC":9.5},"0-0":{"VC":10.5,"B3":9.5,"UN":9},"2-2":{"B3":17,"UN":15,"VC":14},"3-1":{"B3":19,"UN":17,"VC":16},"3-0":{"B3":19,"UN":18,"VC":18}}},{"slug":"tunisia-v-netherlands","fecha":"Jun 25","hora":"19:00","ciudad":"Kansas City","j":3,"grp":"F","local":"Túnez","visita":"Países Bajos","win_pred":"Países Bajos","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Países Bajos":1.5,"Empate":4.04,"Túnez":6.68},"B3":{"Países Bajos":1.53,"Empate":4.1,"Túnez":5.75},"UN":{"Países Bajos":1.54,"Empate":4,"Túnez":5.75},"VC":{"Países Bajos":1.5,"Empate":4.1,"Túnez":6.5}},"cs_top":{"1-0":{"B3":7,"UN":6.5,"VC":6,"BF":5.9},"2-0":{"B3":7,"UN":7,"BF":5.02,"VC":6.5},"2-1":{"B3":9,"UN":8.5,"VC":7.5,"BF":4.63},"1-1":{"B3":8.5,"UN":7.5,"VC":7.5,"BF":7.08},"3-0":{"B3":11,"UN":11,"VC":10.5,"BF":5.31},"3-1":{"B3":13,"UN":13,"BF":5.21,"VC":11.5},"0-0":{"VC":13,"BF":11.3,"B3":11,"UN":10.5},"2-2":{"B3":21,"UN":19,"VC":17,"BF":4.53}}},{"slug":"turkey-v-usa","fecha":"Jun 25","hora":"22:00","ciudad":"Los Ángeles","j":3,"grp":"D","local":"Turquía","visita":"USA","win_pred":"USA","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"USA":2.49,"Turquía":2.72,"Empate":3.16},"B3":{"USA":2.45,"Turquía":2.7,"Empate":3.4},"UN":{"USA":2.5,"Turquía":2.7,"Empate":3.35},"VC":{"USA":2.5,"Turquía":2.75,"Empate":3.3}},"cs_top":{"1-1":{"B3":7,"UN":6.5,"VC":6,"BF":5.8},"1-0":{"B3":9,"UN":8,"VC":8,"BF":7.86},"2-1":{"B3":10,"UN":10,"BF":9.04,"VC":9},"0-0":{"VC":11,"B3":10,"UN":10,"BF":9.62},"2-0":{"B3":13,"BF":12.3,"UN":12,"VC":12},"2-2":{"B3":15,"UN":14,"VC":13,"BF":12.8},"3-1":{"B3":21,"UN":21,"VC":19},"3-0":{"B3":26,"UN":26,"VC":26}}},{"slug":"paraguay-v-australia","fecha":"Jun 25","hora":"22:00","ciudad":"San Francisco","j":3,"grp":"D","local":"Paraguay","visita":"Australia","win_pred":"Paraguay","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Paraguay":2.18,"Empate":3.06,"Australia":3.6},"B3":{"Paraguay":2.15,"Empate":3.2,"Australia":3.4},"UN":{"Paraguay":2.15,"Empate":3.2,"Australia":3.4},"VC":{"Paraguay":2.2,"Empate":3.2,"Australia":3.4}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":6,"BF":5.51},"1-0":{"B3":7,"UN":6.5,"BF":6.1,"VC":6},"0-0":{"VC":9,"B3":8,"UN":8,"BF":7.66},"2-1":{"B3":10,"UN":9.5,"VC":8.5,"BF":8.25},"2-0":{"B3":10,"BF":9.82,"UN":9.5,"VC":9.5},"3-1":{"B3":21,"UN":19,"VC":18},"3-0":{"B3":21,"VC":20,"UN":19},"2-2":{"B3":17,"UN":17,"VC":16,"BF":14.7}}},{"slug":"norway-v-france","fecha":"Jun 26","hora":"15:00","ciudad":"Boston","j":3,"grp":"I","local":"Noruega","visita":"Francia","win_pred":"Francia","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Francia":1.7,"Empate":3.65,"Noruega":5.12},"B3":{"Francia":1.7,"Empate":3.6,"Noruega":4.75},"UN":{"Francia":1.67,"Empate":3.75,"Noruega":4.8},"VC":{"Francia":1.67,"Empate":3.75,"Noruega":5}},"cs_top":{"1-0":{"B3":7,"UN":7,"BF":6.29,"VC":6},"2-0":{"B3":8,"BF":4.72,"UN":7.5,"VC":7.5},"1-1":{"B3":7.5,"UN":7,"VC":7,"BF":6.68},"2-1":{"B3":9,"UN":8.5,"BF":7.66,"VC":7.5},"0-0":{"VC":12,"BF":10.8,"UN":10.5,"B3":9.5},"3-0":{"BF":5.12,"B3":13,"UN":13,"VC":13},"3-1":{"B3":15,"BF":4.92,"UN":14,"VC":13},"2-2":{"B3":19,"UN":16,"VC":16,"BF":15.7}}},{"slug":"senegal-v-iraq","fecha":"Jun 26","hora":"15:00","ciudad":"Toronto","j":3,"grp":"I","local":"Senegal","visita":"Irak","win_pred":"Senegal","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Senegal":1.46,"Empate":4.04,"Irak":6.88},"B3":{"Senegal":1.5,"Empate":4.1,"Irak":5.75},"UN":{"Senegal":1.5,"Empate":4.2,"Irak":6.5},"VC":{"Senegal":1.45,"Empate":4.1,"Irak":7}},"cs_top":{"1-0":{"B3":6.5,"UN":6.5,"VC":5.75,"BF":5.7},"2-0":{"B3":7,"UN":6.5,"VC":6.5,"BF":4.82},"2-1":{"B3":9,"UN":8.5,"VC":7.5,"BF":4.53},"1-1":{"B3":8.5,"UN":8,"VC":7.5,"BF":7.47},"3-0":{"B3":11,"UN":10,"VC":10,"BF":5.12},"0-0":{"VC":12,"UN":11,"BF":10.8,"B3":10},"3-1":{"B3":15,"UN":13,"BF":5.02,"VC":11.5},"2-2":{"B3":23,"UN":19,"VC":18,"BF":4.43}}},{"slug":"cape-verde-v-saudi-arabia","fecha":"Jun 26","hora":"20:00","ciudad":"Houston","j":3,"grp":"H","local":"Cabo Verde","visita":"Arabia Saudita","win_pred":"Arabia Saudita","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Arabia Saudita":2.57,"Cabo Verde":2.55,"Empate":3.3},"B3":{"Arabia Saudita":2.6,"Cabo Verde":2.62,"Empate":3.3},"UN":{"Arabia Saudita":2.55,"Cabo Verde":2.7,"Empate":3.2},"VC":{"Arabia Saudita":2.62,"Cabo Verde":2.75,"Empate":3.12}},"cs_top":{"1-1":{"B3":6.5,"BF":6.29,"UN":6,"VC":5.75},"1-0":{"B3":7.5,"UN":7.5,"BF":7.08,"VC":7},"0-0":{"VC":9,"BF":8.84,"B3":8,"UN":8},"2-1":{"B3":11,"UN":10.5,"VC":9.5,"BF":9.43},"2-0":{"B3":13,"BF":12.3,"UN":12,"VC":12},"2-2":{"B3":19,"BF":16.2,"UN":16,"VC":15},"3-1":{"B3":26,"UN":23,"VC":22},"3-0":{"B3":29,"UN":26,"VC":26}}},{"slug":"uruguay-v-spain","fecha":"Jun 26","hora":"20:00","ciudad":"Guadalajara","j":3,"grp":"H","local":"Uruguay","visita":"España","win_pred":"España","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"España":1.59,"Empate":3.84,"Uruguay":4.92},"B3":{"España":1.61,"Empate":3.9,"Uruguay":5},"UN":{"España":1.62,"Empate":3.9,"Uruguay":5.25},"VC":{"España":1.6,"Empate":3.9,"Uruguay":5.25}},"cs_top":{"1-0":{"B3":7,"UN":7,"VC":6.5,"BF":6.1},"2-0":{"B3":8,"UN":7.5,"BF":4.14,"VC":7},"1-1":{"B3":8,"UN":7.5,"VC":7,"BF":6.88},"2-1":{"B3":9,"UN":8.5,"VC":7.5,"BF":7.27},"3-0":{"B3":13,"UN":12,"VC":12,"BF":4.33},"3-1":{"B3":15,"UN":13,"BF":4.23,"VC":12},"0-0":{"VC":13,"BF":11.3,"B3":11,"UN":11},"2-2":{"B3":19,"UN":17,"VC":16,"BF":15.2}}},{"slug":"egypt-v-iran","fecha":"Jun 26","hora":"23:00","ciudad":"Seattle","j":3,"grp":"G","local":"Egipto","visita":"Irán","win_pred":"Egipto","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Egipto":2.43,"Empate":2.78,"Irán":3.2},"B3":{"Egipto":2.45,"Empate":2.88,"Irán":3.2},"UN":{"Egipto":2.4,"Empate":2.95,"Irán":3.15},"VC":{"Egipto":2.4,"Empate":3,"Irán":3.2}},"cs_top":{"1-1":{"B3":6,"UN":5.75,"VC":5.75},"1-0":{"B3":6.5,"UN":6,"VC":5.75},"0-0":{"VC":7.5,"UN":6.5,"B3":6},"2-1":{"B3":11,"UN":10.5,"VC":9.5},"2-0":{"B3":11,"UN":10.5,"VC":10},"2-2":{"B3":19,"UN":18,"VC":18},"3-1":{"B3":26,"UN":23,"VC":22},"3-0":{"B3":26,"UN":23,"VC":23}}},{"slug":"new-zealand-v-belgium","fecha":"Jun 26","hora":"23:00","ciudad":"Vancouver","j":3,"grp":"G","local":"Nueva Zelanda","visita":"Bélgica","win_pred":"Bélgica","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Bélgica":1.27,"Empate":5.7,"Nueva Zelanda":13.3},"B3":{"Bélgica":1.27,"Empate":5.75,"Nueva Zelanda":9},"UN":{"Bélgica":1.27,"Empate":5.5,"Nueva Zelanda":9.5},"VC":{"Bélgica":1.25,"Empate":5.5,"Nueva Zelanda":11.5}},"cs_top":{"2-0":{"B3":6.5,"UN":6,"BF":5.12,"VC":5.5},"1-0":{"B3":7.5,"UN":7,"BF":4.72,"VC":6},"3-0":{"B3":8,"UN":7.5,"VC":7.5,"BF":5.31},"2-1":{"B3":9.5,"UN":9,"VC":8.5,"BF":4.82},"1-1":{"B3":12,"UN":11,"VC":10,"BF":3.94},"3-1":{"B3":12,"UN":11,"BF":5.21,"VC":10.5},"0-0":{"B3":15,"UN":15,"VC":13,"BF":4.33},"4-0":{"B3":13,"UN":13,"VC":12}}},{"slug":"panama-v-england","fecha":"Jun 27","hora":"17:00","ciudad":"Nueva York","j":3,"grp":"L","local":"Panamá","visita":"Inglaterra","win_pred":"Inglaterra","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Inglaterra":1.23,"Empate":6.29,"Panamá":15.7},"B3":{"Inglaterra":1.22,"Empate":6.5,"Panamá":11},"UN":{"Inglaterra":1.2,"Empate":6.5,"Panamá":12},"VC":{"Inglaterra":1.2,"Empate":6.5,"Panamá":13}},"cs_top":{"2-0":{"B3":6,"BF":5.9,"UN":5.75,"VC":5.5},"1-0":{"B3":7.5,"UN":7,"VC":6.5,"BF":3.84},"3-0":{"B3":7.5,"UN":7,"BF":6.29,"VC":6.5},"2-1":{"B3":10,"UN":9.5,"BF":5.8,"VC":9},"3-1":{"B3":12,"UN":11,"VC":10,"BF":4.63},"1-1":{"B3":13,"UN":13,"VC":11.5,"BF":4.63},"4-0":{"B3":11,"UN":10.5,"VC":10.5},"0-0":{"B3":17,"UN":17,"VC":14,"BF":5.12}}},{"slug":"croatia-v-ghana","fecha":"Jun 27","hora":"17:00","ciudad":"Philadelphia","j":3,"grp":"L","local":"Croacia","visita":"Ghana","win_pred":"Croacia","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Croacia":1.68,"Empate":3.45,"Ghana":5.21},"B3":{"Croacia":1.73,"Empate":3.6,"Ghana":4.5},"UN":{"Croacia":1.73,"Empate":3.6,"Ghana":4.75},"VC":{"Croacia":1.7,"Empate":3.6,"Ghana":5}},"cs_top":{"1-0":{"B3":6.5,"UN":6,"VC":5.75,"BF":5.51},"2-0":{"B3":8,"UN":7.5,"BF":4.14,"VC":7},"1-1":{"B3":7.5,"UN":7,"VC":6.5,"BF":6.29},"2-1":{"B3":9,"UN":8.5,"VC":8,"BF":7.47},"0-0":{"VC":10.5,"BF":9.04,"B3":9,"UN":9},"3-0":{"B3":15,"BF":4.33,"UN":13,"VC":13},"3-1":{"B3":17,"UN":15,"BF":4.23,"VC":14},"2-2":{"B3":21,"UN":18,"VC":17,"BF":16.2}}},{"slug":"colombia-v-portugal","fecha":"Jun 27","hora":"19:30","ciudad":"Miami","j":3,"grp":"K","local":"Colombia","visita":"Portugal","win_pred":"Portugal","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Portugal":2.16,"Empate":3.2,"Colombia":3.45},"B3":{"Portugal":2.15,"Empate":3.25,"Colombia":3.4},"UN":{"Portugal":2.1,"Empate":3.25,"Colombia":3.45},"VC":{"Portugal":2.1,"Empate":3.3,"Colombia":3.5}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":6},"1-0":{"B3":7.5,"UN":7,"BF":6.68,"VC":6.5},"2-1":{"B3":9.5,"UN":9,"VC":8.5},"2-0":{"B3":11,"UN":9.5,"VC":9.5},"0-0":{"VC":10.5,"BF":9.04,"B3":9,"UN":9},"3-1":{"B3":19,"UN":18,"VC":16},"2-2":{"B3":15,"UN":15,"VC":14,"BF":13.3},"3-0":{"B3":21,"UN":19,"VC":19}}},{"slug":"dr-congo-v-uzbekistan","fecha":"Jun 27","hora":"19:30","ciudad":"Atlanta","j":3,"grp":"K","local":"RD Congo","visita":"Uzbekistán","win_pred":"RD Congo","win_nivel":"🟢","cs_refined":"1-0","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"RD Congo":2.51,"Uzbekistán":2.8,"Empate":3.01},"B3":{"RD Congo":2.45,"Uzbekistán":2.8,"Empate":3.3},"UN":{"RD Congo":2.5,"Uzbekistán":2.8,"Empate":3.2},"VC":{"RD Congo":2.55,"Uzbekistán":2.8,"Empate":3.12}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":5.75,"BF":5.7},"1-0":{"B3":7.5,"BF":7.08,"UN":7,"VC":7},"0-0":{"VC":9,"BF":8.25,"B3":8,"UN":8},"2-1":{"B3":11,"UN":10,"VC":9.5,"BF":9.43},"2-0":{"BF":12.8,"B3":12,"VC":11.5,"UN":11},"2-2":{"B3":19,"UN":16,"VC":15,"BF":14.7},"3-1":{"B3":23,"UN":23,"VC":21},"3-0":{"B3":26,"UN":26,"VC":26}}},{"slug":"algeria-v-austria","fecha":"Jun 27","hora":"22:00","ciudad":"Kansas City","j":3,"grp":"J","local":"Argelia","visita":"Austria","win_pred":"Austria","win_nivel":"🟢","cs_refined":"0-1","cs_nivel":"🟢","cs_overridden":true,"has_data":true,"win_table":{"BF":{"Austria":2.22,"Empate":3.01,"Argelia":3.4},"B3":{"Austria":2.15,"Empate":3.2,"Argelia":3.5},"UN":{"Austria":2.1,"Empate":3.2,"Argelia":3.45},"VC":{"Austria":2.1,"Empate":3.3,"Argelia":3.5}},"cs_top":{"1-1":{"B3":6.5,"UN":6,"VC":6,"BF":5.7},"1-0":{"B3":7.5,"UN":7,"BF":6.88,"VC":6.5},"0-0":{"VC":10,"B3":8.5,"UN":8.5,"BF":8.45},"2-1":{"B3":10,"UN":9.5,"BF":8.84,"VC":8.5},"2-0":{"BF":10.3,"B3":10,"UN":9.5,"VC":9.5},"3-1":{"B3":21,"UN":18,"VC":17},"3-0":{"B3":21,"UN":19,"VC":19},"2-2":{"B3":17,"UN":16,"VC":15,"BF":13.7}}},{"slug":"jordan-v-argentina","fecha":"Jun 27","hora":"22:00","ciudad":"Dallas","j":3,"grp":"J","local":"Jordania","visita":"Argentina","win_pred":"Argentina","win_nivel":"🟢","cs_refined":"0-2","cs_nivel":"🟢","cs_overridden":false,"has_data":true,"win_table":{"BF":{"Argentina":1.17,"Empate":7.47,"Jordania":21},"B3":{"Argentina":1.17,"Empate":7,"Jordania":12},"UN":{"Argentina":1.17,"Empate":7,"Jordania":14},"VC":{"Argentina":1.15,"Empate":7,"Jordania":17}},"cs_top":{"2-0":{"B3":6,"BF":5.7,"UN":5.5,"VC":5.25},"3-0":{"B3":7,"UN":6.5,"BF":6.1,"VC":6},"1-0":{"B3":8,"BF":5.61,"UN":7,"VC":7},"2-1":{"B3":11,"UN":10,"BF":5.7,"VC":9.5},"4-0":{"B3":10,"UN":9.5,"VC":9},"3-1":{"B3":12,"BF":6.1,"UN":11,"VC":10.5},"0-0":{"UN":18,"B3":17,"VC":16,"BF":5.12},"1-1":{"B3":15,"BF":14.2,"UN":14,"VC":13}}}];
 const FLAGS={"México": "🇲🇽", "Sudáfrica": "🇿🇦", "Corea del Sur": "🇰🇷", "Rep. Checa": "🇨🇿", "Canadá": "🇨🇦", "Bosnia": "🇧🇦", "USA": "🇺🇸", "Paraguay": "🇵🇾", "Qatar": "🇶🇦", "Suiza": "🇨🇭", "Brasil": "🇧🇷", "Marruecos": "🇲🇦", "Haití": "🇭🇹", "Escocia": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "Australia": "🇦🇺", "Turquía": "🇹🇷", "Alemania": "🇩🇪", "Curazao": "🇨🇼", "C. de Marfil": "🇨🇮", "Ecuador": "🇪🇨", "Países Bajos": "🇳🇱", "Japón": "🇯🇵", "Suecia": "🇸🇪", "Túnez": "🇹🇳", "Bélgica": "🇧🇪", "Egipto": "🇪🇬", "España": "🇪🇸", "Cabo Verde": "🇨🇻", "Arabia Saudita": "🇸🇦", "Uruguay": "🇺🇾", "Irán": "🇮🇷", "Nueva Zelanda": "🇳🇿", "Francia": "🇫🇷", "Senegal": "🇸🇳", "Irak": "🇮🇶", "Noruega": "🇳🇴", "Argentina": "🇦🇷", "Argelia": "🇩🇿", "Austria": "🇦🇹", "Jordania": "🇯🇴", "Portugal": "🇵🇹", "RD Congo": "🇨🇩", "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Croacia": "🇭🇷", "Ghana": "🇬🇭", "Panamá": "🇵🇦", "Uzbekistán": "🇺🇿", "Colombia": "🇨🇴"};
 const BK_NAMES={BF:'Betfair',B3:'bet365',UN:'Unibet',OE:'10bet',MA:'Matchbook',VC:'BetVictor',WA:'Betway'};
 const BK_ORDER=['BF','B3','UN','OE','MA','VC','WA'];
@@ -209,6 +411,13 @@ const GH_REPO='polla-mundial-2026';
 const GH_WORKFLOW='update.yml';
 
 function getLEV(m){const w=m.win_pred;if(!w||w==='Empate')return'E';if(w===m.local)return'L';return'V';}
+
+// ── PER-MATCH REFRESH (stub — triggers full update workflow) ───────────────
+function triggerUpdateForMatch(matchId){
+  // No per-match update available yet — runs full workflow same as Actualizar tab
+  showTab('update');
+  setTimeout(()=>triggerUpdate(),200);
+}
 
 // ── ODDS TABLES ────────────────────────────────────────────────────────────
 function buildWinTable(m){
@@ -263,45 +472,83 @@ const dateKeys=Object.keys(byDate);
 const dayAnchors={};
 
 dateKeys.forEach(fecha=>{
+  // Day block — collapsible, open by default
   const block=document.createElement('div');block.className='day-block';
-  const anchor=document.createElement('div');anchor.id='day_'+fecha.replace(' ','_');
-  dayAnchors[fecha]=anchor.id;
-  block.appendChild(anchor);
+  const dayId='day_'+fecha.replace(' ','_');
+  dayAnchors[fecha]=dayId;
 
-  const dayHdr=document.createElement('div');dayHdr.className='day-title';
-  dayHdr.textContent=DOW[fecha]||fecha;
+  // Sticky date header (acts as collapse toggle)
+  const dayHdr=document.createElement('div');
+  dayHdr.className='day-header';
+  dayHdr.id=dayId;
+  dayHdr.innerHTML=`<span class="day-label">${DOW[fecha]||fecha}</span><span class="day-chevron" id="dchv_${dayId}">&#8964;</span>`;
+  dayHdr.addEventListener('click',()=>toggleDay(dayId));
   block.appendChild(dayHdr);
+
+  // Matches container (open by default)
+  const matchesContainer=document.createElement('div');
+  matchesContainer.className='day-matches';
+  matchesContainer.id='matches_'+dayId;
 
   byDate[fecha].forEach(m=>{
     const ovr=m.cs_overridden,lev=getLEV(m),lf=FLAGS[m.local]||'🏳',vf=FLAGS[m.visita]||'🏳';
-    const levCls=lev==='L'?'L':lev==='V'?'V':'E',levTxt=lev==='E'?'Empate':m.win_pred;
+    const levCls=lev==='L'?'lev-L':lev==='V'?'lev-V':'lev-E';
+    const levTxt=lev==='E'?'Empate':m.win_pred;
     const id='m_'+m.slug.replace(/-/g,'_');
     const wrap=document.createElement('div');wrap.className='match-wrap';
-    wrap.innerHTML=`<div class="match${ovr?' ovr':''}" id="${id}" onclick="toggle('${id}')">
-      <div class="meta">
-        <div class="hora">${m.hora}</div>
-        <div class="ciudad">${m.ciudad}</div>
-        <span class="grp-badge">G${m.grp}·J${m.j}</span>
+    wrap.innerHTML=`
+    <div class="match-card${ovr?' ovr':''}" id="${id}">
+      <div class="card-main" onclick="toggle('${id}')">
+        <div class="card-meta">
+          <div class="meta-time">${m.hora} <span class="meta-tz">CLT</span></div>
+          <div class="meta-city">${m.ciudad}</div>
+          <div class="meta-grp">G${m.grp} · J${m.j}</div>
+        </div>
+        <div class="card-teams">
+          <div class="team-row">
+            <span class="flag">${lf}</span>
+            <span class="tname${lev==='L'?' winner':''}">${m.local}</span>
+          </div>
+          <div class="team-row">
+            <span class="flag">${vf}</span>
+            <span class="tname${lev==='V'?' winner':''}">${m.visita}</span>
+          </div>
+        </div>
+        <div class="card-right">
+          <div class="pred-score${ovr?' pred-ovr':''}">${m.cs_refined||'—'}</div>
+          <div class="pred-badge ${levCls}">${levTxt}</div>
+          <div class="card-bottom">
+            <span class="conf-dot">${m.cs_nivel||''}</span>
+            <span class="expand-arrow" id="chv_${id}">&#8964;</span>
+          </div>
+        </div>
       </div>
-      <div class="teams">
-        <div class="team-row"><span class="flag">${lf}</span><span class="tname${lev==='L'?' bold':''}">${m.local}</span></div>
-        <div class="team-row"><span class="flag">${vf}</span><span class="tname${lev==='V'?' bold':''}">${m.visita}</span></div>
-      </div>
-      <div class="right">
-        <span class="result ${levCls}">${levTxt}</span>
-        <span class="score${ovr?' ovr':''}">${m.cs_refined||'—'}</span>
-        <div class="bottom-row"><span class="cons">${m.cs_nivel||''}</span><span class="chevron" id="chv_${id}">▾</span></div>
-      </div>
+      <button class="refresh-btn" onclick="event.stopPropagation();triggerUpdateForMatch('${m.slug}')" title="Actualizar este partido">&#x21BB;</button>
     </div>
     <div class="detail" id="det_${id}">${buildDetail(m)}</div>`;
-    block.appendChild(wrap);
+    matchesContainer.appendChild(wrap);
   });
+
+  block.appendChild(matchesContainer);
   root.appendChild(block);
 });
 
+function toggleDay(dayId){
+  const container=document.getElementById('matches_'+dayId);
+  const chevron=document.getElementById('dchv_'+dayId);
+  const isOpen=!container.classList.contains('collapsed');
+  container.classList.toggle('collapsed',isOpen);
+  chevron.classList.toggle('rotated',isOpen);
+}
+
 function toggle(id){
-  const d=document.getElementById('det_'+id),c=document.getElementById('chv_'+id),card=document.getElementById(id),o=d.classList.contains('open');
-  d.classList.toggle('open',!o);card.classList.toggle('open',!o);c.classList.toggle('open',!o);
+  const d=document.getElementById('det_'+id);
+  const c=document.getElementById('chv_'+id);
+  const card=document.getElementById(id);
+  const o=d.classList.contains('open');
+  d.classList.toggle('open',!o);
+  card.classList.toggle('open',!o);
+  c.classList.toggle('rotated',!o);
 }
 
 // ── TAB NAVIGATION ─────────────────────────────────────────────────────────
@@ -321,7 +568,7 @@ function buildDayMenu(){
   });
   sel.addEventListener('change',()=>{
     const el=document.getElementById(sel.value);
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
     sel.value='';
   });
 }
@@ -380,12 +627,9 @@ function renderRuns(runs){
   const el=document.getElementById('runs-list');
   if(!runs.length){el.innerHTML='<p class="run-empty">Sin ejecuciones recientes</p>';return;}
 
-  // Check if any run is active — keep polling
   const anyActive=runs.some(r=>r.status==='queued'||r.status==='in_progress');
   if(!anyActive&&pollTimer){clearInterval(pollTimer);pollTimer=null;
-    // Re-enable button
     const btn=document.getElementById('btn-update');btn.disabled=false;btn.textContent='Actualizar todo';
-    // If last run just completed, show reload banner
     if(runs[0]&&runs[0].conclusion==='success'){showReloadBanner();}
   }
 
@@ -409,7 +653,6 @@ function renderRuns(runs){
     </div>`;
   }).join('');
 
-  // Also update the last-run indicator in update state
   if(runs[0]){setRunState({status:runs[0].status,conclusion:runs[0].conclusion,created:runs[0].created_at});}
 }
 
@@ -438,7 +681,6 @@ function showUpdateStatus(type,msg){
   el.innerHTML=`<div class="state-msg ${type==='error'?'state-err':''}">${msg}</div>`;
 }
 
-// Paste from clipboard
 async function pasteToken(){
   try{
     const text=await navigator.clipboard.readText();
@@ -446,7 +688,6 @@ async function pasteToken(){
   }catch(e){document.getElementById('token-status').textContent='Pega manualmente en el campo';}
 }
 
-// Token setup
 document.getElementById('token-save').addEventListener('click',()=>{
   const val=document.getElementById('token-input').value;
   if(!val){return;}
@@ -456,16 +697,14 @@ document.getElementById('token-save').addEventListener('click',()=>{
   setTimeout(()=>{document.getElementById('token-status').textContent='';},2000);
 });
 
-// Load initial state
 if(ghToken()){
   document.getElementById('token-indicator').textContent='Token: guardado ✓';
-  document.getElementById('token-indicator').className='token-ok';
+  document.getElementById('token-indicator').className='token-indicator token-ok';
 } else {
   document.getElementById('token-indicator').textContent='Token: no configurado';
-  document.getElementById('token-indicator').className='token-missing';
+  document.getElementById('token-indicator').className='token-indicator token-missing';
 }
 
-// Pre-load run status silently
 loadRunStatus();
 
 </script>

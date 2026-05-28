@@ -47,6 +47,13 @@ const GH_WORKFLOW='update.yml';
 
 function getLEV(m){const w=m.win_pred;if(!w||w==='Empate')return'E';if(w===m.local)return'L';return'V';}
 
+// ── PER-MATCH REFRESH (stub — triggers full update workflow) ───────────────
+function triggerUpdateForMatch(matchId){
+  // No per-match update available yet — runs full workflow same as Actualizar tab
+  showTab('update');
+  setTimeout(()=>triggerUpdate(),200);
+}
+
 // ── ODDS TABLES ────────────────────────────────────────────────────────────
 function buildWinTable(m){
   const wt=m.win_table||{};const bks=BK_ORDER.filter(bk=>bk in wt);
@@ -100,45 +107,83 @@ const dateKeys=Object.keys(byDate);
 const dayAnchors={};
 
 dateKeys.forEach(fecha=>{
+  // Day block — collapsible, open by default
   const block=document.createElement('div');block.className='day-block';
-  const anchor=document.createElement('div');anchor.id='day_'+fecha.replace(' ','_');
-  dayAnchors[fecha]=anchor.id;
-  block.appendChild(anchor);
+  const dayId='day_'+fecha.replace(' ','_');
+  dayAnchors[fecha]=dayId;
 
-  const dayHdr=document.createElement('div');dayHdr.className='day-title';
-  dayHdr.textContent=DOW[fecha]||fecha;
+  // Sticky date header (acts as collapse toggle)
+  const dayHdr=document.createElement('div');
+  dayHdr.className='day-header';
+  dayHdr.id=dayId;
+  dayHdr.innerHTML=`<span class="day-label">${DOW[fecha]||fecha}</span><span class="day-chevron" id="dchv_${dayId}">&#8964;</span>`;
+  dayHdr.addEventListener('click',()=>toggleDay(dayId));
   block.appendChild(dayHdr);
+
+  // Matches container (open by default)
+  const matchesContainer=document.createElement('div');
+  matchesContainer.className='day-matches';
+  matchesContainer.id='matches_'+dayId;
 
   byDate[fecha].forEach(m=>{
     const ovr=m.cs_overridden,lev=getLEV(m),lf=FLAGS[m.local]||'🏳',vf=FLAGS[m.visita]||'🏳';
-    const levCls=lev==='L'?'L':lev==='V'?'V':'E',levTxt=lev==='E'?'Empate':m.win_pred;
+    const levCls=lev==='L'?'lev-L':lev==='V'?'lev-V':'lev-E';
+    const levTxt=lev==='E'?'Empate':m.win_pred;
     const id='m_'+m.slug.replace(/-/g,'_');
     const wrap=document.createElement('div');wrap.className='match-wrap';
-    wrap.innerHTML=`<div class="match${ovr?' ovr':''}" id="${id}" onclick="toggle('${id}')">
-      <div class="meta">
-        <div class="hora">${m.hora}</div>
-        <div class="ciudad">${m.ciudad}</div>
-        <span class="grp-badge">G${m.grp}·J${m.j}</span>
+    wrap.innerHTML=`
+    <div class="match-card${ovr?' ovr':''}" id="${id}">
+      <div class="card-main" onclick="toggle('${id}')">
+        <div class="card-meta">
+          <div class="meta-time">${m.hora} <span class="meta-tz">CLT</span></div>
+          <div class="meta-city">${m.ciudad}</div>
+          <div class="meta-grp">G${m.grp} · J${m.j}</div>
+        </div>
+        <div class="card-teams">
+          <div class="team-row">
+            <span class="flag">${lf}</span>
+            <span class="tname${lev==='L'?' winner':''}">${m.local}</span>
+          </div>
+          <div class="team-row">
+            <span class="flag">${vf}</span>
+            <span class="tname${lev==='V'?' winner':''}">${m.visita}</span>
+          </div>
+        </div>
+        <div class="card-right">
+          <div class="pred-score${ovr?' pred-ovr':''}">${m.cs_refined||'—'}</div>
+          <div class="pred-badge ${levCls}">${levTxt}</div>
+          <div class="card-bottom">
+            <span class="conf-dot">${m.cs_nivel||''}</span>
+            <span class="expand-arrow" id="chv_${id}">&#8964;</span>
+          </div>
+        </div>
       </div>
-      <div class="teams">
-        <div class="team-row"><span class="flag">${lf}</span><span class="tname${lev==='L'?' bold':''}">${m.local}</span></div>
-        <div class="team-row"><span class="flag">${vf}</span><span class="tname${lev==='V'?' bold':''}">${m.visita}</span></div>
-      </div>
-      <div class="right">
-        <span class="result ${levCls}">${levTxt}</span>
-        <span class="score${ovr?' ovr':''}">${m.cs_refined||'—'}</span>
-        <div class="bottom-row"><span class="cons">${m.cs_nivel||''}</span><span class="chevron" id="chv_${id}">▾</span></div>
-      </div>
+      <button class="refresh-btn" onclick="event.stopPropagation();triggerUpdateForMatch('${m.slug}')" title="Actualizar este partido">&#x21BB;</button>
     </div>
     <div class="detail" id="det_${id}">${buildDetail(m)}</div>`;
-    block.appendChild(wrap);
+    matchesContainer.appendChild(wrap);
   });
+
+  block.appendChild(matchesContainer);
   root.appendChild(block);
 });
 
+function toggleDay(dayId){
+  const container=document.getElementById('matches_'+dayId);
+  const chevron=document.getElementById('dchv_'+dayId);
+  const isOpen=!container.classList.contains('collapsed');
+  container.classList.toggle('collapsed',isOpen);
+  chevron.classList.toggle('rotated',isOpen);
+}
+
 function toggle(id){
-  const d=document.getElementById('det_'+id),c=document.getElementById('chv_'+id),card=document.getElementById(id),o=d.classList.contains('open');
-  d.classList.toggle('open',!o);card.classList.toggle('open',!o);c.classList.toggle('open',!o);
+  const d=document.getElementById('det_'+id);
+  const c=document.getElementById('chv_'+id);
+  const card=document.getElementById(id);
+  const o=d.classList.contains('open');
+  d.classList.toggle('open',!o);
+  card.classList.toggle('open',!o);
+  c.classList.toggle('rotated',!o);
 }
 
 // ── TAB NAVIGATION ─────────────────────────────────────────────────────────
@@ -158,7 +203,7 @@ function buildDayMenu(){
   });
   sel.addEventListener('change',()=>{
     const el=document.getElementById(sel.value);
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
     sel.value='';
   });
 }
@@ -217,12 +262,9 @@ function renderRuns(runs){
   const el=document.getElementById('runs-list');
   if(!runs.length){el.innerHTML='<p class="run-empty">Sin ejecuciones recientes</p>';return;}
 
-  // Check if any run is active — keep polling
   const anyActive=runs.some(r=>r.status==='queued'||r.status==='in_progress');
   if(!anyActive&&pollTimer){clearInterval(pollTimer);pollTimer=null;
-    // Re-enable button
     const btn=document.getElementById('btn-update');btn.disabled=false;btn.textContent='Actualizar todo';
-    // If last run just completed, show reload banner
     if(runs[0]&&runs[0].conclusion==='success'){showReloadBanner();}
   }
 
@@ -246,7 +288,6 @@ function renderRuns(runs){
     </div>`;
   }).join('');
 
-  // Also update the last-run indicator in update state
   if(runs[0]){setRunState({status:runs[0].status,conclusion:runs[0].conclusion,created:runs[0].created_at});}
 }
 
@@ -275,7 +316,6 @@ function showUpdateStatus(type,msg){
   el.innerHTML=`<div class="state-msg ${type==='error'?'state-err':''}">${msg}</div>`;
 }
 
-// Paste from clipboard
 async function pasteToken(){
   try{
     const text=await navigator.clipboard.readText();
@@ -283,7 +323,6 @@ async function pasteToken(){
   }catch(e){document.getElementById('token-status').textContent='Pega manualmente en el campo';}
 }
 
-// Token setup
 document.getElementById('token-save').addEventListener('click',()=>{
   const val=document.getElementById('token-input').value;
   if(!val){return;}
@@ -293,16 +332,14 @@ document.getElementById('token-save').addEventListener('click',()=>{
   setTimeout(()=>{document.getElementById('token-status').textContent='';},2000);
 });
 
-// Load initial state
 if(ghToken()){
   document.getElementById('token-indicator').textContent='Token: guardado ✓';
-  document.getElementById('token-indicator').className='token-ok';
+  document.getElementById('token-indicator').className='token-indicator token-ok';
 } else {
   document.getElementById('token-indicator').textContent='Token: no configurado';
-  document.getElementById('token-indicator').className='token-missing';
+  document.getElementById('token-indicator').className='token-indicator token-missing';
 }
 
-// Pre-load run status silently
 loadRunStatus();
 """
 
@@ -316,139 +353,335 @@ loadRunStatus();
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <title>Polla Mundial 2026</title>
 <style>
 /* ── RESET & BASE ─────────────────────────────────────────────────────────── */
-:root{{color-scheme:light;--bg:#f5f5f2;--card:#fff;--border:#e8e8e4;--text:#1a1a1a;--sub:#888;--accent:#2563eb;--nav-h:62px}}
+:root{{
+  --bg:#f7f7f5;
+  --card:#ffffff;
+  --border:#e5e5e3;
+  --border-light:#f0f0ee;
+  --text:#111111;
+  --text-secondary:#555555;
+  --text-muted:#999999;
+  --accent:#16a34a;
+  --accent-light:#f0fdf4;
+  --accent-border:#bbf7d0;
+  --nav-h:64px;
+  --radius:14px;
+}}
 *{{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}}
 html{{scroll-behavior:smooth}}
-body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;padding-bottom:var(--nav-h)}}
+body{{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.4;
+  padding-bottom:calc(var(--nav-h) + env(safe-area-inset-bottom,0px) + 8px);
+}}
+a{{color:inherit;text-decoration:none}}
 
 /* ── LAYOUT ───────────────────────────────────────────────────────────────── */
-.container{{max-width:700px;margin:0 auto;padding:16px 12px 8px}}
+.container{{max-width:640px;margin:0 auto;padding:16px 14px 4px}}
 
 /* ── HEADER ───────────────────────────────────────────────────────────────── */
-.header{{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}}
-.header h1{{font-size:17px;font-weight:700;flex:1}}
-.updated{{font-size:11px;color:var(--sub);white-space:nowrap}}
+.header{{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 0 14px;gap:10px;
+}}
+.header-title{{font-size:18px;font-weight:700;letter-spacing:-.3px}}
+.header-sub{{font-size:11px;color:var(--text-muted);white-space:nowrap}}
 
-/* ── DAY JUMP ─────────────────────────────────────────────────────────────── */
-.day-jump-wrap{{margin-bottom:12px}}
-#day-jump{{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--card);font-size:14px;color:var(--text);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;cursor:pointer}}
+/* ── DAY JUMP SELECT ──────────────────────────────────────────────────────── */
+.jump-wrap{{margin-bottom:16px;position:relative}}
+.jump-wrap::after{{
+  content:'';position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  width:0;height:0;
+  border-left:5px solid transparent;border-right:5px solid transparent;
+  border-top:5px solid var(--text-muted);pointer-events:none;
+}}
+#day-jump{{
+  width:100%;padding:11px 36px 11px 14px;
+  border-radius:10px;border:1.5px solid var(--border);
+  background:var(--card);font-size:14px;font-family:inherit;
+  color:var(--text);appearance:none;-webkit-appearance:none;cursor:pointer;
+  font-weight:500;
+}}
+#day-jump:focus{{outline:none;border-color:var(--accent)}}
 
-/* ── DAY HEADERS ──────────────────────────────────────────────────────────── */
-.day-block{{margin-bottom:4px}}
-.day-title{{font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--sub);text-transform:uppercase;padding:16px 4px 6px;border-bottom:1px solid var(--border)}}
+/* ── DAY BLOCKS ───────────────────────────────────────────────────────────── */
+.day-block{{margin-bottom:6px}}
 
-/* ── MATCH CARDS ──────────────────────────────────────────────────────────── */
-.match-wrap{{margin-bottom:4px}}
-.match{{display:grid;grid-template-columns:60px 1fr auto;align-items:center;background:var(--card);border:.5px solid var(--border);border-radius:12px;padding:10px 12px;gap:10px;cursor:pointer;transition:background .15s;user-select:none;min-height:64px}}
-.match:active{{background:#f0f0ec}}
-.match.ovr{{border-left:3px solid #e0a020}}
-.match.open{{border-radius:12px 12px 0 0;border-bottom-color:transparent}}
-.meta{{font-size:10px;color:var(--sub);line-height:1.7}}
-.hora{{font-size:13px;font-weight:700;color:#333}}
-.ciudad{{font-size:10px;color:#aaa;line-height:1.4}}
-.grp-badge{{display:inline-block;font-size:9px;font-weight:600;background:#f0f0ec;color:#999;border-radius:4px;padding:1px 5px;margin-top:2px}}
-.teams{{min-width:0}}
-.team-row{{display:flex;align-items:center;gap:6px;padding:2px 0}}
-.flag{{font-size:16px;line-height:1;flex-shrink:0}}
-.tname{{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#333}}
-.tname.bold{{font-weight:700;color:var(--text)}}
-.right{{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}}
-.result{{font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;white-space:nowrap}}
-.L{{background:#eaf3de;color:#3b6d11}}.E{{background:#faeeda;color:#854f0b}}.V{{background:#faece7;color:#993c1d}}
-.score{{font-size:20px;font-weight:700;letter-spacing:2px;font-variant-numeric:tabular-nums;color:var(--text)}}
-.score.ovr{{color:#c08010}}
-.bottom-row{{display:flex;align-items:center;gap:6px}}
-.cons{{font-size:13px}}
-.chevron{{font-size:11px;color:#ccc;transition:transform .2s}}
-.chevron.open{{transform:rotate(180deg)}}
+.day-header{{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 4px 8px;cursor:pointer;user-select:none;
+  position:sticky;top:0;z-index:10;background:var(--bg);
+}}
+.day-label{{
+  font-size:12px;font-weight:700;letter-spacing:.6px;
+  color:var(--text-secondary);text-transform:uppercase;
+}}
+.day-chevron{{
+  font-size:18px;color:var(--text-muted);
+  transition:transform .2s;display:inline-block;line-height:1;
+}}
+.day-chevron.rotated{{transform:rotate(180deg)}}
+
+.day-matches{{transition:none}}
+.day-matches.collapsed{{display:none}}
+
+/* ── MATCH WRAP ───────────────────────────────────────────────────────────── */
+.match-wrap{{margin-bottom:5px}}
+
+/* ── MATCH CARD ───────────────────────────────────────────────────────────── */
+.match-card{{
+  background:var(--card);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  position:relative;
+  transition:border-color .15s;
+}}
+.match-card.ovr{{border-left:3px solid #d97706}}
+.match-card.open{{border-radius:var(--radius) var(--radius) 0 0;border-bottom-color:transparent}}
+
+/* Main clickable row */
+.card-main{{
+  display:grid;
+  grid-template-columns:58px 1fr auto;
+  align-items:center;
+  padding:12px 12px 12px 14px;
+  gap:10px;
+  cursor:pointer;
+  min-height:72px;
+}}
+.card-main:active{{background:#f8f8f7}}
+
+/* Meta column */
+.card-meta{{display:flex;flex-direction:column;gap:2px}}
+.meta-time{{font-size:14px;font-weight:700;color:var(--text);font-variant-numeric:tabular-nums;line-height:1}}
+.meta-tz{{font-size:9px;font-weight:500;color:var(--text-muted);vertical-align:middle;margin-left:1px}}
+.meta-city{{font-size:10px;color:var(--text-muted);line-height:1.3;margin-top:1px}}
+.meta-grp{{
+  font-size:9px;font-weight:600;color:var(--text-muted);
+  background:#f2f2f0;border-radius:4px;padding:2px 5px;
+  display:inline-block;margin-top:3px;align-self:flex-start;
+}}
+
+/* Teams column */
+.card-teams{{min-width:0}}
+.team-row{{display:flex;align-items:center;gap:7px;padding:2px 0}}
+.flag{{font-size:18px;line-height:1;flex-shrink:0}}
+.tname{{
+  font-size:14px;font-weight:500;color:var(--text-secondary);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}}
+.tname.winner{{font-weight:700;color:var(--text)}}
+
+/* Right column */
+.card-right{{
+  display:flex;flex-direction:column;align-items:flex-end;gap:4px;
+  flex-shrink:0;min-width:56px;
+}}
+.pred-score{{
+  font-size:22px;font-weight:700;letter-spacing:2px;
+  font-variant-numeric:tabular-nums;color:var(--text);line-height:1;
+}}
+.pred-score.pred-ovr{{color:#b45309}}
+.pred-badge{{
+  font-size:10px;font-weight:600;padding:2px 8px;
+  border-radius:6px;white-space:nowrap;
+}}
+.lev-L{{background:#dcfce7;color:#15803d}}
+.lev-E{{background:#fef3c7;color:#92400e}}
+.lev-V{{background:#fee2e2;color:#b91c1c}}
+.card-bottom{{display:flex;align-items:center;gap:5px;margin-top:1px}}
+.conf-dot{{font-size:14px;line-height:1}}
+.expand-arrow{{
+  font-size:16px;color:var(--border);
+  transition:transform .2s;display:inline-block;line-height:1;
+}}
+.expand-arrow.rotated{{transform:rotate(180deg)}}
+
+/* Per-match refresh button */
+.refresh-btn{{
+  position:absolute;top:8px;right:8px;
+  width:28px;height:28px;
+  background:transparent;border:none;
+  color:var(--text-muted);font-size:15px;
+  cursor:pointer;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s;
+  line-height:1;
+}}
+.refresh-btn:active{{background:#f0f0ee;color:var(--accent)}}
 
 /* ── DETAIL PANEL ─────────────────────────────────────────────────────────── */
-.detail{{display:none;background:var(--card);border:.5px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:14px 12px 16px}}
+.detail{{
+  display:none;
+  background:var(--card);
+  border:1.5px solid var(--border);border-top:none;
+  border-radius:0 0 var(--radius) var(--radius);
+  padding:14px 14px 18px;
+}}
 .detail.open{{display:block}}
-.detail-links{{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}}
-.det-link{{font-size:12px;color:var(--accent);text-decoration:none;background:#f0f4ff;border-radius:6px;padding:6px 10px;min-height:32px;display:flex;align-items:center}}
-.det-link:active{{background:#dde8ff}}
-.det-section{{margin-bottom:14px}}
-.det-title{{font-size:10px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}}
-.rec-score{{color:#2a6a2a}}
-.ovr-tag{{font-size:10px;color:#c08010}}
+.det-section{{margin-bottom:16px}}
+.det-section:last-child{{margin-bottom:0}}
+.det-title{{
+  font-size:10px;font-weight:700;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;
+}}
+.rec-score{{color:#15803d}}
+.ovr-tag{{font-size:10px;color:#b45309}}
 
 /* ── ODDS TABLES ──────────────────────────────────────────────────────────── */
-.tbl-scroll{{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:8px;border:1px solid #f0f0ec}}
+.tbl-scroll{{
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border-radius:10px;border:1px solid var(--border-light);
+}}
 .odds-table{{width:100%;border-collapse:collapse;font-size:12px}}
-.odds-table th{{text-align:left;color:var(--sub);font-weight:600;padding:6px 8px;background:#fafaf8;white-space:nowrap;border-bottom:1px solid #f0f0ec}}
-.odds-table td{{padding:6px 8px;border-bottom:.5px solid #f8f8f5;white-space:nowrap}}
+.odds-table th{{
+  text-align:left;color:var(--text-muted);font-weight:600;
+  padding:7px 9px;background:#fafaf8;white-space:nowrap;
+  border-bottom:1px solid var(--border-light);
+}}
+.odds-table td{{padding:7px 9px;border-bottom:.5px solid var(--border-light);white-space:nowrap}}
 .odds-table tr:last-child td{{border-bottom:none}}
-.bk-name a{{color:#3b71c8;text-decoration:none;font-weight:500}}
-.fave{{background:#eaf3de;font-weight:700;color:#2a6a2a}}
+.bk-name a{{color:#2563eb;font-weight:500}}
+.fave{{background:#dcfce7;font-weight:700;color:#15803d}}
 .score-col{{font-weight:600;font-variant-numeric:tabular-nums}}
-.best-score{{color:#c08010}}
-.no-data{{font-size:12px;color:#aaa;font-style:italic;padding:8px 0}}
+.best-score{{color:#b45309}}
+.no-data{{font-size:12px;color:var(--text-muted);font-style:italic;padding:6px 0}}
 
 /* ── RECOMMENDATION BARS ──────────────────────────────────────────────────── */
-.bars{{margin-bottom:8px}}
-.bar-row{{display:flex;align-items:center;gap:8px;margin:4px 0}}
+.bars{{margin-bottom:10px}}
+.bar-row{{display:flex;align-items:center;gap:8px;margin:5px 0}}
 .bar-label{{font-size:12px;font-weight:500;color:#666;min-width:34px;font-variant-numeric:tabular-nums}}
-.bar-label.bar-win{{font-weight:700;color:#2a6a2a}}
-.bar-track{{flex:1;background:#f0f0ec;border-radius:4px;height:10px}}
-.bar-fill{{height:100%;background:#ccc;border-radius:4px}}
-.bar-fill.bar-fill-win{{background:#5a9a3a}}
-.bar-pct{{font-size:11px;color:#999;min-width:70px;text-align:right}}
-.bar-pct.bar-pct-win{{color:#2a6a2a}}
-.pills{{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}}
-.pill{{font-size:11px;background:#f0f0ec;color:#888;border-radius:4px;padding:3px 7px}}
-.pill.pill-win{{background:#eaf3de;color:#3b6d11;font-weight:600}}
-.nivel-badge{{display:inline-block;font-size:11px;padding:3px 9px;border-radius:5px;font-weight:500}}
-.ovr-note{{margin-top:8px;padding:8px 10px;background:#fff8e7;border-left:3px solid #c08010;border-radius:0 6px 6px 0;font-size:12px;line-height:1.5}}
+.bar-label.bar-win{{font-weight:700;color:#15803d}}
+.bar-track{{flex:1;background:#efefed;border-radius:4px;height:8px}}
+.bar-fill{{height:100%;background:#d1d5db;border-radius:4px}}
+.bar-fill.bar-fill-win{{background:var(--accent)}}
+.bar-pct{{font-size:11px;color:var(--text-muted);min-width:72px;text-align:right}}
+.bar-pct.bar-pct-win{{color:#15803d}}
+.pills{{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}}
+.pill{{font-size:11px;background:#f2f2f0;color:#777;border-radius:5px;padding:3px 8px}}
+.pill.pill-win{{background:#dcfce7;color:#15803d;font-weight:600}}
+.nivel-badge{{
+  display:inline-block;font-size:11px;padding:4px 10px;
+  border-radius:6px;font-weight:500;
+}}
+.ovr-note{{
+  margin-top:10px;padding:10px 12px;
+  background:#fffbeb;border-left:3px solid #d97706;
+  border-radius:0 8px 8px 0;font-size:12px;line-height:1.6;
+}}
 
 /* ── BOTTOM NAV ───────────────────────────────────────────────────────────── */
-#bottom-nav{{position:fixed;bottom:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.95);border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}}
-.nav-btn{{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:none;background:transparent;color:var(--sub);font-size:10px;font-weight:500;cursor:pointer;transition:color .15s;padding:0;padding-bottom:4px}}
-.nav-btn .nav-icon{{font-size:22px;line-height:1}}
-.nav-btn.active{{color:var(--accent)}}
-.nav-btn:active{{opacity:.7}}
+#bottom-nav{{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.97);
+  border-top:1px solid var(--border);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  z-index:100;
+  padding:8px 24px calc(8px + env(safe-area-inset-bottom,0px));
+  display:flex;justify-content:center;gap:10px;
+}}
+.nav-pill{{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 28px;border-radius:50px;
+  border:none;background:transparent;
+  color:var(--text-muted);font-size:13px;font-weight:600;
+  font-family:inherit;cursor:pointer;
+  transition:background .15s,color .15s;
+  min-height:44px;flex:1;max-width:180px;justify-content:center;
+}}
+.nav-pill .nav-icon{{font-size:18px;line-height:1}}
+.nav-pill.active{{
+  background:var(--accent-light);color:var(--accent);
+  border:1.5px solid var(--accent-border);
+}}
+.nav-pill:active{{opacity:.75}}
 
 /* ── UPDATE TAB ───────────────────────────────────────────────────────────── */
 #tab-update{{display:none}}
-.update-section{{background:var(--card);border-radius:14px;border:.5px solid var(--border);padding:16px;margin-bottom:12px}}
-.update-section h2{{font-size:15px;font-weight:600;margin-bottom:12px}}
-.token-indicator{{font-size:12px;margin-bottom:12px;padding:8px 10px;border-radius:8px;font-weight:500}}
-.token-ok{{background:#eaf3de;color:#3b6d11}}
-.token-missing{{background:#faeeda;color:#854f0b}}
-.token-row{{display:flex;gap:8px;margin-bottom:8px}}
-#token-input{{flex:1;padding:10px 12px;border-radius:10px;border:1px solid var(--border);font-size:14px;background:#fafaf8;min-width:0}}
+.update-card{{
+  background:var(--card);border-radius:var(--radius);
+  border:1.5px solid var(--border);padding:18px;margin-bottom:12px;
+}}
+.update-card-title{{font-size:15px;font-weight:700;margin-bottom:14px;color:var(--text)}}
+.token-indicator{{
+  font-size:12px;font-weight:600;padding:9px 12px;
+  border-radius:8px;margin-bottom:14px;
+}}
+.token-ok{{background:#dcfce7;color:#15803d}}
+.token-missing{{background:#fef3c7;color:#92400e}}
+.token-row{{display:flex;gap:8px;margin-bottom:10px}}
+#token-input{{
+  flex:1;padding:11px 13px;border-radius:10px;
+  border:1.5px solid var(--border);font-size:14px;font-family:inherit;
+  background:#fafaf8;min-width:0;color:var(--text);
+}}
 #token-input:focus{{outline:none;border-color:var(--accent)}}
-#token-paste{{padding:10px 14px;background:#f0f0ec;color:#444;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0}}
-#token-save{{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0}}
-#token-save:active{{opacity:.8}}
-#token-status{{font-size:12px;color:#3b6d11;min-height:18px}}
-.token-help{{font-size:11px;color:var(--sub);line-height:1.5;margin-top:6px}}
-.token-help a{{color:var(--accent)}}
-.update-btn{{width:100%;padding:14px;background:#16a34a;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;margin-top:4px;transition:background .15s}}
-.update-btn:active{{background:#15803d}}
-.update-btn:disabled{{background:#9ca3af;cursor:not-allowed}}
-#run-state{{margin-top:10px;min-height:24px}}
-.state-msg{{font-size:13px;color:var(--sub);padding:8px 0}}
-.state-err{{color:#993c1d}}
-.runs-title{{font-size:11px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px}}
+#token-paste{{
+  padding:11px 14px;background:#f2f2f0;color:#444;
+  border:none;border-radius:10px;font-size:14px;font-family:inherit;
+  font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;
+}}
+#token-save{{
+  padding:11px 16px;background:var(--accent);color:#fff;
+  border:none;border-radius:10px;font-size:14px;font-family:inherit;
+  font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;
+}}
+#token-save:active{{opacity:.85}}
+#token-status{{font-size:12px;color:var(--accent);min-height:18px;margin-top:2px}}
+.update-main-btn{{
+  width:100%;padding:16px;background:var(--accent);color:#fff;
+  border:none;border-radius:12px;font-size:17px;font-family:inherit;
+  font-weight:700;cursor:pointer;margin-top:6px;
+  transition:background .15s;letter-spacing:-.2px;
+}}
+.update-main-btn:active{{background:#15803d}}
+.update-main-btn:disabled{{background:#9ca3af;cursor:not-allowed}}
+#run-state{{margin-top:12px;min-height:22px}}
+.state-msg{{font-size:13px;color:var(--text-secondary);padding:6px 0}}
+.state-err{{color:#b91c1c}}
+.runs-section-title{{
+  font-size:11px;font-weight:700;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.6px;margin-bottom:12px;
+}}
 #runs-list{{display:flex;flex-direction:column;gap:8px}}
-.run-item{{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:#fafaf8;border:.5px solid var(--border)}}
+.run-item{{
+  display:flex;align-items:center;gap:10px;
+  padding:11px 13px;border-radius:10px;
+  background:#fafaf8;border:1px solid var(--border-light);
+}}
 .run-item.run-running{{background:#eff6ff;border-color:#bfdbfe}}
-.run-item.run-queued{{background:#fafaf8}}
-.run-item.run-ok{{background:#f0fdf4;border-color:#bbf7d0}}
+.run-item.run-ok{{background:var(--accent-light);border-color:var(--accent-border)}}
 .run-item.run-fail{{background:#fff1f2;border-color:#fecdd3}}
-.run-icon{{font-size:20px;flex-shrink:0}}
+.run-icon{{font-size:20px;flex-shrink:0;line-height:1}}
 .run-info{{flex:1;min-width:0}}
 .run-label{{font-size:13px;font-weight:600}}
-.run-time{{font-size:11px;color:var(--sub)}}
-.run-link{{font-size:11px;color:var(--accent);text-decoration:none;white-space:nowrap;padding:4px 8px;background:#f0f4ff;border-radius:6px}}
-.run-empty{{font-size:12px;color:var(--sub);font-style:italic;padding:8px 0}}
-#reload-banner{{display:none;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;background:#dcfce7;border-radius:10px;border:1px solid #86efac;margin-bottom:10px}}
-.reload-text{{font-size:13px;color:#166534;font-weight:500}}
-.reload-btn{{padding:8px 14px;background:#16a34a;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer}}
+.run-time{{font-size:11px;color:var(--text-muted);margin-top:1px}}
+.run-link{{
+  font-size:11px;color:var(--accent);white-space:nowrap;
+  padding:5px 10px;background:var(--accent-light);
+  border:1px solid var(--accent-border);border-radius:7px;font-weight:600;
+}}
+.run-empty{{font-size:13px;color:var(--text-muted);font-style:italic;padding:6px 0}}
+#reload-banner{{
+  display:none;align-items:center;justify-content:space-between;
+  gap:10px;padding:13px 16px;background:var(--accent-light);
+  border-radius:12px;border:1.5px solid var(--accent-border);margin-bottom:14px;
+}}
+.reload-text{{font-size:13px;color:#15803d;font-weight:600}}
+.reload-btn{{
+  padding:9px 16px;background:var(--accent);color:#fff;
+  border:none;border-radius:8px;font-size:13px;font-family:inherit;
+  font-weight:700;cursor:pointer;
+}}
 </style>
 </head>
 <body>
@@ -457,10 +690,10 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
 <div id="tab-partidos">
   <div class="container">
     <div class="header">
-      <h1>⚽ Polla Mundial 2026</h1>
-      <span class="updated">Actualizado: {now}</span>
+      <div class="header-title">⚽ Polla Mundial 2026</div>
+      <div class="header-sub">Actualizado: {now}</div>
     </div>
-    <div class="day-jump-wrap">
+    <div class="jump-wrap">
       <select id="day-jump">
         <option value="">Ir a un día…</option>
       </select>
@@ -475,18 +708,24 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
 
     <div id="reload-banner">
       <span class="reload-text">✅ Actualización completada</span>
-      <button class="reload-btn" onclick="location.reload()">Recargar página</button>
+      <button class="reload-btn" onclick="location.reload()">Recargar</button>
     </div>
 
-    <div class="update-section">
-      <h2>🔄 Actualizar cuotas</h2>
+    <div class="update-card">
+      <div class="update-card-title">Actualizar cuotas</div>
       <div id="token-indicator" class="token-indicator token-missing">Token: no configurado</div>
+      <div class="token-row">
+        <input id="token-input" type="password" placeholder="GitHub token…">
+        <button id="token-paste" onclick="pasteToken()">Pegar</button>
+        <button id="token-save">Guardar</button>
+      </div>
+      <div id="token-status"></div>
       <div id="run-state"></div>
-      <button class="update-btn" id="btn-update" onclick="triggerUpdate()">Actualizar todo</button>
+      <button class="update-main-btn" id="btn-update" onclick="triggerUpdate()">Actualizar todo</button>
     </div>
 
-    <div class="update-section">
-      <div class="runs-title">Últimas ejecuciones</div>
+    <div class="update-card">
+      <div class="runs-section-title">Últimas ejecuciones</div>
       <div id="runs-list"><p class="run-empty">Cargando…</p></div>
     </div>
 
@@ -495,11 +734,11 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
 
 <!-- ── BOTTOM NAV ────────────────────────────────────────────────────────── -->
 <nav id="bottom-nav">
-  <button class="nav-btn active" id="nav-partidos" onclick="showTab('partidos')">
+  <button class="nav-pill active" id="nav-partidos" onclick="showTab('partidos')">
     <span class="nav-icon">📅</span>
     Partidos
   </button>
-  <button class="nav-btn" id="nav-update" onclick="showTab('update')">
+  <button class="nav-pill" id="nav-update" onclick="showTab('update')">
     <span class="nav-icon">🔄</span>
     Actualizar
   </button>
