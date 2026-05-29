@@ -224,7 +224,7 @@ dateKeys.forEach(fecha=>{
     const levTxt=lev==='E'?'Empate':m.win_pred;
     const id='m_'+m.slug.replace(/-/g,'_');
     const started=isMatchStarted(m);
-    const tsHtml=m.last_updated?`<span class="match-ts">cuotas: ${fmtUpdated(m.last_updated)}</span>`:'';
+    const tsHtml=m.last_updated?`<span class="match-ts">Last Quotes: ${fmtUpdated(m.last_updated)}</span>`:'';
     const refreshBtn=started
       ?`<span class="lock-badge">🔒 En curso</span>`
       :`<button class="refresh-btn" id="rbtn_${id}" onclick="event.stopPropagation();triggerUpdateForMatch(${mIdx},this)" title="Actualizar cuotas de este partido">↻</button>`;
