@@ -64,12 +64,7 @@ function fmtUpdated(iso){
   if(!iso)return'';
   try{
     const d=new Date(iso);
-    const now=new Date();
-    const diffMin=Math.round((now-d)/60000);
-    if(diffMin<1)return'ahora';
-    if(diffMin<60)return`hace ${diffMin}min`;
-    if(diffMin<1440){const h=Math.round(diffMin/60);return`hace ${h}h`;}
-    return d.toLocaleDateString('es-CL',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+    return d.toLocaleString('es-CL',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Santiago'});
   }catch(e){return'';}
 }
 
@@ -410,11 +405,7 @@ function showReloadBanner(){
 }
 
 function timeAgo(d){
-  const s=Math.floor((Date.now()-d)/1000);
-  if(s<60)return'hace '+s+'s';
-  if(s<3600)return'hace '+Math.floor(s/60)+'min';
-  if(s<86400)return'hace '+Math.floor(s/3600)+'h';
-  return'hace '+Math.floor(s/86400)+'d';
+  return d.toLocaleString('es-CL',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'America/Santiago'});
 }
 
 function showUpdateStatus(type,msg){
