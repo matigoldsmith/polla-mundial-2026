@@ -11,8 +11,15 @@ on:
   schedule:
     - cron: '0 11 * * *'
 
+concurrency:
+  group: update-polla
+  cancel-in-progress: false
+
 permissions:
   contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   update:
@@ -47,5 +54,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add polla_data_final.json index.html
           git diff --cached --quiet || git commit -m "Auto-update $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git pull --rebase origin main
+          git fetch origin
+          git rebase -X ours origin/main
           git push
