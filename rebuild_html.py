@@ -915,7 +915,7 @@ def main():
     now = datetime.datetime.now().strftime('%d %b %Y %H:%M')
     html = build_html(data, now)
 
-    out_path = os.path.join(DIR, 'polla_mundial_2026.html')
+    out_path = os.path.join(DIR, 'index.html')
     with open(out_path, 'w', encoding='utf-8') as f:
         f.write(html)
 
